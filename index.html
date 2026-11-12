@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Business Ethics: key ideas from the team's presentation.">
+<title>Business Ethics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky section rail on top, then six numbered sections, each a responsive grid of recall cards; colors taken from the team's Canva deck (navy, magenta, sun yellow, sky blue on cream) */
+:root{
+  --bg:#FBF7EE; --surface:#FFFFFF; --ink:#26315F; --ink-soft:#5A6283; --line:#E6DFCF;
+  --navy:#3A5196; --magenta:#E2357A; --sun:#F4BE3A; --sky:#2C86DD;
+  --tint-m:#FCE6EF; --tint-n:#E7ECF8; --tint-s:#FDF2D4;
+  --f-display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141728; --surface:#1C2036; --ink:#E8EBF7; --ink-soft:#A3A9C6; --line:#2E3452;
+  --navy:#8EA6EE; --magenta:#FF6FA4; --sun:#F6CB5C; --sky:#6DB2F3;
+  --tint-m:#3A1E30; --tint-n:#222B4A; --tint-s:#3A321C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141728; --surface:#1C2036; --ink:#E8EBF7; --ink-soft:#A3A9C6; --line:#2E3452;
+  --navy:#8EA6EE; --magenta:#FF6FA4; --sun:#F6CB5C; --sky:#6DB2F3;
+  --tint-m:#3A1E30; --tint-n:#222B4A; --tint-s:#3A321C; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+header .wrap{padding-block:40px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.title{font-family:var(--f-display);font-weight:800;line-height:.92;letter-spacing:-.02em;margin:0;font-size:clamp(44px,8vw,84px);text-wrap:balance}
+.title .b{color:var(--navy);display:block}
+.title .e{color:var(--magenta)}
+.title .tag{font-family:var(--f-body);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:super;margin-left:10px}
+.lede{margin:14px 0 0;max-width:56ch;color:var(--ink-soft);font-size:16px}
+.lede strong{color:var(--magenta);font-weight:600}
+.meta{font-size:13px;color:var(--ink-soft);text-align:right;display:grid;gap:4px}
+.meta b{color:var(--ink);font-weight:600}
+.stripe{height:5px;background:linear-gradient(90deg,var(--sky) 0 62%,var(--sun) 62% 100%)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;align-items:center;padding-block:10px;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
+nav a span{color:var(--magenta);font-family:var(--f-display);margin-right:6px}
+nav a:hover,nav a:focus-visible{border-color:var(--magenta);outline:none}
+.search{flex:1 0 180px;margin-left:auto;min-width:0}
+.search input{width:100%;font:inherit;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.search input:focus-visible{outline:2px solid var(--magenta);outline-offset:1px}
+
+/* sections */
+main .wrap{padding-block:12px 64px;display:grid;gap:52px}
+section{scroll-margin-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.num{font-family:var(--f-display);font-weight:800;font-size:46px;line-height:1;color:var(--magenta)}
+.sec-head h2{font-family:var(--f-display);font-weight:700;font-size:28px;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:14px;flex-basis:100%}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;min-width:0}
+.card.wide{grid-column:1/-1}
+.card h3{font-family:var(--f-display);font-weight:700;font-size:17px;margin:0 0 10px;letter-spacing:-.005em}
+.card p{margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+ul.tight,ol.tight{margin:0;padding-left:20px;display:grid;gap:4px}
+.key{background:var(--tint-s);border-radius:8px;padding:8px 10px;font-weight:600;margin-top:10px}
+.hidden-match{display:none}
+mark{background:var(--sun);color:#26315F;border-radius:3px;padding:0 2px}
+
+/* two-column contrast boxes */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vs > div{border-radius:10px;padding:12px}
+.vs .p{background:var(--tint-n)}
+.vs .m{background:var(--tint-m)}
+.vs b{font-family:var(--f-display);font-size:18px;display:block}
+.vs .p b{color:var(--navy)} .vs .m b{color:var(--magenta)}
+.vs small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* numbered lists of named items */
+.items{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:i}
+.items li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline;counter-increment:i}
+.items li::before{content:counter(i);font-family:var(--f-display);font-weight:800;color:var(--magenta);font-size:18px;font-variant-numeric:tabular-nums}
+.items b{font-weight:600}
+.items span{color:var(--ink-soft)}
+
+/* chain */
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}
+.chain span{background:var(--tint-n);padding:4px 10px;border-radius:999px}
+.chain i{font-style:normal;color:var(--magenta);font-weight:700}
+
+/* stats */
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+.stats div{min-width:0}
+.stats b{font-family:var(--f-display);font-weight:800;font-size:30px;color:var(--navy);line-height:1;display:block;font-variant-numeric:tabular-nums}
+.stats small{font-size:12px;color:var(--ink-soft)}
+
+/* options table */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.pill.bad{background:var(--tint-m);color:var(--magenta)}
+.pill.warn{background:var(--tint-s);color:var(--ink)}
+.pill.good{background:var(--tint-n);color:var(--navy)}
+
+/* game recap */
+.game{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.game li{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px}
+.game .q{grid-column:1/-1;font-weight:600}
+.game .a{background:var(--tint-n);border-radius:8px;padding:6px 10px}
+.game .b{background:var(--tint-m);border-radius:8px;padding:6px 10px}
+.game .a::before{content:"A · ";font-weight:700;color:var(--navy)}
+.game .b::before{content:"B · ";font-weight:700;color:var(--magenta)}
+
+blockquote{margin:0;font-family:var(--f-display);font-weight:700;font-size:20px;line-height:1.25;color:var(--magenta);text-wrap:balance}
+.empty{color:var(--ink-soft);font-size:14px}
+footer .wrap{padding-block:24px 40px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft);display:grid;gap:6px}
+footer p{margin:0;max-width:90ch}
+
+@media (max-width:640px){
+  header .wrap{grid-template-columns:1fr}
+  .meta{text-align:left}
+  .grid{grid-template-columns:1fr}
+  .vs,.game li{grid-template-columns:1fr}
+  .num{font-size:38px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div>
+      <h1 class="title"><span class="b">Business</span><span class="e">Ethics</span></h1>
+      <p class="lede">What choice to make when the <strong>right thing</strong> is not obviously the "right thing". Every key idea from the deck, on one page.</p>
+    </div>
+    <div class="meta">
+      <span>VinUniversity · Week 9</span>
+      <span><b>Ngọc · Raine · Thảo Linh · Dương · Khánh</b></span>
+    </div>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a href="#s1"><span>01</span>Prudential vs Moral</a>
+    <a href="#s2"><span>02</span>Character Audit</a>
+    <a href="#s3"><span>03</span>Law &amp; Ethics</a>
+    <a href="#s4"><span>04</span>Decision Making</a>
+    <a href="#s5"><span>05</span>Moral Obligation</a>
+    <a href="#s6"><span>06</span>Who am I?</a>
+    <label class="search"><input id="q" type="search" placeholder="Search terms, e.g. Tylenol" aria-label="Search the cheat sheet"></label>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<section id="s1">
+  <div class="sec-head"><span class="num">01</span><h2>Prudential vs. Moral</h2><p>What do you do when doing the right thing might cost you something?</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Two kinds of reasons</h3>
+      <div class="vs">
+        <div class="p"><b>Prudential</b>what's good for me<small>job · salary · reputation</small></div>
+        <div class="m"><b>Moral</b>what's good for others<small>the "right" thing to do</small></div>
+      </div>
+      <p class="key">Ethics is a daily choice. You choose it again and again, today too.</p>
+    </div>
+    <div class="card">
+      <h3>Is it wrong to think of yourself?</h3>
+      <p>Not necessarily. Both kinds of reasons are real.</p>
+      <ul class="tight">
+        <li>Caring for yourself is <b>normal</b></li>
+        <li>Caring for others is <b>moral</b></li>
+        <li>Knowing which one drives you is <b>what matters</b></li>
+      </ul>
+      <p class="key">Nobody expects a superhero. What it costs you matters.</p>
+    </div>
+    <div class="card">
+      <h3>Me vs. everyone</h3>
+      <p>What's best for me isn't always best for all. <b>Me first, sometimes</b> is fair when your livelihood is seriously at stake.</p>
+      <span class="label">When the stakes are high</span>
+      <p>Approve a car part she knows might fail?</p>
+      <div class="vs">
+        <div class="p"><b>Refuse</b><small>she might lose her job</small></div>
+        <div class="m"><b>Approve</b><small>people could get hurt</small></div>
+      </div>
+      <p class="key">Integrity has a price.</p>
+    </div>
+    <div class="card">
+      <h3>Weighing it up</h3>
+      <ul class="tight">
+        <li>The more others could get hurt, the more it tips toward <b>right</b>.</li>
+        <li>Big risk to me, small harm to others → <b>protect yourself</b>.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">Same scale, bigger stakes</span>
+      <p>What do you owe millions of people? Should global benefit beat profit? Closer to home: the <b>VinFuture Prize</b> (healthcare · energy · AI · environment).</p>
+    </div>
+    <div class="card wide">
+      <h3>Opening game recap: every A was prudential, every B was moral</h3>
+      <ul class="game">
+        <li><span class="q">1. The café gives you 50,000₫ too much change, and you're late for class.</span><span class="a">Keep walking. It's their mistake.</span><span class="b">Go back and return it.</span></li>
+        <li><span class="q">2. One group member did almost nothing. Peer review time.</span><span class="a">Full marks for everyone. Keep the peace.</span><span class="b">Rate honestly, even if it causes drama.</span></li>
+        <li><span class="q">3. Two internship offers.</span><span class="a">Big firm, great pay, treats interns badly.</span><span class="b">Small NGO, low pay, a mission you love.</span></li>
+        <li><span class="q">4. Your manager praises you to the CEO for your teammate's idea.</span><span class="a">Say thanks and stay quiet.</span><span class="b">Correct it on the spot.</span></li>
+        <li><span class="q">5. Pick your motto.</span><span class="a">"Take care of yourself first."</span><span class="b">"Do what's right, even when it costs you."</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><span class="num">02</span><h2>Evaluating reasons &amp; the character audit</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>A survival instinct</h3>
+      <p>We magnify threats to ourselves, which makes harming others feel easier to justify.</p>
+      <p>A business is a <b>"legal person"</b>, not a person.</p>
+    </div>
+    <div class="card">
+      <h3>Ethics as a character audit</h3>
+      <p>A reflective check of your own character.</p>
+      <ul class="tight">
+        <li>Not just a personal choice</li>
+        <li>Not just a group belief</li>
+        <li><b>An obligation, for everyone</b></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Seen clearly in the AI era</h3>
+      <div class="chain"><span>Fear of falling behind</span><i>→</i><span>Rush to adopt AI</span><i>→</i><span>Mass lay-offs</span><i>→</i><span>Costly rehiring</span></div>
+      <p style="margin-top:10px">…all called modernisation.</p>
+      <p class="key">Survival of the firm is not a free pass. Keeping a company alive never justifies harming innocent people.</p>
+    </div>
+    <div class="card">
+      <h3>Five questions for your audit</h3>
+      <ol class="items">
+        <li><div><b>Imagination</b> <span>Beyond the two obvious options?</span></div></li>
+        <li><div><b>Balance</b> <span>Me vs. others, weighed fairly?</span></div></li>
+        <li><div><b>Honesty</b> <span>Am I inflating my own risk?</span></div></li>
+        <li><div><b>Autonomy</b> <span>Just following orders?</span></div></li>
+        <li><div><b>Responsibility</b> <span>Am I part of the harm?</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>The final test</h3>
+      <ul class="tight">
+        <li>If everyone did this, would society be okay?</li>
+        <li>Could I say it out loud, without shame?</li>
+        <li>Imagine explaining it in court.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">Discussion</span>
+      <p>If going beyond duty is optional, how is society protected? Can ethics be forced? Then why do we teach it?</p>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><span class="num">03</span><h2>Why ethics can't be regulated</h2><p>Follow every law and you're automatically ethical? No.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Six reasons law isn't enough</h3>
+      <ol class="items">
+        <li><div><b>Law ≠ ethics</b> <span>Legal can still be harmful.</span></div></li>
+        <li><div><b>Built-in limits</b> <span>Courts are a blunt tool.</span></div></li>
+        <li><div><b>Slow &amp; rigid</b> <span>Problems move faster.</span></div></li>
+        <li><div><b>Lobbying</b> <span>Rules get watered down.</span></div></li>
+        <li><div><b>Perverse incentives</b> <span>Secrecy, bare minimum.</span></div></li>
+        <li><div><b>Moral ownership</b> <span>Set your own standard.</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Minimum vs. standard</h3>
+      <div class="vs">
+        <div class="p"><b>Compliance</b>"What's the least we can do?"</div>
+        <div class="m"><b>Ethics</b>"What's the right thing to do?"</div>
+      </div>
+      <p class="key">The law sets the minimum. Ethics sets the standard.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><span class="num">04</span><h2>The decision-making process</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>The ethical professional</h3>
+      <p>You sit between <b>employees, customers, community</b> and <b>business results</b>.</p>
+      <p class="key">Balance results with the well-being of people.</p>
+    </div>
+    <div class="card">
+      <h3>Case: the Tylenol crisis</h3>
+      <span class="label">Chicago area · 1982</span>
+      <div class="stats">
+        <div><b>31M</b><small>bottles recalled</small></div>
+        <div><b>7</b><small>deaths from tampered capsules</small></div>
+      </div>
+      <ul class="tight">
+        <li>Tampering happened <b>after</b> the factory.</li>
+        <li>Product came back with tamper-resistant packaging.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">What J&amp;J's choice teaches</span>
+      <ul class="tight">
+        <li><b>Safety</b> before profit</li>
+        <li><b>Accountability</b> even when not at fault</li>
+        <li><b>Trust</b> for the long run</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Six steps to decide</h3>
+      <ol class="items">
+        <li><div><b>Name the issue</b></div></li>
+        <li><div><b>List the facts</b></div></li>
+        <li><div><b>Who's affected?</b></div></li>
+        <li><div><b>What would they want?</b></div></li>
+        <li><div><b>Test three options</b> <span>best case · worst case · who gets hurt · values given up · rules</span></div></li>
+        <li><div><b>Decide</b></div></li>
+      </ol>
+      <p class="key">Slow down. Don't just go with your gut.</p>
+    </div>
+    <div class="card wide">
+      <h3>Worked example: the snack batch</h3>
+      <p>A batch has the wrong expiry date and some may already be unsafe. Your manager says: "Just ship it. Nobody will notice."</p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:10px 0 14px">
+        <div><span class="label">1 · The issue</span><p>Sell something unsafe to save money?</p></div>
+        <div><span class="label">2 · The facts</span><p>Wrong dates · costly recall · kids eat these</p></div>
+        <div><span class="label">3 · Who's affected</span><p>Customers · company · manager · you</p></div>
+        <div><span class="label">4 · What they want</span><p>Safe food · low cost · a trusted brand</p></div>
+      </div>
+      <span class="label">5 · Test three options</span>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Option</th><th>Verdict</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Ship it anyway</td><td><span class="pill bad">ruled out</span></td><td>Unsafe and illegal.</td></tr>
+            <tr><td>Quietly bin it</td><td><span class="pill warn">risky for you</span></td><td>Done behind your boss's back.</td></tr>
+            <tr><td>Escalate to QC</td><td><span class="pill good">best choice</span></td><td>Protects customers, company and you.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="key">6 · Decide: Option 3, the least harm and the most good. Weigh the scale properly. Don't let fear decide.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><span class="num">05</span><h2>Moral obligation</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Four things to remember</h3>
+      <ol class="items">
+        <li><div>Self-interest needn't hurt others.</div></li>
+        <li><div>Laws can't guarantee good intentions.</div></li>
+        <li><div>Living ethically is a choice.</div></li>
+        <li><div>Our choices never affect just us.</div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="label">The takeaway</span>
+      <blockquote>Live in harmony, without harming others.</blockquote>
+      <p style="margin-top:12px">Ethics comes from the top. One day, the top will be you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head"><span class="num">06</span><h2>Secret ending: Who am I?</h2><p>Every choice was a reflection of you. Can you see the gap between your thoughts and your actions?</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Use yourself as the framework</h3>
+      <p>No theories to memorise. Just practise it, every day.</p>
+    </div>
+    <div class="card">
+      <h3>Hard choices reveal us</h3>
+      <div class="vs">
+        <div class="p"><b>Easy choice</b><small>One option is clearly better.</small></div>
+        <div class="m"><b>Hard choice</b><small>No option is better. Each is a different life.</small></div>
+      </div>
+      <p class="key">Hardship shows your true nature, so be brave. Can't decide? That doesn't make you incompetent.</p>
+    </div>
+    <div class="card">
+      <h3>Choose from your identity</h3>
+      <div class="vs">
+        <div class="p"><b>Not self-esteem</b><small>shifts with your mood</small></div>
+        <div class="m"><b>But identity</b><small>clear · consistent · stable</small></div>
+      </div>
+      <p style="margin-top:10px;font-size:13px;color:var(--ink-soft)">Based on "self-concept clarity", Campbell et al. (1996).</p>
+    </div>
+    <div class="card">
+      <h3>The self is bigger than you think</h3>
+      <p>Your relationships, reputation, work and possessions are part of you too. Self-interest is only a small part of who you are. <span style="color:var(--ink-soft)">(William James, 1890)</span></p>
+      <span class="label" style="margin-top:6px">What's scarier than a bad person?</span>
+      <p><b>An ignorant one.</b> They think they're good, so they never get the chance to change.</p>
+    </div>
+    <div class="card">
+      <h3>After this course, ask yourself</h3>
+      <ol class="items">
+        <li><div>Do my actions match how I see myself?</div></li>
+        <li><div>If not, what needs to change?</div></li>
+        <li><div>Am I as ethical as I think I am?</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<p class="empty" id="empty" hidden>No card matches that search.</p>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>References.</b> Campbell, J. D., et al. (1996). Self-concept clarity. <i>Journal of Personality and Social Psychology, 70</i>(1), 141–156. · EBSCO Research Starters, "Seven People Die After Taking Cyanide-Laced Tylenol". · James, W. (1890). <i>The Principles of Psychology</i>, Vol. 1. · Course textbook, Week 9: Business Ethics.</p>
+    <p>Summarised from the team's Canva deck "Business Ethics".</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const input=document.getElementById('q');
+  const cards=[...document.querySelectorAll('.card')];
+  const sections=[...document.querySelectorAll('main section')];
+  const empty=document.getElementById('empty');
+  const originals=new Map(cards.map(c=>[c,c.innerHTML]));
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+  function highlight(node,re){
+    const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+    const texts=[];while(walker.nextNode())texts.push(walker.currentNode);
+    texts.forEach(t=>{
+      if(!re.test(t.nodeValue))return;re.lastIndex=0;
+      const frag=document.createDocumentFragment();let last=0;
+      t.nodeValue.replace(re,(m,i)=>{frag.append(t.nodeValue.slice(last,i));const mk=document.createElement('mark');mk.textContent=m;frag.append(mk);last=i+m.length;});
+      frag.append(t.nodeValue.slice(last));t.replaceWith(frag);
+    });
+  }
+  input.addEventListener('input',()=>{
+    const q=input.value.trim();
+    let shown=0;
+    cards.forEach(c=>{c.innerHTML=originals.get(c);
+      if(!q){c.classList.remove('hidden-match');return}
+      const hit=c.textContent.toLowerCase().includes(q.toLowerCase());
+      c.classList.toggle('hidden-match',!hit);
+      if(hit){shown++;highlight(c,new RegExp(esc(q),'gi'))}
+    });
+    sections.forEach(s=>{s.hidden=!!q&&!s.querySelector('.card:not(.hidden-match)')});
+    empty.hidden=!q||shown>0;
+  });
+})();
+</script>
+
+</body>
+</html>
