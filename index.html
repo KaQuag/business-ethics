@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Business Ethics: key ideas from the team's presentation.">
+<meta name="description" content="Business Ethics (MANA3021): a summary of every week of the course and the rules for Team 8's games.">
 <title>Business Ethics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,8 @@ nav a:hover,nav a:focus-visible{border-color:var(--magenta);outline:none}
 
 /* sections */
 main .wrap{padding-block:12px 64px;display:grid;gap:52px}
-section{scroll-margin-top:72px}
+section{scroll-margin-top:128px}
+.view{display:grid;gap:52px}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap}
 .num{font-family:var(--f-display);font-weight:800;font-size:46px;line-height:1;color:var(--magenta)}
 .sec-head h2{font-family:var(--f-display);font-weight:700;font-size:28px;margin:0;letter-spacing:-.01em;text-wrap:balance}
@@ -77,10 +78,10 @@ mark{background:var(--sun);color:#26315F;border-radius:3px;padding:0 2px}
 /* two-column contrast boxes */
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .vs > div{border-radius:10px;padding:12px}
-.vs .p{background:var(--tint-n)}
-.vs .m{background:var(--tint-m)}
+.vs .p{background:var(--tint-m)}
+.vs .m{background:var(--tint-n)}
 .vs b{font-family:var(--f-display);font-size:18px;display:block}
-.vs .p b{color:var(--navy)} .vs .m b{color:var(--magenta)}
+.vs .p b{color:var(--magenta)} .vs .m b{color:var(--navy)}
 .vs small{display:block;color:var(--ink-soft);font-size:13px}
 
 /* numbered lists of named items */
@@ -115,17 +116,182 @@ th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-s
 .game{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .game li{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px}
 .game .q{grid-column:1/-1;font-weight:600}
-.game .a{background:var(--tint-n);border-radius:8px;padding:6px 10px}
-.game .b{background:var(--tint-m);border-radius:8px;padding:6px 10px}
-.game .a::before{content:"A · ";font-weight:700;color:var(--navy)}
-.game .b::before{content:"B · ";font-weight:700;color:var(--magenta)}
+.game .a{background:var(--tint-m);border-radius:8px;padding:6px 10px}
+.game .b{background:var(--tint-n);border-radius:8px;padding:6px 10px}
+.game .a::before{content:"A · ";font-weight:700;color:var(--magenta)}
+.game .b::before{content:"B · ";font-weight:700;color:var(--navy)}
 
 blockquote{margin:0;font-family:var(--f-display);font-weight:700;font-size:20px;line-height:1.25;color:var(--magenta);text-wrap:balance}
 .empty{color:var(--ink-soft);font-size:14px}
 footer .wrap{padding-block:24px 40px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft);display:grid;gap:6px}
 footer p{margin:0;max-width:90ch}
 
+/* tabs */
+nav .wrap.navrow{padding-block:10px 0;overflow:visible;gap:12px}
+.tabs{display:inline-flex;flex:none;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+nav a.tab{border:0;background:transparent;padding:7px 16px;font-size:14px;color:var(--ink-soft)}
+nav a.tab:hover{color:var(--ink)}
+nav a.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+nav a.tab:focus-visible{outline:2px solid var(--magenta);outline-offset:2px}
+.navrow .search{flex:1 1 140px}
+
+/* game rules */
+ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ul.checks li{display:grid;grid-template-columns:20px 1fr;gap:8px}
+ul.checks li::before{content:"✓";color:var(--magenta);font-weight:700}
+details.reveal{margin-top:14px;border:1px dashed var(--line);border-radius:10px;padding:10px 12px}
+details.reveal summary{cursor:pointer;font-weight:600;color:var(--magenta)}
+details.reveal summary:focus-visible{outline:2px solid var(--magenta);outline-offset:2px}
+details.reveal[open] summary{margin-bottom:10px}
+
+.room{display:grid;grid-template-columns:30px 1fr 50px;grid-template-rows:auto 28px auto;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--bg)}
+.room .front{grid-column:1;grid-row:1/4;writing-mode:vertical-rl;transform:rotate(180deg);display:grid;place-items:center;background:var(--ink);color:var(--bg);border-radius:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.room .side{border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.room .pr{grid-column:2;grid-row:1;background:var(--tint-m)} .room .pr b{color:var(--magenta)}
+.room .mo{grid-column:2;grid-row:3;background:var(--tint-n)} .room .mo b{color:var(--navy)}
+.room .side b{font-family:var(--f-display);font-size:16px}
+.room .aisle{grid-column:2;grid-row:2;display:grid;place-items:center;font-size:11px;color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase;border:1px dashed var(--line);border-radius:6px}
+.room .jury{grid-column:3;grid-row:1/4;background:var(--tint-s);border-radius:8px;display:grid;place-items:center;writing-mode:vertical-rl;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.tables{display:flex;gap:6px}
+.tables i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);font-weight:700;font-family:var(--f-display);font-size:14px}
+.room-note{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+.who{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.who i{width:10px;height:10px;border-radius:50%;flex:none}
+td small{display:block;color:var(--ink-soft);font-size:12px}
+
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.side-col{border-radius:12px;padding:14px;min-width:0}
+.side-col.mo{background:var(--tint-n)} .side-col.pr{background:var(--tint-m)}
+.side-col h4{font-family:var(--f-display);font-weight:800;font-size:22px;margin:0 0 10px}
+.side-col.mo h4{color:var(--navy)} .side-col.pr h4{color:var(--magenta)}
+.side-col dl{margin:0;display:grid;gap:10px}
+.side-col dt{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.side-col dd{margin:2px 0 0}
+
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;counter-reset:f}
+.flow li{counter-increment:f;border-radius:12px;background:var(--tint-n);padding:14px;display:grid;gap:6px;align-content:start;min-width:0}
+.flow li:last-child{background:var(--tint-s)}
+.flow li::before{content:counter(f);font-family:var(--f-display);font-weight:800;font-size:24px;color:var(--magenta);line-height:1}
+.flow b{font-family:var(--f-display);font-size:16px}
+.flow .t{justify-self:start;font-size:12px;font-weight:600;background:var(--surface);border-radius:999px;padding:2px 9px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.flow .d{font-size:13.5px;color:var(--ink-soft)}
+
+.meter{display:grid;gap:4px}
+.meter + .meter{margin-top:14px}
+.meter .top{display:flex;justify-content:space-between;gap:8px;font-weight:600}
+.meter .top span{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-weight:500}
+.meter small{color:var(--ink-soft);font-size:13px}
+.bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:50%;border-radius:999px}
+
+.scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.scenes > div{border-top:3px solid var(--sky);padding-top:10px;min-width:0}
+.scenes > div:nth-child(2){border-color:var(--sun)}
+.scenes > div:nth-child(3){border-color:var(--magenta)}
+.scenes b{font-family:var(--f-display);font-size:17px;display:block;margin-bottom:4px}
+
+.split{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:8px}
+.split i{width:12px;height:12px;border-radius:3px}
+.split .s{background:var(--magenta)} .split .o{background:var(--sky)}
+.score{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.path{display:inline-flex;gap:4px;vertical-align:middle}
+.path i{font-style:normal;width:24px;height:24px;display:grid;place-items:center;border-radius:6px;font-weight:700;font-size:12px}
+.path i.a{background:var(--tint-m);color:var(--magenta)}
+.path i.b{background:var(--tint-n);color:var(--navy)}
+.paths{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--ink-soft)}
+tr.level td{background:var(--tint-s)}
+.endings b{font-family:var(--f-display);font-size:15px}
+
+.prizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.prize{border-radius:12px;padding:14px;display:grid;gap:6px;align-content:start}
+.prize h4{font-family:var(--f-display);font-weight:700;font-size:17px;margin:0}
+.prize p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.prize span{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.prize.w{background:var(--tint-s)} .prize.pr{background:var(--tint-m)} .prize.mo{background:var(--tint-n)} .prize.j{border:1px solid var(--line)}
+
+/* course summary */
+.week{display:grid;gap:18px}
+.week-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding-top:22px;border-top:2px solid var(--ink)}
+.wk{display:grid;justify-items:center;line-height:1;min-width:64px;gap:4px}
+.wk small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.wk b{font-family:var(--f-display);font-weight:800;font-size:56px;color:var(--magenta);font-variant-numeric:tabular-nums}
+.team{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:var(--tint-n);color:var(--navy)}
+.team.us{background:var(--magenta);color:var(--bg)}
+.week-head h2{font-family:var(--f-display);font-weight:700;font-size:30px;margin:8px 0 4px;letter-spacing:-.01em;text-wrap:balance}
+.week-head p{margin:0;color:var(--ink-soft);max-width:68ch}
+.week-head .bq{margin-top:8px;font-weight:600;color:var(--ink)}
+.week-body{display:grid;gap:40px}
+.sec-head.sub .num{font-size:30px}
+.sec-head.sub h2{font-size:23px}
+
+.map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.map{grid-template-columns:repeat(2,minmax(0,1fr))} .map a.us{grid-column:1/-1}}
+@media (max-width:560px){.map{grid-template-columns:1fr}}
+.map a{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;text-decoration:none;color:var(--ink);padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);align-content:start}
+.map a:hover,.map a:focus-visible{border-color:var(--magenta);outline:none}
+.map a.us{background:var(--tint-m);border-color:var(--magenta)}
+.map .n{grid-row:1/4;font-family:var(--f-display);font-weight:800;font-size:28px;color:var(--magenta);line-height:1;font-variant-numeric:tabular-nums}
+.map b{font-size:14.5px;font-weight:600}
+.map small{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.map i{font-style:normal;font-size:13px;color:var(--ink-soft)}
+
+.fam{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fam > div{border-radius:12px;padding:14px;min-width:0}
+.fam > div:nth-child(1){background:var(--tint-s)}
+.fam > div:nth-child(2){background:var(--tint-n)}
+.fam > div:nth-child(3){border:1px solid var(--line)}
+.fam h4{font-family:var(--f-display);font-size:19px;margin:0}
+.fam .basis{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:2px 0 10px}
+.fam dl{margin:0;display:grid;gap:8px}
+.fam dt{font-weight:600}
+.fam dd{margin:0;font-size:14px;color:var(--ink-soft)}
+
+.pyr{display:grid;gap:4px;justify-items:center;margin:4px 0 12px}
+.pyr div{text-align:center;padding:8px 6px;border-radius:6px;font-weight:600;font-size:14px}
+.pyr div:nth-child(1){width:40%;background:var(--tint-m)}
+.pyr div:nth-child(2){width:60%;background:var(--tint-s)}
+.pyr div:nth-child(3){width:80%;background:var(--tint-n)}
+.pyr div:nth-child(4){width:100%;background:var(--ink);color:var(--bg)}
+
+.eras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.eras > div{border-top:3px solid var(--navy);padding-top:10px;min-width:0}
+.eras > div:last-child{border-color:var(--magenta)}
+.eras .yr{font-family:var(--f-display);font-weight:800;font-size:17px;color:var(--navy);font-variant-numeric:tabular-nums}
+.eras > div:last-child .yr{color:var(--magenta)}
+.eras b{display:block;margin:2px 0 8px}
+.eras ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:13.5px}
+.eras li span{font-variant-numeric:tabular-nums;font-weight:600;color:var(--magenta);margin-right:4px}
+.src{font-size:12px;color:var(--ink-soft);margin-top:12px}
+
+.wbar{display:flex;height:30px;border-radius:8px;overflow:hidden;font-size:12px;font-weight:600;margin:6px 0 8px}
+.wbar span{display:grid;place-items:center;min-width:0}
+.wbar .w1{width:70%;background:var(--sky);color:var(--bg)}
+.wbar .w2{width:22%;background:var(--navy);color:var(--bg)}
+.wbar .w3{width:8%;background:var(--sun);color:#26315F}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--ink-soft)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:0}
+
+table.dec{min-width:360px}
+table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:600}
+.ok,.no{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;margin:2px 4px 2px 0;white-space:nowrap}
+.ok{background:var(--tint-n);color:var(--navy)}
+.no{background:var(--tint-m);color:var(--magenta)}
+.items small.case{display:block;font-size:13px;color:var(--ink-soft);border-left:2px solid var(--sun);padding-left:8px;margin-top:4px}
+.inclass{font-size:13.5px;color:var(--ink-soft)}
+.inclass b{color:var(--ink)}
+
+@media (max-width:900px){
+  .flow{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+  .scenes{grid-template-columns:1fr}
+  .eras{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:640px){
+  .sides{grid-template-columns:1fr}
+  .fam,.eras{grid-template-columns:1fr}
+  .wk b{font-size:44px}
+  .week-head{gap:12px}
+  .week-head h2{font-size:25px}
   header .wrap{grid-template-columns:1fr}
   .meta{text-align:left}
   .grid{grid-template-columns:1fr}
@@ -142,33 +308,582 @@ footer p{margin:0;max-width:90ch}
   <div class="wrap">
     <div>
       <h1 class="title"><span class="b">Business</span><span class="e">Ethics</span></h1>
-      <p class="lede">What choice to make when the <strong>right thing</strong> is not obviously the "right thing". Every key idea from the deck, on one page.</p>
+      <p class="lede">What choice to make when the <strong>right thing</strong> is not obviously the "right thing". Every week of MANA3021 in one place, plus the rules for today's games.</p>
     </div>
     <div class="meta">
-      <span>VinUniversity · Week 9</span>
+      <span>VinUniversity · MANA3021 · Team 8</span>
       <span><b>Ngọc · Raine · Thảo Linh · Dương · Khánh</b></span>
     </div>
   </div>
   <div class="stripe"></div>
 </header>
 
-<nav aria-label="Sections">
-  <div class="wrap">
-    <a href="#s1"><span>01</span>Prudential vs Moral</a>
-    <a href="#s2"><span>02</span>Character Audit</a>
-    <a href="#s3"><span>03</span>Law &amp; Ethics</a>
-    <a href="#s4"><span>04</span>Decision Making</a>
-    <a href="#s5"><span>05</span>Moral Obligation</a>
-    <a href="#s6"><span>06</span>Who am I?</a>
-    <label class="search"><input id="q" type="search" placeholder="Search terms, e.g. Tylenol" aria-label="Search the cheat sheet"></label>
+<nav aria-label="Page">
+  <div class="wrap navrow">
+    <div class="tabs" role="tablist" aria-label="Views">
+      <a href="#course" class="tab" id="tab-course" role="tab" aria-controls="view-course" aria-selected="true">Course summary</a>
+      <a href="#rules" class="tab" id="tab-rules" role="tab" aria-controls="view-rules" aria-selected="false">Game rules</a>
+    </div>
+    <label class="search"><input id="q" type="search" placeholder="Search this tab" aria-label="Search this tab"></label>
+  </div>
+  <div class="wrap chips" id="chips-course">
+    <a href="#w1"><span>W1</span>Why ethics</a>
+    <a href="#w2"><span>W2</span>Normative theories</a>
+    <a href="#w3"><span>W3</span>Applying theories</a>
+    <a href="#w4"><span>W4</span>CSR</a>
+    <a href="#w5"><span>W5</span>Global ethics</a>
+    <a href="#w6"><span>W6</span>Environment</a>
+    <a href="#w7"><span>W7</span>Ethics at work</a>
+    <a href="#w8"><span>W8</span>Leadership &amp; culture</a>
+    <a href="#w9"><span>W9</span>Hard choices</a>
+  </div>
+  <div class="wrap chips" id="chips-rules" hidden>
+    <a href="#r1"><span>01</span>Line-up game</a>
+    <a href="#r2"><span>02</span>Teams &amp; seats</a>
+    <a href="#r3"><span>03</span>Story &amp; characters</a>
+    <a href="#r4"><span>04</span>How to play</a>
+    <a href="#r5"><span>05</span>Endings &amp; prizes</a>
   </div>
 </nav>
 
 <main>
 <div class="wrap">
+<div class="view" id="view-course" role="tabpanel" aria-labelledby="tab-course">
+
+<section id="map">
+  <div class="sec-head"><h2>The course at a glance</h2><p>MANA3021 Business Ethics, nine weeks. From week 2, each team teaches one week: week 2 is team 1, through to week 9, team 8.</p></div>
+  <div class="grid">
+    <div class="card wide">
+      <div class="map">
+        <a href="#w1"><span class="n">1</span><b>Why ethics in business matters</b><small>Course intro</small><i>What is ethics, and how do we reason morally?</i></a>
+        <a href="#w2"><span class="n">2</span><b>Normative theories of ethics</b><small>Team 1</small><i>Judge by consequences, duty or character?</i></a>
+        <a href="#w3"><span class="n">3</span><b>Applying ethical theories</b><small>Team 2</small><i>How do values shape real workplace calls?</i></a>
+        <a href="#w4"><span class="n">4</span><b>Corporate social responsibility</b><small>Team 3</small><i>What does a company owe beyond profit?</i></a>
+        <a href="#w5"><span class="n">5</span><b>Global ethics &amp; culture</b><small>Team 4</small><i>Whose standards apply abroad?</i></a>
+        <a href="#w6"><span class="n">6</span><b>Environmental ethics</b><small>Team 5</small><i>Who pays for pollution?</i></a>
+        <a href="#w7"><span class="n">7</span><b>Ethics at work</b><small>Team 6</small><i>What do employer and employee owe each other?</i></a>
+        <a href="#w8"><span class="n">8</span><b>Ethics, leadership &amp; culture</b><small>Team 7</small><i>How do leaders make ethics stick?</i></a>
+        <a href="#w9" class="us"><span class="n">9</span><b>When the right thing isn't obvious</b><small>Team 8 · today</small><i>What do you do when doing right costs you?</i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="w1" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>1</b></div>
+    <div><span class="team">Course intro</span><h2>Why ethics in business matters</h2><p class="bq">What is ethics, and how do we reason about right and wrong?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>What is ethics?</h3>
+      <p>There is no single, universal definition.</p>
+      <ul class="tight">
+        <li><b>Spinoza:</b> good is what helps us flourish. <i>How can we live well?</i></li>
+        <li><b>W. D. Ross:</b> right action comes from several prima facie duties: fidelity, justice, beneficence, non-maleficence. <i>What ought I to do?</i></li>
+        <li><b>Wittgenstein:</b> the enquiry into what is good, valuable and meaningful. <i>What is worth living for?</i></li>
+      </ul>
+      <p class="key">Ethics is the systematic reflection on what is good, what is right, and how we ought to live and act.</p>
+    </div>
+    <div class="card">
+      <h3>Business ethics</h3>
+      <p>"The study of business situations, activities, and decisions where the issues of right and wrong are addressed" (Crane et al., 2019).</p>
+      <span class="label">From values to results</span>
+      <div class="chain"><span>Integrity · Honesty · Fairness</span><i>→</i><span>Personal values</span><i>→</i><span>Business ethics</span><i>→</i><span>Trust · Sound decisions · Reputation</span></div>
+      <p style="margin-top:10px;font-size:13.5px;color:var(--ink-soft)">Lillie (2011): ethics is the normative science of human conduct in society, judging it right or wrong, good or bad.</p>
+    </div>
+    <div class="card wide">
+      <h3>Kohlberg's stages of moral development</h3>
+      <p>The Heinz dilemma: should a husband steal a drug he can't afford to save his dying wife? What counts is the reasoning behind the yes or no.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Level</th><th>Stage</th><th>Sounds like</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="2"><b>Pre-conventional</b></td><td>1 · Avoid punishment</td><td>"I won't steal. I don't want to go to jail."</td></tr>
+            <tr><td>2 · What's in it for me?</td><td>"I'll steal. My wife lives and I'm a hero."</td></tr>
+            <tr><td rowspan="2"><b>Conventional</b></td><td>3 · Roles and norms</td><td>"A good husband would steal to save his wife."</td></tr>
+            <tr><td>4 · Follow rules, keep social order</td><td>"I won't steal because it's against the law."</td></tr>
+            <tr><td rowspan="2"><b>Post-conventional</b></td><td>5 · Social contract</td><td>"A law can't justify losing a human life."</td></tr>
+            <tr><td>6 · Universal ethical principles</td><td>"Saving the most lives is always the best decision."</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Scandals that made the case</h3>
+      <ul class="tight">
+        <li>Volkswagen cheated emissions tests.</li>
+        <li>Big banks manipulated interest-rate benchmarks used to price global financial products.</li>
+        <li>Commonwealth Bank's financial advice scandal.</li>
+      </ul>
+      <p style="margin-top:8px">Most surfaced after the 2008 financial crisis.</p>
+    </div>
+    <div class="card">
+      <h3>Questions to keep asking</h3>
+      <ul class="tight">
+        <li>Is following organisational norms more important than your personal principles?</li>
+        <li>Are organisational goals and personal morals mutually exclusive?</li>
+        <li>Can an ethical business be a profitable business?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="w2" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>2</b></div>
+    <div><span class="team">Team 1</span><h2>Normative theories of ethics</h2><p class="bq">Do we judge an action by its consequences, by duty, or by character?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card wide">
+      <h3>Three families of theories</h3>
+      <div class="fam">
+        <div><h4>Virtue theories</h4><p class="basis">Based on character</p><dl><div><dt>Aristotle's virtue</dt><dd>Develop virtues to become an "excellent" person.</dd></div><div><dt>Ethic of care</dt><dd>Caring for others, using traditionally "feminine" virtues such as care and selflessness.</dd></div></dl></div>
+        <div><h4>Teleology</h4><p class="basis">Based on consequences</p><dl><div><dt>Egoism</dt><dd>Achieve the moral agent's best long-term interest.</dd></div><div><dt>Utilitarianism</dt><dd>Achieve the greatest good for the greatest number.</dd></div></dl></div>
+        <div><h4>Deontology</h4><p class="basis">Based on duty</p><dl><div><dt>Kantian ethics</dt><dd>Universal law, good will, treat others as an end, never merely as a means.</dd></div><div><dt>W. D. Ross</dt><dd>When principles conflict, prioritise the most important.</dd></div></dl></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Egoism</h3>
+      <p>An action is right if, and only if, it best promotes the actor's self-interest.</p>
+      <div class="vs">
+        <div class="p"><b>Psychological</b><small>short-term self-interest</small></div>
+        <div class="m"><b>Ethical</b><small>long-term self-interest; may help others if that serves the agent</small></div>
+      </div>
+      <span class="label" style="margin-top:12px">Apply it</span>
+      <p>Identify the moral agent (a person or a company), list positive and negative consequences for them, then weigh which serves their long-term interest.</p>
+      <p style="font-size:13.5px;color:var(--ink-soft)">Myths: egoists don't simply do what they like, and they can benefit others. Weakness: it looks only at the individual and can ignore blatant wrongs.</p>
+    </div>
+    <div class="card">
+      <h3>Utilitarianism</h3>
+      <p>An action is moral only when it achieves the greatest good for the greatest number.</p>
+      <ul class="tight">
+        <li>Counts unhappiness as well as happiness.</li>
+        <li>Judged on the cumulative total, not person by person.</li>
+        <li>What's acceptable can change with context.</li>
+        <li>Simple, flexible and democratic for organisations.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">Critiques</span>
+      <p>How do we measure happiness? How far do we cast the net? It can demand otherwise immoral acts and harm a few for the many.</p>
+    </div>
+    <div class="card">
+      <h3>Kant's ethics</h3>
+      <ul class="tight">
+        <li><b>Good will:</b> morality depends on intention, whatever the outcome.</li>
+        <li><b>Categorical imperative:</b> act only on rules everyone could accept.</li>
+        <li><b>Humanity as an end,</b> never merely a means.</li>
+      </ul>
+      <p style="margin-top:8px">At work: firm rules ("always tell the truth"), people at the centre of every decision, and acting from duty.</p>
+      <p style="font-size:13.5px;color:var(--ink-soft)">Critique: anyone working for a wage sells their labour. Are they being used as a means?</p>
+    </div>
+    <div class="card">
+      <h3>Ross, rights and reasoning</h3>
+      <p><b>Ross:</b> duties are prima facie and can conflict, so we must choose between them. For Kant, duties never conflict.</p>
+      <ul class="tight">
+        <li><b>Legal rights</b> come from a legal system.</li>
+        <li><b>Moral rights</b> come from roles and relationships.</li>
+        <li><b>Human rights</b> are universal, equal, inalienable and natural, such as life and free speech.</li>
+      </ul>
+      <p class="key">Good moral reasoning is logical, based on facts, and grounded in sound principles, not gut feeling.</p>
+    </div>
+    <div class="card">
+      <h3>Dilemma: the trolley and the bridge</h3>
+      <p>Pulling a lever to divert a tram kills one to save five. Pushing a heavy man off a bridge does the same.</p>
+      <ul class="tight">
+        <li><b>The moral question:</b> if pulling the lever is right, why would pushing be wrong?</li>
+        <li><b>The psychological question:</b> why do people pull the lever but not push the man?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="w3" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>3</b></div>
+    <div><span class="team">Team 2</span><h2>Applying ethical theories</h2><p class="bq">How do morals, values and virtues play out in real workplace cases?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>The lifeboat task</h3>
+      <p>A ship is sinking. One lifeboat holds six people, and eleven are left. As captain, who gets a place?</p>
+      <ul class="tight">
+        <li><b>Morals:</b> principles or habits about right and wrong conduct.</li>
+        <li><b>Values:</b> a principle, standard or quality considered worthwhile.</li>
+        <li><b>Virtues:</b> me vs. others.</li>
+      </ul>
+      <p class="key">"It's not hard to make decisions when you know what your values are." Roy Disney</p>
+    </div>
+    <div class="card">
+      <h3>Six workplace cases</h3>
+      <ol class="items">
+        <li><div><b>Employee absence</b> <span>Was the suspension fair? Is there ever a solution for working parents?</span></div></li>
+        <li><div><b>Networking</b> <span>What do J.R.'s actions say about his ethics, and who should be concerned?</span></div></li>
+        <li><div><b>Substance abuse</b> <span>Should Fred be reinstated, and is that fair to others?</span></div></li>
+        <li><div><b>Workplace discrimination</b> <span>Should Marian quit, confront, report or sue?</span></div></li>
+        <li><div><b>Purchase</b> <span>Can a VP skip bidding to buy from family?</span></div></li>
+        <li><div><b>Social media at work</b> <span>Where is the line between personal expression and professional duty?</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Law and morality</h3>
+      <p>The law sometimes can't find who is guilty, for example when many people are involved. Ethics still asks the moral question.</p>
+      <p>Theories give our arguments a backbone, but our reasoning is also shaped by our values and upbringing: parents, teachers and the people around us.</p>
+    </div>
+    <div class="card">
+      <h3>Theory lenses for any case</h3>
+      <ul class="tight">
+        <li><b>Egoism:</b> what serves the decision-maker best in the long run?</li>
+        <li><b>Utilitarianism:</b> which option gives the most net good for everyone affected?</li>
+        <li><b>Kant:</b> could the rule be universal? Is anyone used merely as a means?</li>
+        <li><b>Ross:</b> which duty matters most here?</li>
+        <li><b>Virtue and care:</b> what would an excellent, caring person do?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="w4" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>4</b></div>
+    <div><span class="team">Team 3</span><h2>Corporate social responsibility</h2><p class="bq">What does a company owe society beyond making a profit?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card wide">
+      <h3>How CSR evolved: from philanthropy to shared value</h3>
+      <div class="eras">
+        <div><span class="yr">1950s–60s</span><b>Foundational philanthropy</b><ul><li><span>1953</span>Bowen, "father of CSR": business should follow society's objectives and values.</li><li><span>1960</span>Davis's Iron Law: responsibility must match corporate power.</li><li><span>1963</span>McGuire: beyond legal duties.</li></ul></div>
+        <div><span class="yr">1970s–80s</span><b>Social contract &amp; operations</b><ul><li><span>1971</span>CED: business exists by public consent.</li><li><span>1979</span>Carroll's four-part model.</li><li><span>1970s</span>US creates EPA and OSHA.</li><li><span>1980</span>Jones: CSR as a decision process.</li></ul></div>
+        <div><span class="yr">1990s–2000s</span><b>Strategic CSR &amp; globalisation</b><ul><li><span>1987</span>Brundtland Report defines sustainable development.</li><li><span>1991</span>Carroll's CSR pyramid.</li><li><span>1994</span>Elkington's triple bottom line: people, planet, profit.</li><li><span>2000</span>UN Global Compact, 10 principles.</li></ul></div>
+        <div><span class="yr">2010s–now</span><b>Creating shared value</b><ul><li><span>2006</span>Porter &amp; Kramer: strategic CSR.</li><li><span>2011</span>Porter &amp; Kramer: Creating Shared Value.</li><li><span>2015</span>UN SDGs and Paris Agreement.</li><li><span>2016</span>Chandler: sustainable value creation.</li></ul></div>
+      </div>
+      <p class="src">Source: Agudelo et al., 2019</p>
+    </div>
+    <div class="card">
+      <h3>Carroll's CSR pyramid (1991)</h3>
+      <div class="pyr" role="img" aria-label="Pyramid from base to top: economic, legal, ethical, philanthropic">
+        <div>Philanthropic</div><div>Ethical</div><div>Legal</div><div>Economic</div>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-soft)">Economic is the base, philanthropic the top.</p>
+    </div>
+    <div class="card">
+      <h3>Three terms people mix up</h3>
+      <ul class="tight">
+        <li><b>Corporate governance:</b> the rules, practices and processes by which a company is directed and controlled.</li>
+        <li><b>CSR:</b> going beyond financial and economic obligations to cover social and environmental impact.</li>
+        <li><b>Corporate moral responsibility:</b> whether a corporation can make moral decisions and be held responsible.</li>
+      </ul>
+      <p style="margin-top:8px;font-size:13.5px;color:var(--ink-soft)">A corporation is a legal person: it owns property, makes profit, signs contracts and takes risks. But can it make moral decisions?</p>
+    </div>
+    <div class="card">
+      <h3>Narrow vs. broad view</h3>
+      <div class="vs">
+        <div class="p"><b>Narrow</b>Maximise profit, limit liability. Shareholder wealth comes first (Friedman).</div>
+        <div class="m"><b>Broad</b>Firms are accountable for their social, political and economic impact, and depend on all stakeholders.</div>
+      </div>
+      <span class="label" style="margin-top:12px">Stakeholders</span>
+      <p><b>Primary:</b> employees, local community, suppliers, customers, shareholders. <b>Secondary:</b> government, legal bodies, the environment.</p>
+    </div>
+    <div class="card wide">
+      <h3>The three narrow-view arguments, and the pushback</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Argument</th><th>Claim</th><th>Criticism</th></tr></thead>
+          <tbody>
+            <tr><td><b>The invisible hand</b></td><td>Adam Smith and Friedman: firms chasing self-interest produce the greatest good overall.</td><td>Public opinion, media and activists pressure firms to act responsibly, and new generations reward responsible brands.</td></tr>
+            <tr><td><b>Business can't handle it</b></td><td>Firms lack the expertise and would impose materialistic values.</td><td>Many firms do support community well-being, for example Qantas in medical research and food banks.</td></tr>
+            <tr><td><b>Let government do it</b></td><td>Galbraith: the "visible hand" of government should bring firms to heel.</td><td>Government is intrusive, lacks day-to-day knowledge, and its officials are not always virtuous.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card wide">
+      <h3>Traditional CSR vs. Creating Shared Value</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th></th><th>Traditional CSR</th><th>Creating Shared Value</th></tr></thead>
+          <tbody>
+            <tr><td><b>Driver</b></td><td>Doing good, moral duty, reputation</td><td>Economic and social progress inside the core business</td></tr>
+            <tr><td><b>Place in the firm</b></td><td>On the side, in PR or foundation silos</td><td>Built into strategy, value chain and daily operations</td></tr>
+            <tr><td><b>Budget</b></td><td>A cost centre, limited by the CSR budget</td><td>Uses the core budget and opens profitable markets</td></tr>
+            <tr><td><b>Outcome</b></td><td>Good citizenship and risk control</td><td>Economic value co-created with social and environmental benefit</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="inclass" style="margin-top:10px"><b>In class:</b> narrow or broad? Heineken Vietnam, Coca-Cola Vietnam, VinFast, Cocoon, Pizza 4P's, Marou. Plus Apple's supplier labour practices and the Office Lunches case.</p>
+    </div>
+  </div>
+</section>
+
+<section id="w5" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>5</b></div>
+    <div><span class="team">Team 4</span><h2>Global ethics &amp; cross-cultural challenges</h2><p class="bq">When a multinational works abroad, whose ethical standards should it follow?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Globalisation's ethical issues</h3>
+      <p>Friedman (1999): the spread of free-market capitalism to almost every country, with a powerful backlash from those left behind.</p>
+      <ul class="tight">
+        <li><b>Equality:</b> WTO conditions can disadvantage weaker nations while powerful ones keep barriers.</li>
+        <li><b>Homogenised culture:</b> should "Americanisation" be the price of joining the global market?</li>
+        <li><b>Distributive justice:</b> developed nations consume most resources, mostly sourced from developing ones.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Multinationals (MNCs)</h3>
+      <p>Many MNCs have more economic power than their host countries.</p>
+      <div class="vs">
+        <div class="m"><b>Host gains</b><small>capital, technology, expertise, skills</small></div>
+        <div class="p"><b>Host risks</b><small>power that can be abused</small></div>
+      </div>
+      <p style="margin-top:10px">Moral issues: cultural differences, environmental damage, duties to local communities and employees, reparations, dumping unsafe products, and human rights such as fair wages, safety and unions.</p>
+    </div>
+    <div class="card">
+      <h3>Absolutism vs. relativism</h3>
+      <p>Is an issue acceptable at home, and abroad? The absolutist applies the home standard everywhere; the relativist follows the host country.</p>
+      <div class="tbl">
+        <table class="dec">
+          <thead><tr><th></th><th>Acceptable abroad</th><th>Not acceptable abroad</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Acceptable at home</th><td><span class="ok">Absolutist ✓</span><span class="ok">Relativist ✓</span></td><td><span class="ok">Absolutist ✓</span><span class="no">Relativist ✗</span></td></tr>
+            <tr><th scope="row">Not acceptable at home</th><td><span class="no">Absolutist ✗</span><span class="ok">Relativist ✓</span></td><td><span class="no">Absolutist ✗</span><span class="no">Relativist ✗</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Integrative social contract theory</h3>
+      <p>Donaldson &amp; Dunfee (1994): define right conduct through a hypothetical social contract among members of economic communities.</p>
+      <p class="key">Global ground rules + local community flexibility.</p>
+      <p style="font-size:13.5px;color:var(--ink-soft)">In practice: impact assessments, stakeholder engagement, social performance plans and reviews, local content plans, social investment plans.</p>
+    </div>
+    <div class="card">
+      <h3>Hofstede's cultural dimensions</h3>
+      <ul class="tight">
+        <li><b>Power distance:</b> egalitarian ↔ embraces hierarchy</li>
+        <li><b>Individualism:</b> collectivist ↔ individualist</li>
+        <li><b>Uncertainty avoidance:</b> comfortable ↔ uncomfortable with uncertainty</li>
+        <li><b>Masculinity:</b> nurture important ↔ power important</li>
+        <li><b>Long-term orientation:</b> traditional, short-term ↔ futuristic, long-term</li>
+      </ul>
+      <p style="margin-top:8px;font-size:13.5px;color:var(--ink-soft)">Class question: where does Vietnam sit, and what could it do better?</p>
+    </div>
+    <div class="card">
+      <h3>Gifts, bribes and what firms can do</h3>
+      <p>Fadiman (HBR, 1986): in relationship-based cultures a gift can be etiquette. Bribes come as money, gifts, favours or entertainment, and firms can be drawn in without knowing.</p>
+      <ul class="tight">
+        <li>Top management commits to the ethics program.</li>
+        <li>A written, explicit code of conduct.</li>
+        <li>An ethics committee gives the program an identity.</li>
+        <li>Formal training, with line managers as role models.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="w6" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>6</b></div>
+    <div><span class="team">Team 5</span><h2>Environmental ethics &amp; sustainability</h2><p class="bq">Business runs inside an ecosystem. Who pays to keep it working?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>The damage</h3>
+      <div class="stats">
+        <div><b>50%</b><small>of wetlands gone</small></div>
+        <div><b>80%</b><small>of grasslands degraded</small></div>
+        <div><b>20%</b><small>of drylands at risk of desert</small></div>
+      </div>
+      <span class="label">Where the world's water goes</span>
+      <div class="wbar" role="img" aria-label="70% irrigation, 22% industry, 8% human consumption"><span class="w1">70%</span><span class="w2">22%</span><span class="w3">8%</span></div>
+      <div class="legend"><span><i style="background:var(--sky)"></i>Irrigation</span><span><i style="background:var(--navy)"></i>Industry</span><span><i style="background:var(--sun)"></i>People</span></div>
+      <p style="margin-top:10px">1 billion people lack clean water; 2.4 billion have no sanitation.</p>
+    </div>
+    <div class="card">
+      <h3>Where business does harm</h3>
+      <ul class="tight">
+        <li><b>Agriculture:</b> chemical pollution, soil erosion, lost seed and animal diversity, animal waste.</li>
+        <li><b>Water:</b> intensive irrigation causes salination and pressure on water systems.</li>
+        <li><b>Air:</b> asthma, lung cancer, heart disease, risk to pregnant women and children.</li>
+        <li><b>Climate:</b> the hottest decade on record, melting ice, erratic weather, coral disease.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Why it happened</h3>
+      <p>Business's traditional attitudes:</p>
+      <ul class="tight">
+        <li>The environment treated as a "free and unlimited good".</li>
+        <li>Spillovers, or externalities.</li>
+        <li>Private interest over the common good.</li>
+      </ul>
+      <p class="key">Every organism affects its environment. Humans can upset the whole system.</p>
+    </div>
+    <div class="card">
+      <h3>Who should pay?</h3>
+      <ul class="tight">
+        <li>Those responsible? Those who benefit? Free riders vs. the social contract.</li>
+        <li>Cost–benefit analysis struggles: benefits are often aesthetic, uncertain and shaped by values.</li>
+        <li>We owe future generations a habitable world. But can people who don't exist yet have rights?</li>
+      </ul>
+    </div>
+    <div class="card wide">
+      <h3>Four ways to reach environmental goals</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Method</th><th>How it works</th><th>Drawbacks</th></tr></thead>
+          <tbody>
+            <tr><td><b>Regulation</b></td><td>Legally enforceable standards.</td><td>Hard to make equitable; relocation and shutdown costs can be high.</td></tr>
+            <tr><td><b>Incentives</b></td><td>Tax breaks or matched grants; voluntary.</td><td>Slow, and effectively a subsidy for polluters.</td></tr>
+            <tr><td><b>Pricing</b></td><td>Charge per unit of pollution, or tradable pollution permits. Pollution becomes a production cost.</td><td>Puts the bill directly on polluters, who push back.</td></tr>
+            <tr><td><b>Combination</b></td><td>No single fix is ideal, so mix methods.</td><td>Must balance effectiveness with fairness to whoever pays.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="inclass" style="margin-top:10px"><b>In class:</b> who pays for BHP's mine disaster in Brazil? And the poverty and pollution debate: "Valleys of Death", the Summers memo, and whether people who stay in polluted towns for jobs have really consented.</p>
+    </div>
+  </div>
+</section>
+
+<section id="w7" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>7</b></div>
+    <div><span class="team">Team 6</span><h2>Ethics at work: moral issues &amp; practices</h2><p class="bq">What do employers and employees owe each other?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>The employment relationship</h3>
+      <p>Rooted in the old master–servant relationship. Implied duties: <b>loyalty, obedience, diligence.</b> The law of agency says act loyally, in good faith, and follow lawful instructions.</p>
+      <p class="key">Morality requires neither blind loyalty nor total submission.</p>
+    </div>
+    <div class="card">
+      <h3>Abuse of position</h3>
+      <ul class="tight">
+        <li><b>Misusing company funds.</b></li>
+        <li><b>Insider trading:</b> trading on non-public information. Unfair to outsiders and breaks fiduciary trust.</li>
+        <li><b>Trade secrets:</b> company property. Theft is unfair competition; disclosure breaks confidentiality.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Conflict of interest</h3>
+      <p>When personal interests are big enough to interfere with job duties. It is worrying even if the employee never acts on it.</p>
+      <p>Personal or family investment in suppliers, customers or distributors is a classic case; policies should deter it.</p>
+    </div>
+    <div class="card">
+      <h3>How to decide at work</h3>
+      <ol class="items">
+        <li><div><b>Identify</b> <span>your obligations, the ideals at stake and the effects of each option.</span></div></li>
+        <li><div><b>Weigh</b> <span>where the emphasis should lie.</span></div></li>
+        <li><div><b>Newspaper test</b> <span>Would you defend it if it were printed?</span></div></li>
+        <li><div><b>Talk to a friend</b> <span>to check your bias.</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Fairness and discrimination</h3>
+      <p>Areas of concern: women in work, comparable worth, sexual harassment, unions, and discrimination by age, ethnicity, disability, genes, gender, class, religion, sexual orientation or politics.</p>
+      <p>Job discrimination can be intentional or unintentional, veiled or systemic. Parental leave, flexible work and childcare let parents compete fairly.</p>
+      <p class="inclass"><b>Case:</b> Ellen Pao vs. Kleiner Perkins, gender bias in venture capital.</p>
+    </div>
+    <div class="card">
+      <h3>Privacy at work</h3>
+      <ul class="tight">
+        <li>Monitoring, email reading, vehicle tracking and social media checks threaten privacy.</li>
+        <li><b>Informed consent</b> must be freely given and fully understood.</li>
+        <li>Personality tests, drug tests and wellness programs raise the same questions.</li>
+        <li>A firm's legitimate interest stops at what significantly affects work performance.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Personnel policies</h3>
+      <ul class="tight">
+        <li><b>Hiring:</b> fair treatment, reliable and valid tests, no unfair discrimination.</li>
+        <li><b>Promotion:</b> seniority vs. most qualified; nepotism.</li>
+        <li><b>Discipline and dismissal:</b> just cause, due process, notice or severance.</li>
+      </ul>
+      <p style="margin-top:8px;font-size:13.5px;color:var(--ink-soft)">Employees rank honest communication, recognition and respect above good pay.</p>
+    </div>
+    <div class="card">
+      <h3>Whistleblowing</h3>
+      <p>Edward Snowden: traitor or hero?</p>
+      <p>Should whistleblowers be punished, protected or promoted? Are they good for their country?</p>
+    </div>
+  </div>
+</section>
+
+<section id="w8" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>8</b></div>
+    <div><span class="team">Team 7</span><h2>Ethics, leadership &amp; culture</h2><p class="bq">How do leaders and culture make ethics stick inside an organisation?</p></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Case: Vạn Thịnh Phát – SCB</h3>
+      <div class="stats">
+        <div><b>5–8%</b><small>of Vietnam's GDP lost</small></div>
+        <div><b>10 yrs</b><small>2012–2022</small></div>
+      </div>
+      <p>Trương Mỹ Lan's group took hidden control of Saigon Commercial Bank and ran thousands of illegal loans through falsified documents and shell companies. Losses: 498,000–764,000 billion VND.</p>
+      <p style="font-size:13.5px;color:var(--ink-soft)">Deception, abuse of power, corruption, fraud and breach of fiduciary duty, while internal controls, auditors and regulators all failed.</p>
+    </div>
+    <div class="card">
+      <h3>Corporate culture (Schein)</h3>
+      <ol class="items">
+        <li><div><b>Artefacts</b> <span>The visible level: language, technology, clothing, manner of address, org chart.</span></div></li>
+        <li><div><b>Espoused beliefs and values</b> <span>Strategies, goals and philosophies that guide behaviour.</span></div></li>
+        <li><div><b>Underlying assumptions</b> <span>Taken-for-granted beliefs nobody debates.</span></div></li>
+      </ol>
+      <p class="key">Ignoring behaviour that breaks the norms can end up rewarding it.</p>
+    </div>
+    <div class="card">
+      <h3>Ethical culture</h3>
+      <p>Five dimensions: role modelling by managers, capability (time and resources) to act ethically, commitment, openness to discuss issues, and reinforcement.</p>
+      <div class="vs">
+        <div class="m"><b>Hardware</b><small>do's, don'ts and permissions</small></div>
+        <div class="p"><b>Software</b><small>the capacity and conditions that encourage ethics</small></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Ethical leadership</h3>
+      <p>"The demonstration of normatively appropriate conduct through personal actions and interpersonal relationships, and the promotion of such conduct to followers."</p>
+      <ul class="tight">
+        <li><b>Personal morality:</b> authenticity, integrity, courage.</li>
+        <li><b>Leader morality:</b> ethics as a priority, and legitimate decisions.</li>
+        <li><b>Leader behaviour:</b> openness, inclusiveness, visible role modelling.</li>
+        <li><b>Follower morality:</b> ethical leaders need ethical followers, not groupthink or flattery.</li>
+      </ul>
+      <p class="key">Reputation is the most critical element. Leaders must be seen to be ethical.</p>
+    </div>
+    <div class="card wide">
+      <h3>Building ethics into the organisation (Shaw et al., 2013)</h3>
+      <div class="fam">
+        <div><h4>Ethical culture</h4><p class="basis">Achieved through</p><p>Management commitment, capability, role modelling, openness, positive reinforcement.</p></div>
+        <div><h4>Ethical leadership</h4><p class="basis">Achieved through</p><p>Personal morality, leader morality, leader behaviour.</p></div>
+        <div><h4>Institutionalised ethics</h4><p class="basis">Achieved through</p><p>Codes, policies, training, reward systems, monitoring.</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Perilous at the top</h3>
+      <p>Leaders' overconfidence in their own morality can lead to downfall: Ken Lay, Jack Abramoff.</p>
+      <ul class="tight">
+        <li><b>Apple "batterygate" (2017):</b> updates throttled older iPhones.</li>
+        <li><b>Facebook–Cambridge Analytica (2018):</b> data from 87 million users harvested without explicit consent.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>A final thought</h3>
+      <p>Financial performance is critical, but shareholders, employees, customers and communities all have to accept the way those profits are earned.</p>
+    </div>
+  </div>
+</section>
+
+<section id="w9" class="week">
+  <div class="week-head">
+    <div class="wk"><small>Week</small><b>9</b></div>
+    <div><span class="team us">Team 8 · today</span><h2>When the right thing isn't obvious</h2><p class="bq">What do you do when doing the right thing might cost you something?</p><p>Prudential vs. moral reasons, the character audit, why law isn't enough, a six-step decision process, moral obligation, and the secret ending.</p></div>
+  </div>
+  <div class="week-body">
 
 <section id="s1">
-  <div class="sec-head"><span class="num">01</span><h2>Prudential vs. Moral</h2><p>What do you do when doing the right thing might cost you something?</p></div>
+  <div class="sec-head sub"><span class="num">9.1</span><h2>Prudential vs. Moral</h2><p>What do you do when doing the right thing might cost you something?</p></div>
   <div class="grid">
     <div class="card">
       <h3>Two kinds of reasons</h3>
@@ -208,21 +923,11 @@ footer p{margin:0;max-width:90ch}
       <span class="label" style="margin-top:12px">Same scale, bigger stakes</span>
       <p>What do you owe millions of people? Should global benefit beat profit? Closer to home: the <b>VinFuture Prize</b> (healthcare · energy · AI · environment).</p>
     </div>
-    <div class="card wide">
-      <h3>Opening game recap: every A was prudential, every B was moral</h3>
-      <ul class="game">
-        <li><span class="q">1. The café gives you 50,000₫ too much change, and you're late for class.</span><span class="a">Keep walking. It's their mistake.</span><span class="b">Go back and return it.</span></li>
-        <li><span class="q">2. One group member did almost nothing. Peer review time.</span><span class="a">Full marks for everyone. Keep the peace.</span><span class="b">Rate honestly, even if it causes drama.</span></li>
-        <li><span class="q">3. Two internship offers.</span><span class="a">Big firm, great pay, treats interns badly.</span><span class="b">Small NGO, low pay, a mission you love.</span></li>
-        <li><span class="q">4. Your manager praises you to the CEO for your teammate's idea.</span><span class="a">Say thanks and stay quiet.</span><span class="b">Correct it on the spot.</span></li>
-        <li><span class="q">5. Pick your motto.</span><span class="a">"Take care of yourself first."</span><span class="b">"Do what's right, even when it costs you."</span></li>
-      </ul>
-    </div>
   </div>
 </section>
 
 <section id="s2">
-  <div class="sec-head"><span class="num">02</span><h2>Evaluating reasons &amp; the character audit</h2></div>
+  <div class="sec-head sub"><span class="num">9.2</span><h2>Evaluating reasons &amp; the character audit</h2></div>
   <div class="grid">
     <div class="card">
       <h3>A survival instinct</h3>
@@ -268,17 +973,22 @@ footer p{margin:0;max-width:90ch}
 </section>
 
 <section id="s3">
-  <div class="sec-head"><span class="num">03</span><h2>Why ethics can't be regulated</h2><p>Follow every law and you're automatically ethical? No.</p></div>
+  <div class="sec-head sub"><span class="num">9.3</span><h2>Why ethics can't be regulated</h2><p>Follow every law and you're automatically ethical? No.</p></div>
   <div class="grid">
+    <div class="card">
+      <span class="label">The case</span>
+      <h3>One app. One life. Zero laws broken?</h3>
+      <p>A 14-year-old Character.AI user in Orlando, Florida, spent 10 months talking to a chatbot before his death in February 2024. Each reason below traces back to his case.</p>
+    </div>
     <div class="card">
       <h3>Six reasons law isn't enough</h3>
       <ol class="items">
-        <li><div><b>Law ≠ ethics</b> <span>Legal can still be harmful.</span></div></li>
-        <li><div><b>Built-in limits</b> <span>Courts are a blunt tool.</span></div></li>
-        <li><div><b>Slow &amp; rigid</b> <span>Problems move faster.</span></div></li>
-        <li><div><b>Lobbying</b> <span>Rules get watered down.</span></div></li>
-        <li><div><b>Perverse incentives</b> <span>Secrecy, bare minimum.</span></div></li>
-        <li><div><b>Moral ownership</b> <span>Set your own standard.</span></div></li>
+        <li><div><b>Law ≠ ethics</b> <span>Legal can still be harmful.</span><small class="case">A chatbot romancing a 14-year-old dozens of times a day broke no rule in 2023.</small></div></li>
+        <li><div><b>Built-in limits</b> <span>Courts are a blunt tool.</span><small class="case">The lawsuit after his death settled 15 months later: terms secret, no verdict.</small></div></li>
+        <li><div><b>Slow &amp; rigid</b> <span>Problems move faster.</span><small class="case">First chat April 2023; first state law January 2026; federal law still waiting.</small></div></li>
+        <li><div><b>Lobbying</b> <span>Rules get watered down.</span><small class="case">Of two bills on AI companions for kids, the strict one was vetoed and the one that passed was weakened first.</small></div></li>
+        <li><div><b>Perverse incentives</b> <span>Secrecy, bare minimum.</span><small class="case">About 2 hours a day per user pleased investors; teen safety changes came the day the lawsuit landed.</small></div></li>
+        <li><div><b>Moral ownership</b> <span>Set your own standard.</span><small class="case">October 2025: Character.AI banned under-18 chats with no law requiring it. Why not at launch?</small></div></li>
       </ol>
     </div>
     <div class="card">
@@ -293,7 +1003,7 @@ footer p{margin:0;max-width:90ch}
 </section>
 
 <section id="s4">
-  <div class="sec-head"><span class="num">04</span><h2>The decision-making process</h2></div>
+  <div class="sec-head sub"><span class="num">9.4</span><h2>The decision-making process</h2></div>
   <div class="grid">
     <div class="card">
       <h3>The ethical professional</h3>
@@ -356,7 +1066,7 @@ footer p{margin:0;max-width:90ch}
 </section>
 
 <section id="s5">
-  <div class="sec-head"><span class="num">05</span><h2>Moral obligation</h2></div>
+  <div class="sec-head sub"><span class="num">9.5</span><h2>Moral obligation</h2></div>
   <div class="grid">
     <div class="card">
       <h3>Four things to remember</h3>
@@ -376,11 +1086,12 @@ footer p{margin:0;max-width:90ch}
 </section>
 
 <section id="s6">
-  <div class="sec-head"><span class="num">06</span><h2>Secret ending: Who am I?</h2><p>Every choice was a reflection of you. Can you see the gap between your thoughts and your actions?</p></div>
+  <div class="sec-head sub"><span class="num">9.6</span><h2>Secret ending: Who am I?</h2><p>Every choice was a reflection of you. Can you see the gap between your thoughts and your actions?</p></div>
   <div class="grid">
     <div class="card">
       <h3>Use yourself as the framework</h3>
       <p>No theories to memorise. Just practise it, every day.</p>
+      <p class="key">Business is just a practice of expanding yourself.</p>
     </div>
     <div class="card">
       <h3>Hard choices reveal us</h3>
@@ -415,6 +1126,223 @@ footer p{margin:0;max-width:90ch}
   </div>
 </section>
 
+  </div>
+</section>
+
+</div>
+
+<div class="view" id="view-rules" role="tabpanel" aria-labelledby="tab-rules" hidden>
+
+<section id="r1">
+  <div class="sec-head"><span class="num">01</span><h2>The line-up game</h2><p>A quick game to open the session. Very simple, just follow the order. Your choices shape the rest of today's lesson.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>How it works</h3>
+      <ol class="items">
+        <li><div><b>Stand up at your table.</b> <span>Projector at the front, tables on both sides. Get ready to move.</span></div></li>
+        <li><div><b>One question, two sides.</b> <span>Five questions, each with an A and a B answer.</span></div></li>
+        <li><div><b>Join a line.</b> <span>Answer A? Join line A. Answer B? Join line B.</span></div></li>
+        <li><div><b>No middle ground.</b> <span>Time's up? Freeze. Not in a line when time runs out? You join the shorter line.</span></div></li>
+        <li><div><b>Last question: line up in order.</b> <span>First come, first in line. No cutting in.</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Rules</h3>
+      <ul class="checks">
+        <li>Choose for yourself, not your friends.</li>
+        <li>No right or wrong answers.</li>
+        <li>Freeze when time's up.</li>
+        <li>Not in a line? Join the shorter one.</li>
+        <li>No cutting in.</li>
+        <li>Try to balance the two lines.</li>
+      </ul>
+    </div>
+    <div class="card wide">
+      <h3>The five questions</h3>
+      <ul class="game">
+        <li><span class="q">1. The café gives you 50,000₫ too much change, and you're already late for class.</span><span class="a">Keep walking. It's their mistake.</span><span class="b">Go back and return it.</span></li>
+        <li><span class="q">2. One group member did almost nothing. It's time for peer review.</span><span class="a">Full marks for everyone. Keep the peace.</span><span class="b">Rate honestly, even if it causes drama.</span></li>
+        <li><span class="q">3. You get two internship offers.</span><span class="a">Big firm, great pay, known for treating interns badly.</span><span class="b">Small NGO, lower pay, a mission you love.</span></li>
+        <li><span class="q">4. Your manager praises you in front of the CEO, for your teammate's idea.</span><span class="a">Say thanks and stay quiet.</span><span class="b">Correct it on the spot.</span></li>
+        <li><span class="q">5. Final question, line up in order: pick your motto.</span><span class="a">"Take care of yourself first."</span><span class="b">"Do what's right for society first."</span></li>
+      </ul>
+      <details class="reveal">
+        <summary>What did A and B mean?</summary>
+        <div class="vs">
+          <div class="p"><b>Every A was prudential</b>what's good for me</div>
+          <div class="m"><b>Every B was moral</b>what's good for others</div>
+        </div>
+        <p style="margin-top:10px">Look around: this is your side for today.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="r2">
+  <div class="sec-head"><span class="num">02</span><h2>Teams &amp; seats</h2><p>Right after the final question, your line becomes your side.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>From line to table</h3>
+      <ol class="items">
+        <li><div><b>Stay in your line.</b> <span>Stand still, front to back. We'll count you in groups of 5.</span></div></li>
+        <li><div><b>Every 5 is a team.</b> <span>Remember your number. That's your table.</span></div></li>
+        <li><div><b>Take your side.</b> <span>Line A sits on the prudential side, line B on the moral side.</span></div></li>
+        <li><div><b>The jury sits at the back.</b> <span>The jury sits in one row at the back of the room.</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>The room</h3>
+      <div class="room" role="img" aria-label="Room layout: projector at the front, prudential tables 1 to 3 on one side, moral tables 4 to 6 on the other, the jury in one row at the back">
+        <div class="front">Projector · front</div>
+        <div class="side pr"><b>Prudential</b><span class="tables"><i>1</i><i>2</i><i>3</i></span></div>
+        <div class="aisle">aisle</div>
+        <div class="side mo"><b>Moral</b><span class="tables"><i>4</i><i>5</i><i>6</i></span></div>
+        <div class="jury">Jury · back</div>
+      </div>
+      <p class="room-note">Tables marked "NO" on the slide stay empty.</p>
+    </div>
+  </div>
+</section>
+
+<section id="r3">
+  <div class="sec-head"><span class="num">03</span><h2>The immersive Inside Out game</h2><p>3 scenes, 5 endings.</p></div>
+  <div class="grid">
+    <div class="card">
+      <span class="label">The idea</span>
+      <blockquote>No side is good or bad.</blockquote>
+      <p style="margin-top:10px">Like Inside Out, they are two voices inside the same person. Every choice only shows which voice was louder in that moment.</p>
+    </div>
+    <div class="card">
+      <h3>The story</h3>
+      <p><b>Lumen Health</b> is a Vietnamese billion-dollar company with 120 employees. Its app, <b>Lumen Scan</b>, checks a phone photo of a skin mark for signs of cancer.</p>
+      <p>But the results can be thrown off by the type of phone, skin colour and more.</p>
+      <p class="key">Your three decisions lead to one of five endings.</p>
+    </div>
+    <div class="card wide">
+      <h3>Characters</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Character</th><th>Who they are</th><th>What pulls at them</th></tr></thead>
+          <tbody>
+            <tr><td><span class="who"><i style="background:var(--sun)"></i>Linh (29)</span><small>That's you</small></td><td>Product Lead at Lumen Health. Every big decision has her name on it.</td><td>Her career and her mother's hospital bills for cancer on one side; the patients and her conscience on the other.</td></tr>
+            <tr><td><span class="who"><i style="background:var(--magenta)"></i>Mr. Quân (45)</span></td><td>Founder and CEO.</td><td>"A dead company saves no one." A profit-forward person.</td></tr>
+            <tr><td><span class="who"><i style="background:var(--sky)"></i>Mai (30)</span></td><td>Lead Data Scientist and Linh's best friend.</td><td>Believes the truth comes first.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card wide">
+      <h3>Understand your side</h3>
+      <div class="sides">
+        <div class="side-col mo">
+          <h4>Moral</h4>
+          <dl>
+            <div><dt>Thinks like</dt><dd>Empathetic, principled, honest. Thinks about duty and fairness.</dd></div>
+            <div><dt>Speaks for</dt><dd>Patients, the public, the truth and people outside the room.</dd></div>
+            <div><dt>Asks</dt><dd>"Who gets hurt, and is that fair to them?"</dd></div>
+            <div><dt>Sounds like</dt><dd>"Imagine it was your mother." "Legal isn't the same as right." "Someone has to go first."</dd></div>
+          </dl>
+        </div>
+        <div class="side-col pr">
+          <h4>Prudential</h4>
+          <dl>
+            <div><dt>Thinks like</dt><dd>Realistic, protective, practical. Thinks about consequences and risk.</dd></div>
+            <div><dt>Speaks for</dt><dd>Linh, her family, her career, the company and its 120 jobs.</dd></div>
+            <div><dt>Asks</dt><dd>"What does this cost us, and can we survive it?"</dd></div>
+            <div><dt>Sounds like</dt><dd>"Be realistic." "Think of the jobs." "Something is better than nothing."</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="r4">
+  <div class="sec-head"><span class="num">04</span><h2>How to play</h2><p>Each of the three film scenes runs through the same five steps.</p></div>
+  <div class="grid">
+    <div class="card wide">
+      <h3>One round</h3>
+      <ol class="flow">
+        <li><b>Know your brain</b><span class="d">Know your side and what it cares about.</span></li>
+        <li><b>Watch the scene</b><span class="t">1 min</span><span class="d">Watch the next part of Linh's story.</span></li>
+        <li><b>Internal Thoughts</b><span class="t">3 min</span><span class="d">Your team talks it through and builds its case.</span></li>
+        <li><b>Internal Debate</b><span class="t">30 s each</span><span class="d">Each side argues its case.</span></li>
+        <li><b>External Action</b><span class="t">30 s verdict</span><span class="d">The jury gives its verdict and Linh acts on it.</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="label">The scoreboard</span>
+      <h3>Every choice has a price. You only choose who pays it.</h3>
+      <div class="meter">
+        <div class="top">Career &amp; Happiness <span>50 / 100</span></div>
+        <div class="bar"><i style="background:var(--magenta)"></i></div>
+        <small>Linh's money, promotion and her mother's treatment</small>
+      </div>
+      <div class="meter">
+        <div class="top">Coworker Trust <span>50 / 100</span></div>
+        <div class="bar"><i style="background:var(--sun)"></i></div>
+        <small>How Mai and the team see Linh</small>
+      </div>
+      <div class="meter">
+        <div class="top">Society <span>50 / 100</span></div>
+        <div class="bar"><i style="background:var(--sky)"></i></div>
+        <small>Patients, rural clinics and public trust</small>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Voting</h3>
+      <div class="vs">
+        <div class="p"><b>Self</b>A · Prudential</div>
+        <div class="m"><b>Others</b>B · Moral</div>
+      </div>
+      <ul class="checks" style="margin-top:12px">
+        <li>Jurors' votes must not be equal.</li>
+        <li>The judge decides when it is unfair.</li>
+      </ul>
+    </div>
+    <div class="card wide">
+      <h3>The three scenes</h3>
+      <div class="scenes">
+        <div><b>Film one</b><p>The app is ready. The investors are waiting. Only Linh knows what the numbers really say. One button stands between 80 jobs and the people the app might fail.</p></div>
+        <div><b>Film two</b><p>Six months later, Lumen passes the new law with ease. Maybe too easily. Linh knows something the law never asked about. Stay quiet, or say it out loud?</p></div>
+        <div><b>Film three</b><p>A phone photo. A name. A diagnosis that came too late. Now there's an offer on the table, and a hotline on Linh's screen. Only one of them can be the answer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="r5">
+  <div class="sec-head"><span class="num">05</span><h2>Endings &amp; prizes</h2><p>Five endings. Only one stays level.</p></div>
+  <div class="grid">
+    <div class="card wide">
+      <h3>The five endings</h3>
+      <div class="tbl">
+        <table class="endings">
+          <thead><tr><th>#</th><th>Ending</th><th>Self : Others</th><th>Verdicts (film 1 → 2 → 3)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><b>The Empire</b></td><td class="score"><span class="split" aria-hidden="true"><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i></span>4 : 0</td><td><div class="paths"><span class="path"><i class="a">A</i><i class="a">A</i><i class="a">A</i></span></div></td></tr>
+            <tr><td>2</td><td><b>The Quiet Compromise</b></td><td class="score"><span class="split" aria-hidden="true"><i class="s"></i><i class="s"></i><i class="s"></i><i class="o"></i></span>3 : 1</td><td><div class="paths"><span class="path"><i class="a">A</i><i class="b">B</i><i class="a">A</i></span>or<span class="path"><i class="b">B</i><i class="a">A</i><i class="a">A</i></span></div></td></tr>
+            <tr class="level"><td>3</td><td><b>Balance</b><small>Stays level</small></td><td class="score"><span class="split" aria-hidden="true"><i class="s"></i><i class="s"></i><i class="o"></i><i class="o"></i></span>2 : 2</td><td><div class="paths"><span class="path"><i class="a">A</i><i class="a">A</i><i class="b">B</i></span>or<span class="path"><i class="b">B</i><i class="b">B</i><i class="a">A</i></span></div></td></tr>
+            <tr><td>4</td><td><b>The Hard Truth</b></td><td class="score"><span class="split" aria-hidden="true"><i class="s"></i><i class="o"></i><i class="o"></i><i class="o"></i></span>1 : 3</td><td><div class="paths"><span class="path"><i class="a">A</i><i class="b">B</i><i class="b">B</i></span>or<span class="path"><i class="b">B</i><i class="a">A</i><i class="b">B</i></span></div></td></tr>
+            <tr><td>5</td><td><b>The Burning Candle</b></td><td class="score"><span class="split" aria-hidden="true"><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></span>0 : 4</td><td><div class="paths"><span class="path"><i class="b">B</i><i class="b">B</i><i class="b">B</i></span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card wide">
+      <h3>Play well. There are prizes.</h3>
+      <div class="prizes">
+        <div class="prize w"><h4>Winning side</h4><p>The side with the most verdicts after 3 rounds.</p><span>Mystery prize</span></div>
+        <div class="prize pr"><h4>Best Prudential team</h4><p>Voted by the jurors.</p><span>Mystery prize</span></div>
+        <div class="prize mo"><h4>Best Moral team</h4><p>Voted by the jurors.</p><span>Mystery prize</span></div>
+        <div class="prize j"><h4>2 Best Jurors</h4><p>The fairest jurors of the day, voted by the judge.</p><span>Mystery prize</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
 <p class="empty" id="empty" hidden>No card matches that search.</p>
 
 </div>
@@ -423,17 +1351,20 @@ footer p{margin:0;max-width:90ch}
 <footer>
   <div class="wrap">
     <p><b>References.</b> Campbell, J. D., et al. (1996). Self-concept clarity. <i>Journal of Personality and Social Psychology, 70</i>(1), 141–156. · EBSCO Research Starters, "Seven People Die After Taking Cyanide-Laced Tylenol". · James, W. (1890). <i>The Principles of Psychology</i>, Vol. 1. · Course textbook, Week 9: Business Ethics.</p>
-    <p>Summarised from the team's Canva deck "Business Ethics".</p>
+    <p>Weeks 1–8 summarised from the MANA3021 lecture slides (Prof. Hong T. M. Bui). Week 9 and the game rules from Team 8's deck "Business Ethics". Also cited in the slides: Crane et al. (2019); Lillie (2011); Agudelo et al. (2019); Donaldson &amp; Dunfee (1994); Fadiman (1986); Shaw et al. (2013); Laura, K. (2025), BBC News.</p>
   </div>
 </footer>
 
 <script>
 (function(){
   const input=document.getElementById('q');
-  const cards=[...document.querySelectorAll('.card')];
-  const sections=[...document.querySelectorAll('main section')];
   const empty=document.getElementById('empty');
-  const originals=new Map(cards.map(c=>[c,c.innerHTML]));
+  const header=document.querySelector('header');
+  const views={course:document.getElementById('view-course'),rules:document.getElementById('view-rules')};
+  const tabs={course:document.getElementById('tab-course'),rules:document.getElementById('tab-rules')};
+  const chips={course:document.getElementById('chips-course'),rules:document.getElementById('chips-rules')};
+  const originals=new Map([...document.querySelectorAll('.card')].map(c=>[c,c.innerHTML]));
+  let current='course';
   function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
   function highlight(node,re){
     const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
@@ -445,18 +1376,40 @@ footer p{margin:0;max-width:90ch}
       frag.append(t.nodeValue.slice(last));t.replaceWith(frag);
     });
   }
-  input.addEventListener('input',()=>{
+  function filter(){
     const q=input.value.trim();
+    const root=views[current];
     let shown=0;
-    cards.forEach(c=>{c.innerHTML=originals.get(c);
+    root.querySelectorAll('.card').forEach(c=>{c.innerHTML=originals.get(c);
       if(!q){c.classList.remove('hidden-match');return}
       const hit=c.textContent.toLowerCase().includes(q.toLowerCase());
       c.classList.toggle('hidden-match',!hit);
-      if(hit){shown++;highlight(c,new RegExp(esc(q),'gi'))}
+      if(hit){shown++;highlight(c,new RegExp(esc(q),'gi'));
+        c.querySelectorAll('details').forEach(d=>{if(d.querySelector('mark'))d.open=true});}
     });
-    sections.forEach(s=>{s.hidden=!!q&&!s.querySelector('.card:not(.hidden-match)')});
+    root.querySelectorAll('section').forEach(s=>{s.hidden=!!q&&!s.querySelector('.card:not(.hidden-match)')});
     empty.hidden=!q||shown>0;
-  });
+  }
+  function show(name){
+    current=name;
+    for(const k in views){const on=k===name;views[k].hidden=!on;chips[k].hidden=!on;tabs[k].setAttribute('aria-selected',on?'true':'false');}
+    filter();
+  }
+  function route(scroll){
+    const h=decodeURIComponent(location.hash.slice(1));
+    if(!h||h==='course'||h==='ideas'||h==='rules'){
+      show(h==='rules'?'rules':'course');
+      if(scroll&&h&&window.scrollY>header.offsetHeight)window.scrollTo(0,header.offsetHeight);
+      return;
+    }
+    const el=document.getElementById(h);
+    if(!el){show('course');return}
+    show(el.closest('#view-rules')?'rules':'course');
+    if(scroll)el.scrollIntoView();
+  }
+  input.addEventListener('input',filter);
+  window.addEventListener('hashchange',()=>route(true));
+  route(true);
 })();
 </script>
 
