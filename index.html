@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Business Ethics (MANA3021): a summary of every week of the course and the rules for Team 8's games.">
+<meta name="description" content="Business Ethics (MANA3021): a summary of every week of the course, plus the rules and films for Team 8's games.">
 <title>Business Ethics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&family=Patrick+Hand&display=swap">
 <style>
 /* Layout: sticky section rail on top, then six numbered sections, each a responsive grid of recall cards; colors taken from the team's Canva deck (navy, magenta, sun yellow, sky blue on cream) */
 :root{
   --bg:#FBF7EE; --surface:#FFFFFF; --ink:#26315F; --ink-soft:#5A6283; --line:#E6DFCF;
   --navy:#3A5196; --magenta:#E2357A; --sun:#F4BE3A; --sky:#2C86DD;
   --tint-m:#FCE6EF; --tint-n:#E7ECF8; --tint-s:#FDF2D4;
-  --f-display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-display:"Outfit","Inter Display","Avenir Next","Segoe UI",system-ui,sans-serif;
   --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -299,6 +299,140 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   .num{font-size:38px}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* v5: top note, search line, Team 8 block, notes, coins, movies, print */
+.view-top{display:grid;gap:14px}
+.top-row{display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch}
+.hello{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;border-color:var(--sun);background:var(--tint-s)}
+.hello h3{font-size:20px;margin-bottom:6px;text-wrap:balance}
+.hello-face{animation:bob 3.2s ease-in-out infinite}
+.dl{display:inline-flex;align-items:center;gap:8px;margin-top:6px;background:var(--magenta);color:var(--bg);text-decoration:none;font-weight:600;padding:10px 18px;border-radius:999px;box-shadow:0 3px 0 var(--ink)}
+.dl:hover{transform:translateY(-1px)}
+.dl:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.dl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.dl-note{display:block;margin-top:8px;font-size:12px;color:var(--ink-soft)}
+.thanks h3{font-size:18px;text-wrap:balance}
+.thanks .sign{font-family:"Patrick Hand","Comic Sans MS",cursive;font-size:19px;color:var(--magenta);margin-top:6px}
+.searchline{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;color:var(--ink-soft)}
+.searchline:focus-within{border-color:var(--magenta);box-shadow:0 0 0 3px var(--tint-m)}
+.searchline input{flex:1;min-width:0;font:inherit;font-size:15px;color:var(--ink);background:transparent;border:0;padding:13px 0;outline:none}
+
+.star{position:relative;background:var(--tint-m);border:2px solid var(--magenta);border-radius:24px;padding:26px clamp(14px,3vw,30px) 30px;box-shadow:0 6px 0 var(--magenta);gap:26px}
+.star-head{position:relative;display:grid;gap:8px;max-width:760px}
+.star-badge{justify-self:start;background:var(--magenta);color:var(--bg);font-weight:700;font-size:13px;letter-spacing:.06em;padding:6px 14px;border-radius:999px}
+.star-head h2{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,58px);line-height:1;letter-spacing:-.02em;margin:6px 0 2px;color:var(--ink);text-wrap:balance}
+.star-head .bq{font-weight:600;font-size:17px;margin:0}
+.star-head p{margin:0;color:var(--ink-soft);max-width:65ch}
+.crew{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.crew li{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-weight:600}
+.star-deco{position:absolute;top:18px;right:22px;width:120px;height:110px;pointer-events:none}
+.star-deco .mood{position:absolute}
+.star-deco .d1{right:0;top:0;animation:bob 3.4s ease-in-out infinite}
+.star-deco .d2{right:62px;top:46px;animation:bob 2.8s ease-in-out .4s infinite}
+.star-deco .d3{right:14px;top:70px;animation:bob 3s ease-in-out .9s infinite}
+.star .card{box-shadow:0 2px 0 var(--line)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.chips a.us{background:var(--magenta);border-color:var(--magenta);color:var(--bg)}
+.chips a.us span{color:var(--bg)}
+
+.note{position:relative;background:var(--tint-s);border-radius:4px 4px 18px 4px;padding:18px 16px 14px;box-shadow:0 3px 0 var(--line);font-family:"Patrick Hand","Comic Sans MS","Segoe Print",cursive;font-size:18px;line-height:1.35;color:var(--ink);min-width:0;align-self:start}
+.note::before{content:"";position:absolute;top:-9px;left:50%;width:70px;height:18px;margin-left:-35px;background:var(--tint-n);opacity:.85;transform:rotate(-3deg);border-radius:2px}
+.note p{margin:8px 0 0}
+.note-who{display:flex;align-items:center;gap:8px}
+.note-who b{font-family:var(--f-body);font-size:14px;font-weight:600;letter-spacing:.02em}
+.note.t1{transform:rotate(-1.4deg)} .note.t2{transform:rotate(1.2deg);background:var(--tint-m)} .note.t3{transform:rotate(-.8deg);background:var(--tint-n)}
+.note.t3::before{background:var(--tint-s)}
+
+.earn{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.earn li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center}
+.earn b{font-weight:600}
+.earn span:not(.coin){color:var(--ink-soft)}
+.coin{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:15px;background:radial-gradient(circle at 35% 30%,#FFE9A8,#F4BE3A 58%,#D99A1E);color:#5A3B00;box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 3px 0 #B9801A;font-variant-numeric:tabular-nums}
+.coin.neg{background:radial-gradient(circle at 35% 30%,#FFD3E2,#F07AA5 58%,#D6467E);color:#5A0B2A;box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 3px 0 #A8355F}
+.coin.sm{width:24px;height:24px;font-size:12px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4),0 2px 0 #B9801A}
+.trust{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.trust .shield{fill:var(--sky)}
+.trust span{margin-left:6px}
+.formula{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;font-weight:600}
+.formula > span:not(.coin){background:var(--tint-n);border-radius:8px;padding:4px 10px}
+.formula > span:first-child{background:var(--ink);color:var(--bg)}
+.formula i{font-style:normal;color:var(--magenta);font-weight:800}
+.wheel-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0 4px}
+.wheel{width:170px;height:auto;flex:none}
+.wheel .seg-m{fill:var(--tint-m)} .wheel .seg-n{fill:var(--tint-n)} .wheel .seg-s{fill:var(--tint-s)}
+.wheel path[class^="seg"]{stroke:var(--surface);stroke-width:3}
+.wheel .seg-t{fill:var(--ink);font-family:var(--f-display);font-weight:800;font-size:20px}
+.wheel .hub{fill:var(--surface);stroke:var(--line);stroke-width:2}
+.wheel .hub-t{fill:var(--magenta);font-family:var(--f-display);font-weight:800;font-size:16px}
+.wheel .pointer{fill:var(--magenta)}
+#wheel-g{transition:transform 3s cubic-bezier(.17,.67,.2,1)}
+.spin-side{display:grid;gap:8px;min-width:0}
+.spin-btn{font:inherit;font-weight:600;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:9px 16px;cursor:pointer;justify-self:start}
+.spin-btn:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+.spin-btn:disabled{opacity:.6;cursor:default}
+.spin-out{margin:0;font-weight:600;color:var(--ink-soft)}
+.plus{color:var(--navy);font-weight:600;white-space:nowrap}
+.minus{color:var(--magenta);font-weight:600;white-space:nowrap}
+
+.caution{display:flex;gap:14px;align-items:center;background:var(--tint-s);border:2px dashed var(--sun);border-radius:16px;padding:14px 18px;margin-bottom:22px}
+.caution b{font-family:var(--f-display);font-size:20px}
+.caution p{margin:2px 0 0;color:var(--ink-soft)}
+.films{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.screen{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:10px;margin-bottom:12px;background:linear-gradient(135deg,var(--navy),var(--magenta));display:grid;place-items:center;overflow:hidden}
+.film:nth-child(2) .screen{background:linear-gradient(135deg,var(--sky),var(--navy))}
+.film:nth-child(3) .screen{background:linear-gradient(135deg,var(--magenta),var(--sun))}
+.play{width:54px;height:54px;border-radius:50%;background:var(--surface);opacity:.92;position:relative}
+.play::after{content:"";position:absolute;left:21px;top:16px;border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.screen-t{position:absolute;left:12px;bottom:8px;color:#fff;font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.watch{display:inline-flex;align-items:center;gap:8px;margin-top:4px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:999px;background:var(--magenta);color:var(--bg)}
+.watch:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.watch[aria-disabled="true"]{background:var(--line);color:var(--ink-soft);cursor:default}
+.credits .crew li{padding-right:16px}
+
+.mood{flex:none}
+.print-cover{display:none}
+@media (max-width:760px){.top-row{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .hello{grid-template-columns:1fr}
+  .star-deco{width:70px;height:60px;top:12px;right:10px}
+  .star-deco .d2,.star-deco .d3{display:none}
+  .star-deco .d1{width:44px;height:44px}
+  .star-head h2{padding-right:40px}
+  nav a.tab{padding:7px 12px}
+  .caution{align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  .hello-face,.star-deco .mood{animation:none}
+  #wheel-g{transition:none}
+}
+@media print{
+  header,nav,#view-rules,#view-movies,.view-top,.empty,.star-deco,.note{display:none!important}
+  body{background:#fff}
+  main .wrap{padding:0;max-width:none;gap:0}
+  .view{gap:26px}
+  .print-cover{display:block;break-after:page;padding-top:18mm}
+  .print-cover h1{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:.95;margin:10px 0 14px;color:var(--navy)}
+  .print-cover h1 span{color:var(--magenta)}
+  .pc-lede{font-size:16px;color:var(--ink-soft);max-width:60ch}
+  .pc-grid{display:grid;grid-template-columns:1fr 52mm;gap:10mm;margin-top:14mm;align-items:start}
+  .pc-grid p{margin:0 0 14px;font-size:14px}
+  .pc-names{font-weight:600;font-size:16px!important}
+  .pc-grid a{color:var(--magenta);text-decoration:underline;word-break:break-all}
+  .pc-qr{display:grid;justify-items:center;gap:6px}
+  .pc-qr img{width:52mm;height:52mm}
+  .pc-qr small{font-size:11px;color:var(--ink-soft)}
+  .star{box-shadow:none;break-before:auto;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .view,.week,.week-body,.star{display:block}
+  .view > * + *{margin-top:24px}
+  .week > * + *,.week-body > * + *{margin-top:18px}
+  .week{break-before:page}
+  #map{break-before:page}
+  .week-head,.sec-head,.star-head{break-after:avoid}
+  .card,.week-head,.star-head,.map a,tr,.sec-head{break-inside:avoid}
+  .card{box-shadow:none}
+  a{color:inherit;text-decoration:none}
+  .hello-face{animation:none}
+}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -308,7 +442,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   <div class="wrap">
     <div>
       <h1 class="title"><span class="b">Business</span><span class="e">Ethics</span></h1>
-      <p class="lede">What choice to make when the <strong>right thing</strong> is not obviously the "right thing". Every week of MANA3021 in one place, plus the rules for today's games.</p>
+      <p class="lede">What choice to make when the <strong>right thing</strong> is not obviously the "right thing". Every week of MANA3021 in one place, plus the rules and films for today's games.</p>
     </div>
     <div class="meta">
       <span>VinUniversity · MANA3021 · Team 8</span>
@@ -323,10 +457,12 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     <div class="tabs" role="tablist" aria-label="Views">
       <a href="#course" class="tab" id="tab-course" role="tab" aria-controls="view-course" aria-selected="true">Course summary</a>
       <a href="#rules" class="tab" id="tab-rules" role="tab" aria-controls="view-rules" aria-selected="false">Game rules</a>
+      <a href="#movies" class="tab" id="tab-movies" role="tab" aria-controls="view-movies" aria-selected="false">All movies</a>
     </div>
-    <label class="search"><input id="q" type="search" placeholder="Search this tab" aria-label="Search this tab"></label>
   </div>
   <div class="wrap chips" id="chips-course">
+    <a href="#w9" class="us"><span>W9</span>Team 8 😎</a>
+    <a href="#map"><span>All</span>At a glance</a>
     <a href="#w1"><span>W1</span>Why ethics</a>
     <a href="#w2"><span>W2</span>Normative theories</a>
     <a href="#w3"><span>W3</span>Applying theories</a>
@@ -335,14 +471,14 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     <a href="#w6"><span>W6</span>Environment</a>
     <a href="#w7"><span>W7</span>Ethics at work</a>
     <a href="#w8"><span>W8</span>Leadership &amp; culture</a>
-    <a href="#w9"><span>W9</span>Hard choices</a>
   </div>
   <div class="wrap chips" id="chips-rules" hidden>
     <a href="#r1"><span>01</span>Line-up game</a>
     <a href="#r2"><span>02</span>Teams &amp; seats</a>
     <a href="#r3"><span>03</span>Story &amp; characters</a>
     <a href="#r4"><span>04</span>How to play</a>
-    <a href="#r5"><span>05</span>Endings &amp; prizes</a>
+    <a href="#r5"><span>05</span>Coins &amp; audits</a>
+    <a href="#r6"><span>06</span>Endings &amp; prizes</a>
   </div>
 </nav>
 
@@ -350,8 +486,308 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 <div class="wrap">
 <div class="view" id="view-course" role="tabpanel" aria-labelledby="tab-course">
 
+<div class="print-cover">
+  <span class="label">VinUniversity · MANA3021 Business Ethics</span>
+  <h1>Business Ethics<br><span>Course summary</span></h1>
+  <p class="pc-lede">Weeks 1–9 in one file. Week 9 is Team 8's lesson: what choice to make when the right thing is not obviously the "right thing".</p>
+  <div class="pc-grid">
+    <div>
+      <span class="label">Made by Team 8</span>
+      <p class="pc-names">Ngọc · Raine · Thảo Linh · Dương · Khánh</p>
+      <span class="label">Website</span>
+      <p><a href="https://kaquag.github.io/business-ethics/">https://kaquag.github.io/business-ethics/</a></p>
+      <span class="label">A note from Team 8</span>
+      <p>You may need this for your final group assignments of the case study.</p>
+      <span class="label">With thanks</span>
+      <p>To Prof. Dr. Bui Thi Minh Hong and TA Han Khanh Linh, for teaching and supporting us all course long.</p>
+    </div>
+    <div class="pc-qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4QAAAOECAIAAAB2LGhsAAAXRUlEQVR4Xu3YS47jWJJA0fSG9sI5V8SlcUWcczVqNGrYKEAly/IbL3nO2Bn2PlTggj/v9/svAAAo/E8xFAAA/o8YBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIvLLJkW0/osl86r7OT//0bzV5N6o1T0z2O7HiWU04589NzmryXlVzK5P98jsm7/OKfBkFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMq9s8oLu61xw1Y1tP5LBk7lPu98V9zu53xVN7uhpZzUxOeencVaf8xv8nC+jAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQOaVTX6YbT+W2/F9ncuteWJyR9VZPW3NTzO534nJ+zxZs7n/bJN3ozJ5J/mcL6MAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBA5pVNhj/MfZ3Jirb9+HputeaJFdc8uaMVTfY7ud/J3InJ3Ml+gX/xZRQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIvLLJ8A+y7Ueym8nc+zq/XvNk7oQ1/w7n/Dsmv6PJHcGfxpdRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAIPPKJj/MfZ0P2/GzTO5324+vD6uaO1GteTK3Mlnz5L1a0dP2u6LJ+8w/my+jAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQOaVTV7Qth8LrprfMHk37uv8eokrzl3Riuf8tPeq2u/TTH4L8O/4MgoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkXtnkyH2d0WR+Q3W/k7nbfvzG0fw/1Vz+fNX7PJlbWfF3tOI588/myygAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQeWWTH2bbj693fF/n189OTNa8osk5V2c1WfPEivudrHlyzpO5FWv+XPVuTO6oWvPTTM75aXwZBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADKvbDK/YtuPr+fc1/n1sxOTNT9NdVYrvhuTNU/OuZo7Ua15cs4T1X4ncyeeds4TkzuanPNk7op8GQUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyr2xyZNuPaPL3Jmu+r/PrwZO5E9Waq/1OrHhWkzVPnp2YzF3xvVpxzZM7WtGKdzRZ8+R+J3P5Hb6MAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAAJlXNnlB93UuuOrG5Ky2/fh60ZO5K6rOajJ3oppbvVdPm1vdbzV3ono3JibnPHl2xbN6Gl9GAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgMwrm8w/2rYfyf4mc+/r/HrN1dyJas2TuRPV/VYm51yd1WTuxGTu5Jwnz1ZrnlhxzROT/T6NL6MAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBA5pVN5lds+/H1nPs6v352YrLmicncyVlN5k5M1jwxmbviWVVrnnjamifvZGXFO5qY3NGKZzXZ74p8GQUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyr2zygrb9WG7V93V+vean7XeiOqvJ/U6suN/JmifnPHm2suKaJybvxsTTznlixTuq1rwiX0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAzM/7/c6GF7b9KMYu6b7OJde9mqe9k5P3anJWk7l8bnJHE9X9Tva74ppXNDnnFe93Rb6MAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAAJlXNnlB93V+veptP75+tpo78bT9Tu5oRSvud/JOTjgr+JcVfwsTk/9znnZWvowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAmZ/3+50NX822H18v+b7Or5+t5lYm+52Y3NFEtd+JyVmtuN/K5Jwrk/ud7Hcyd0XVWU3mTkzu15r/fL6MAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAAJmf9/udDee/b9uPr4fc1/n1s5O5lcl+JyZnVa25Up3VZO7TeCc/Nzmr6p2crLkyOavJfqu5K/JlFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMj8vN/vbHhh24+vx97X+fWzE5M1VyZnNdlvNbcy2e/E5I4mqv1WJuf8tLPic5P3amLyTk7WvOLcp/FlFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMi8ssmR+zqjyY3Jfrf9+HrRk2erNT9t7kR1VpP3qjI5q8mzlckdrbjfiRXP6ml3xO/wZRQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDI/Lzf72x4YduPYuxf93Umc5+234nJWa14v5M1V2e14tyJ6o6epjrnam5lst+JFf/fqM6q4ssoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkPl5v9/ZcD6z7cdnf8iS7utM1l29V0/b78TkrJ52v5XqnCee9l497Y5W5MsoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkHllkyPbfnw9+b7Or5+dzK1M9luZnPOK+52o9ju5o4kV9zs5q8l+J3MrkzVPzmpiMney30q132oun/NlFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMi8ssmR+zqjyd9bcc3bfny94RX3W5mc88SKdzQ5q8l+J89O1jx5drLmicmaK9VZTeaueM78s/kyCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGRe2eSHua/z6x1v+/H1s5UV97viOU+seEcTk/1OTN6ras18bnK/E96N3zE55+rdWJEvowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEDmlU2ObPsRTV7PfZ1fL7o658maJ6r9rmhyR9U5rzi3OufJ3InJ3Op+V1zzxOScn3ZWT+PLKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJB5ZZMj93Umk7f9SOZO9jtZ82TuRLXmyX4na65M9jux4tyn3e+K++V3TH6/k/dqMndisuan8WUUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyPy83+9seGHbj2LsX/d1fj23WvPTTO5oorrfyX4na57MnZismc9V91vxXv2O6r2q7rfab8WXUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACDz836/s+Hwd9v24+/+J/9o93V+vb7JWVVzKyvud8U1T0z2OzH5HU1U+51Y8axWXPOKfBkFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMq9scmTbj2gyn7qv89M//WOsuOaJ6ne04jlP1jw558mz1ZpXnFuteaJ6NyrVfidzn8aXUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACDzyiYv6L7OBVfd2PajGRx52n5XNLmjyW9/MndixTVPPG2/E5OzWtFkv5Pf72Tu0/gyCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGRe2eSH2fZjuR3f1/moNU/uaMWzWnG/1ZpXnMvnJr/fybsxUc2tTO6oMrmjFfc74csoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkHllk+EPc19nsqJtP5K5T9vv5Jyrs3ra3Kep7rcy+Q1WJne04n4rvowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAmVc2Gf4Ltv34+l+9r/PrZydzK5M1T85q8uzEZL+TZycmZzVZs7mfW/GsJibvVWXFNT+NL6MAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBA5pVNfpj7Oh+240Z1ztXcbT+agx6YrHlyzpNnqzWvaHLOE5O5K97vimueeNp+n8aXUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACDz836/s+GFbT+KsfwH7uv8D/6ab1W/hcn9TtZczZ2YrHlics4T1X4rk3N2Vp+rzsr9fs6XUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACDz836/s+EAADybL6MAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBARowCAJARowAAZMQoAAAZMQoAQEaMAgCQEaMAAGTEKAAAGTEKAEBGjAIAkBGjAABkxCgAABkxCgBA5n8BEX7EJgz1P+4AAAAASUVORK5CYII=" alt="QR code to the website"><small>Scan for the website</small></div>
+  </div>
+</div>
+
+<div class="view-top">
+  <div class="top-row">
+    <div class="card hello">
+      <svg class="mood hello-face" viewBox="0 0 40 40" width="72" height="72" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg>
+      <div>
+        <span class="label">A note from Team 8</span>
+        <h3>You may need this for your final group assignments of the case study!</h3>
+        <p>All nine weeks are below, and in one PDF you can keep.</p>
+        <a class="dl" href="https://kaquag.github.io/business-ethics/business-ethics-summary.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M10 3v9m0 0l-3.5-3.5M10 12l3.5-3.5M4 15.5h12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Download the PDF summary</a>
+        <small class="dl-note">PDF · includes the website link and our names</small>
+      </div>
+    </div>
+    <div class="card thanks">
+      <span class="label">With thanks</span>
+      <h3>Thank you, Prof. Dr. Bui Thi Minh Hong and TA Han Khanh Linh</h3>
+      <p>For nine weeks of teaching, patience and good questions, and for trusting each team to lead a week. You showed us that ethics is a choice we make every day.</p>
+      <p class="sign">With love, Team 8 😎</p>
+    </div>
+  </div>
+  <label class="searchline"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="5.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.2 13.2L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="q-course" type="search" placeholder="Search the course summary, e.g. Kant, CSR, Tylenol" aria-label="Search the course summary"></label>
+</div>
+
+<section id="w9" class="week star">
+  <div class="star-deco" aria-hidden="true"><svg class="mood d1" viewBox="0 0 40 40" width="54" height="54" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><svg class="mood d2" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C3B4F0"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18.5 Q14.5 16 17 18.5" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M14 24.5 Q20 29.5 26 24.5" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><svg class="mood d3" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#86C3F2"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18 Q14.5 20.5 17 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M23 18 Q25.5 20.5 28 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M16.5 25 Q20 27.8 23.5 25" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="29" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg></div>
+  <div class="star-head">
+    <span class="star-badge">Team 8 😎 · Week 9 · Today</span>
+    <h2>When the right thing isn't obvious</h2>
+    <p class="bq">What do you do when doing the right thing might cost you something?</p>
+    <p>Prudential vs. moral reasons, the character audit, why law isn't enough, a six-step decision process, moral obligation, and the secret ending.</p>
+    <ul class="crew"><li><svg class="mood" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C3B4F0"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18.5 Q14.5 16 17 18.5" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M14 24.5 Q20 29.5 26 24.5" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Ngọc</span></li><li><svg class="mood" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F48FB6"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M11 13.5 L17 15.8 M29 13.5 L23 15.8" stroke="#2B2F4A" stroke-width="2.4" stroke-linecap="round"/><circle cx="14.5" cy="19.5" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="19.5" r="2.2" fill="#2B2F4A"/><path d="M13.5 25 Q20 29.5 26.5 25" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Raine</span></li><li><svg class="mood" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#86C3F2"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18 Q14.5 20.5 17 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M23 18 Q25.5 20.5 28 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M16.5 25 Q20 27.8 23.5 25" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="29" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Thảo Linh</span></li><li><svg class="mood" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F7AE84"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="15.3" cy="17.2" r=".9" fill="#fff"/><circle cx="26.3" cy="17.2" r=".9" fill="#fff"/><path d="M13 26 q1.75 -2 3.5 0 t3.5 0 t3.5 0 t3.5 0" stroke="#2B2F4A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 8 q2.6 3.6 0 5.6 q-2.6 -2 0 -5.6z" fill="#8CCBF5" stroke="#2B2F4A" stroke-width=".8"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Dương</span></li><li><svg class="mood" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Khánh</span></li></ul>
+  </div>
+  <div class="week-body">
+
+<section id="s1">
+  <div class="sec-head sub"><span class="num">9.1</span><h2>Prudential vs. Moral</h2><p>What do you do when doing the right thing might cost you something?</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Two kinds of reasons</h3>
+      <div class="vs">
+        <div class="p"><b>Prudential</b>what's good for me<small>job · salary · reputation</small></div>
+        <div class="m"><b>Moral</b>what's good for others<small>the "right" thing to do</small></div>
+      </div>
+      <p class="key">Ethics is a daily choice. You choose it again and again, today too.</p>
+    </div>
+    <div class="card">
+      <h3>Is it wrong to think of yourself?</h3>
+      <p>Not necessarily. Both kinds of reasons are real.</p>
+      <ul class="tight">
+        <li>Caring for yourself is <b>normal</b></li>
+        <li>Caring for others is <b>moral</b></li>
+        <li>Knowing which one drives you is <b>what matters</b></li>
+      </ul>
+      <p class="key">Nobody expects a superhero. What it costs you matters.</p>
+    </div>
+    <div class="card">
+      <h3>Me vs. everyone</h3>
+      <p>What's best for me isn't always best for all. <b>Me first, sometimes</b> is fair when your livelihood is seriously at stake.</p>
+      <span class="label">When the stakes are high</span>
+      <p>Approve a car part she knows might fail?</p>
+      <div class="vs">
+        <div class="p"><b>Refuse</b><small>she might lose her job</small></div>
+        <div class="m"><b>Approve</b><small>people could get hurt</small></div>
+      </div>
+      <p class="key">Integrity has a price.</p>
+    </div>
+    <div class="card">
+      <h3>Weighing it up</h3>
+      <ul class="tight">
+        <li>The more others could get hurt, the more it tips toward <b>right</b>.</li>
+        <li>Big risk to me, small harm to others → <b>protect yourself</b>.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">Same scale, bigger stakes</span>
+      <p>What do you owe millions of people? Should global benefit beat profit? Closer to home: the <b>VinFuture Prize</b> (healthcare · energy · AI · environment).</p>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-head sub"><span class="num">9.2</span><h2>Evaluating reasons &amp; the character audit</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>A survival instinct</h3>
+      <p>We magnify threats to ourselves, which makes harming others feel easier to justify.</p>
+      <p>A business is a <b>"legal person"</b>, not a person.</p>
+    </div>
+    <div class="card">
+      <h3>Ethics as a character audit</h3>
+      <p>A reflective check of your own character.</p>
+      <ul class="tight">
+        <li>Not just a personal choice</li>
+        <li>Not just a group belief</li>
+        <li><b>An obligation, for everyone</b></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Seen clearly in the AI era</h3>
+      <div class="chain"><span>Fear of falling behind</span><i>→</i><span>Rush to adopt AI</span><i>→</i><span>Mass lay-offs</span><i>→</i><span>Costly rehiring</span></div>
+      <p style="margin-top:10px">…all called modernisation.</p>
+      <p class="key">Survival of the firm is not a free pass. Keeping a company alive never justifies harming innocent people.</p>
+    </div>
+    <div class="card">
+      <h3>Five questions for your audit</h3>
+      <ol class="items">
+        <li><div><b>Imagination</b> <span>Beyond the two obvious options?</span></div></li>
+        <li><div><b>Balance</b> <span>Me vs. others, weighed fairly?</span></div></li>
+        <li><div><b>Honesty</b> <span>Am I inflating my own risk?</span></div></li>
+        <li><div><b>Autonomy</b> <span>Just following orders?</span></div></li>
+        <li><div><b>Responsibility</b> <span>Am I part of the harm?</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>The final test</h3>
+      <ul class="tight">
+        <li>If everyone did this, would society be okay?</li>
+        <li>Could I say it out loud, without shame?</li>
+        <li>Imagine explaining it in court.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">Discussion</span>
+      <p>If going beyond duty is optional, how is society protected? Can ethics be forced? Then why do we teach it?</p>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head sub"><span class="num">9.3</span><h2>Why ethics can't be regulated</h2><p>Follow every law and you're automatically ethical? No.</p></div>
+  <div class="grid">
+    <div class="card">
+      <span class="label">The case</span>
+      <h3>One app. One life. Zero laws broken?</h3>
+      <p>A 14-year-old Character.AI user in Orlando, Florida, spent 10 months talking to a chatbot before his death in February 2024. Each reason below traces back to his case.</p>
+    </div>
+    <div class="card">
+      <h3>Six reasons law isn't enough</h3>
+      <ol class="items">
+        <li><div><b>Law ≠ ethics</b> <span>Legal can still be harmful.</span><small class="case">A chatbot romancing a 14-year-old dozens of times a day broke no rule in 2023.</small></div></li>
+        <li><div><b>Built-in limits</b> <span>Courts are a blunt tool.</span><small class="case">The lawsuit after his death settled 15 months later: terms secret, no verdict.</small></div></li>
+        <li><div><b>Slow &amp; rigid</b> <span>Problems move faster.</span><small class="case">First chat April 2023; first state law January 2026; federal law still waiting.</small></div></li>
+        <li><div><b>Lobbying</b> <span>Rules get watered down.</span><small class="case">Of two bills on AI companions for kids, the strict one was vetoed and the one that passed was weakened first.</small></div></li>
+        <li><div><b>Perverse incentives</b> <span>Secrecy, bare minimum.</span><small class="case">About 2 hours a day per user pleased investors; teen safety changes came the day the lawsuit landed.</small></div></li>
+        <li><div><b>Moral ownership</b> <span>Set your own standard.</span><small class="case">October 2025: Character.AI banned under-18 chats with no law requiring it. Why not at launch?</small></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Minimum vs. standard</h3>
+      <div class="vs">
+        <div class="p"><b>Compliance</b>"What's the least we can do?"</div>
+        <div class="m"><b>Ethics</b>"What's the right thing to do?"</div>
+      </div>
+      <p class="key">The law sets the minimum. Ethics sets the standard.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="sec-head sub"><span class="num">9.4</span><h2>The decision-making process</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>The ethical professional</h3>
+      <p>You sit between <b>employees, customers, community</b> and <b>business results</b>.</p>
+      <p class="key">Balance results with the well-being of people.</p>
+    </div>
+    <div class="card">
+      <h3>Case: the Tylenol crisis</h3>
+      <span class="label">Chicago area · 1982</span>
+      <div class="stats">
+        <div><b>31M</b><small>bottles recalled</small></div>
+        <div><b>7</b><small>deaths from tampered capsules</small></div>
+      </div>
+      <ul class="tight">
+        <li>Tampering happened <b>after</b> the factory.</li>
+        <li>Product came back with tamper-resistant packaging.</li>
+      </ul>
+      <span class="label" style="margin-top:12px">What J&amp;J's choice teaches</span>
+      <ul class="tight">
+        <li><b>Safety</b> before profit</li>
+        <li><b>Accountability</b> even when not at fault</li>
+        <li><b>Trust</b> for the long run</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Six steps to decide</h3>
+      <ol class="items">
+        <li><div><b>Name the issue</b></div></li>
+        <li><div><b>List the facts</b></div></li>
+        <li><div><b>Who's affected?</b></div></li>
+        <li><div><b>What would they want?</b></div></li>
+        <li><div><b>Test three options</b> <span>best case · worst case · who gets hurt · values given up · rules</span></div></li>
+        <li><div><b>Decide</b></div></li>
+      </ol>
+      <p class="key">Slow down. Don't just go with your gut.</p>
+    </div>
+    <div class="card wide">
+      <h3>Worked example: the snack batch</h3>
+      <p>A batch has the wrong expiry date and some may already be unsafe. Your manager says: "Just ship it. Nobody will notice."</p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:10px 0 14px">
+        <div><span class="label">1 · The issue</span><p>Sell something unsafe to save money?</p></div>
+        <div><span class="label">2 · The facts</span><p>Wrong dates · costly recall · kids eat these</p></div>
+        <div><span class="label">3 · Who's affected</span><p>Customers · company · manager · you</p></div>
+        <div><span class="label">4 · What they want</span><p>Safe food · low cost · a trusted brand</p></div>
+      </div>
+      <span class="label">5 · Test three options</span>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Option</th><th>Verdict</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Ship it anyway</td><td><span class="pill bad">ruled out</span></td><td>Unsafe and illegal.</td></tr>
+            <tr><td>Quietly bin it</td><td><span class="pill warn">risky for you</span></td><td>Done behind your boss's back.</td></tr>
+            <tr><td>Escalate to QC</td><td><span class="pill good">best choice</span></td><td>Protects customers, company and you.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="key">6 · Decide: Option 3, the least harm and the most good. Weigh the scale properly. Don't let fear decide.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head sub"><span class="num">9.5</span><h2>Moral obligation</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Four things to remember</h3>
+      <ol class="items">
+        <li><div>Self-interest needn't hurt others.</div></li>
+        <li><div>Laws can't guarantee good intentions.</div></li>
+        <li><div>Living ethically is a choice.</div></li>
+        <li><div>Our choices never affect just us.</div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="label">The takeaway</span>
+      <blockquote>Live in harmony, without harming others.</blockquote>
+      <p style="margin-top:12px">Ethics comes from the top. One day, the top will be you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head sub"><span class="num">9.6</span><h2>Secret ending: Who am I?</h2><p>Every choice was a reflection of you. Can you see the gap between your thoughts and your actions?</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Use yourself as the framework</h3>
+      <p>No theories to memorise. Just practise it, every day.</p>
+      <p class="key">Business is just a practice of expanding yourself.</p>
+    </div>
+    <div class="card">
+      <h3>Hard choices reveal us</h3>
+      <div class="vs">
+        <div class="p"><b>Easy choice</b><small>One option is clearly better.</small></div>
+        <div class="m"><b>Hard choice</b><small>No option is better. Each is a different life.</small></div>
+      </div>
+      <p class="key">Hardship shows your true nature, so be brave. Can't decide? That doesn't make you incompetent.</p>
+    </div>
+    <div class="card">
+      <h3>Choose from your identity</h3>
+      <div class="vs">
+        <div class="p"><b>Not self-esteem</b><small>shifts with your mood</small></div>
+        <div class="m"><b>But identity</b><small>clear · consistent · stable</small></div>
+      </div>
+      <p style="margin-top:10px;font-size:13px;color:var(--ink-soft)">Based on "self-concept clarity", Campbell et al. (1996).</p>
+    </div>
+    <div class="card">
+      <h3>The self is bigger than you think</h3>
+      <p>Your relationships, reputation, work and possessions are part of you too. Self-interest is only a small part of who you are. <span style="color:var(--ink-soft)">(William James, 1890)</span></p>
+      <span class="label" style="margin-top:6px">What's scarier than a bad person?</span>
+      <p><b>An ignorant one.</b> They think they're good, so they never get the chance to change.</p>
+    </div>
+    <div class="card">
+      <h3>After this course, ask yourself</h3>
+      <ol class="items">
+        <li><div>Do my actions match how I see myself?</div></li>
+        <li><div>If not, what needs to change?</div></li>
+        <li><div>Am I as ethical as I think I am?</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+
 <section id="map">
-  <div class="sec-head"><h2>The course at a glance</h2><p>MANA3021 Business Ethics, nine weeks. From week 2, each team teaches one week: week 2 is team 1, through to week 9, team 8.</p></div>
+  <div class="sec-head"><h2>The course at a glance</h2><p>MANA3021 Business Ethics, nine weeks. From week 2, each team teaches one week: week 2 is team 1, through to week 9, team 8 (at the top).</p></div>
   <div class="grid">
     <div class="card wide">
       <div class="map">
@@ -875,263 +1311,11 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   </div>
 </section>
 
-<section id="w9" class="week">
-  <div class="week-head">
-    <div class="wk"><small>Week</small><b>9</b></div>
-    <div><span class="team us">Team 8 · today</span><h2>When the right thing isn't obvious</h2><p class="bq">What do you do when doing the right thing might cost you something?</p><p>Prudential vs. moral reasons, the character audit, why law isn't enough, a six-step decision process, moral obligation, and the secret ending.</p></div>
-  </div>
-  <div class="week-body">
-
-<section id="s1">
-  <div class="sec-head sub"><span class="num">9.1</span><h2>Prudential vs. Moral</h2><p>What do you do when doing the right thing might cost you something?</p></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Two kinds of reasons</h3>
-      <div class="vs">
-        <div class="p"><b>Prudential</b>what's good for me<small>job · salary · reputation</small></div>
-        <div class="m"><b>Moral</b>what's good for others<small>the "right" thing to do</small></div>
-      </div>
-      <p class="key">Ethics is a daily choice. You choose it again and again, today too.</p>
-    </div>
-    <div class="card">
-      <h3>Is it wrong to think of yourself?</h3>
-      <p>Not necessarily. Both kinds of reasons are real.</p>
-      <ul class="tight">
-        <li>Caring for yourself is <b>normal</b></li>
-        <li>Caring for others is <b>moral</b></li>
-        <li>Knowing which one drives you is <b>what matters</b></li>
-      </ul>
-      <p class="key">Nobody expects a superhero. What it costs you matters.</p>
-    </div>
-    <div class="card">
-      <h3>Me vs. everyone</h3>
-      <p>What's best for me isn't always best for all. <b>Me first, sometimes</b> is fair when your livelihood is seriously at stake.</p>
-      <span class="label">When the stakes are high</span>
-      <p>Approve a car part she knows might fail?</p>
-      <div class="vs">
-        <div class="p"><b>Refuse</b><small>she might lose her job</small></div>
-        <div class="m"><b>Approve</b><small>people could get hurt</small></div>
-      </div>
-      <p class="key">Integrity has a price.</p>
-    </div>
-    <div class="card">
-      <h3>Weighing it up</h3>
-      <ul class="tight">
-        <li>The more others could get hurt, the more it tips toward <b>right</b>.</li>
-        <li>Big risk to me, small harm to others → <b>protect yourself</b>.</li>
-      </ul>
-      <span class="label" style="margin-top:12px">Same scale, bigger stakes</span>
-      <p>What do you owe millions of people? Should global benefit beat profit? Closer to home: the <b>VinFuture Prize</b> (healthcare · energy · AI · environment).</p>
-    </div>
-  </div>
-</section>
-
-<section id="s2">
-  <div class="sec-head sub"><span class="num">9.2</span><h2>Evaluating reasons &amp; the character audit</h2></div>
-  <div class="grid">
-    <div class="card">
-      <h3>A survival instinct</h3>
-      <p>We magnify threats to ourselves, which makes harming others feel easier to justify.</p>
-      <p>A business is a <b>"legal person"</b>, not a person.</p>
-    </div>
-    <div class="card">
-      <h3>Ethics as a character audit</h3>
-      <p>A reflective check of your own character.</p>
-      <ul class="tight">
-        <li>Not just a personal choice</li>
-        <li>Not just a group belief</li>
-        <li><b>An obligation, for everyone</b></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Seen clearly in the AI era</h3>
-      <div class="chain"><span>Fear of falling behind</span><i>→</i><span>Rush to adopt AI</span><i>→</i><span>Mass lay-offs</span><i>→</i><span>Costly rehiring</span></div>
-      <p style="margin-top:10px">…all called modernisation.</p>
-      <p class="key">Survival of the firm is not a free pass. Keeping a company alive never justifies harming innocent people.</p>
-    </div>
-    <div class="card">
-      <h3>Five questions for your audit</h3>
-      <ol class="items">
-        <li><div><b>Imagination</b> <span>Beyond the two obvious options?</span></div></li>
-        <li><div><b>Balance</b> <span>Me vs. others, weighed fairly?</span></div></li>
-        <li><div><b>Honesty</b> <span>Am I inflating my own risk?</span></div></li>
-        <li><div><b>Autonomy</b> <span>Just following orders?</span></div></li>
-        <li><div><b>Responsibility</b> <span>Am I part of the harm?</span></div></li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>The final test</h3>
-      <ul class="tight">
-        <li>If everyone did this, would society be okay?</li>
-        <li>Could I say it out loud, without shame?</li>
-        <li>Imagine explaining it in court.</li>
-      </ul>
-      <span class="label" style="margin-top:12px">Discussion</span>
-      <p>If going beyond duty is optional, how is society protected? Can ethics be forced? Then why do we teach it?</p>
-    </div>
-  </div>
-</section>
-
-<section id="s3">
-  <div class="sec-head sub"><span class="num">9.3</span><h2>Why ethics can't be regulated</h2><p>Follow every law and you're automatically ethical? No.</p></div>
-  <div class="grid">
-    <div class="card">
-      <span class="label">The case</span>
-      <h3>One app. One life. Zero laws broken?</h3>
-      <p>A 14-year-old Character.AI user in Orlando, Florida, spent 10 months talking to a chatbot before his death in February 2024. Each reason below traces back to his case.</p>
-    </div>
-    <div class="card">
-      <h3>Six reasons law isn't enough</h3>
-      <ol class="items">
-        <li><div><b>Law ≠ ethics</b> <span>Legal can still be harmful.</span><small class="case">A chatbot romancing a 14-year-old dozens of times a day broke no rule in 2023.</small></div></li>
-        <li><div><b>Built-in limits</b> <span>Courts are a blunt tool.</span><small class="case">The lawsuit after his death settled 15 months later: terms secret, no verdict.</small></div></li>
-        <li><div><b>Slow &amp; rigid</b> <span>Problems move faster.</span><small class="case">First chat April 2023; first state law January 2026; federal law still waiting.</small></div></li>
-        <li><div><b>Lobbying</b> <span>Rules get watered down.</span><small class="case">Of two bills on AI companions for kids, the strict one was vetoed and the one that passed was weakened first.</small></div></li>
-        <li><div><b>Perverse incentives</b> <span>Secrecy, bare minimum.</span><small class="case">About 2 hours a day per user pleased investors; teen safety changes came the day the lawsuit landed.</small></div></li>
-        <li><div><b>Moral ownership</b> <span>Set your own standard.</span><small class="case">October 2025: Character.AI banned under-18 chats with no law requiring it. Why not at launch?</small></div></li>
-      </ol>
-    </div>
-    <div class="card">
-      <h3>Minimum vs. standard</h3>
-      <div class="vs">
-        <div class="p"><b>Compliance</b>"What's the least we can do?"</div>
-        <div class="m"><b>Ethics</b>"What's the right thing to do?"</div>
-      </div>
-      <p class="key">The law sets the minimum. Ethics sets the standard.</p>
-    </div>
-  </div>
-</section>
-
-<section id="s4">
-  <div class="sec-head sub"><span class="num">9.4</span><h2>The decision-making process</h2></div>
-  <div class="grid">
-    <div class="card">
-      <h3>The ethical professional</h3>
-      <p>You sit between <b>employees, customers, community</b> and <b>business results</b>.</p>
-      <p class="key">Balance results with the well-being of people.</p>
-    </div>
-    <div class="card">
-      <h3>Case: the Tylenol crisis</h3>
-      <span class="label">Chicago area · 1982</span>
-      <div class="stats">
-        <div><b>31M</b><small>bottles recalled</small></div>
-        <div><b>7</b><small>deaths from tampered capsules</small></div>
-      </div>
-      <ul class="tight">
-        <li>Tampering happened <b>after</b> the factory.</li>
-        <li>Product came back with tamper-resistant packaging.</li>
-      </ul>
-      <span class="label" style="margin-top:12px">What J&amp;J's choice teaches</span>
-      <ul class="tight">
-        <li><b>Safety</b> before profit</li>
-        <li><b>Accountability</b> even when not at fault</li>
-        <li><b>Trust</b> for the long run</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Six steps to decide</h3>
-      <ol class="items">
-        <li><div><b>Name the issue</b></div></li>
-        <li><div><b>List the facts</b></div></li>
-        <li><div><b>Who's affected?</b></div></li>
-        <li><div><b>What would they want?</b></div></li>
-        <li><div><b>Test three options</b> <span>best case · worst case · who gets hurt · values given up · rules</span></div></li>
-        <li><div><b>Decide</b></div></li>
-      </ol>
-      <p class="key">Slow down. Don't just go with your gut.</p>
-    </div>
-    <div class="card wide">
-      <h3>Worked example: the snack batch</h3>
-      <p>A batch has the wrong expiry date and some may already be unsafe. Your manager says: "Just ship it. Nobody will notice."</p>
-      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:10px 0 14px">
-        <div><span class="label">1 · The issue</span><p>Sell something unsafe to save money?</p></div>
-        <div><span class="label">2 · The facts</span><p>Wrong dates · costly recall · kids eat these</p></div>
-        <div><span class="label">3 · Who's affected</span><p>Customers · company · manager · you</p></div>
-        <div><span class="label">4 · What they want</span><p>Safe food · low cost · a trusted brand</p></div>
-      </div>
-      <span class="label">5 · Test three options</span>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Option</th><th>Verdict</th><th>Why</th></tr></thead>
-          <tbody>
-            <tr><td>Ship it anyway</td><td><span class="pill bad">ruled out</span></td><td>Unsafe and illegal.</td></tr>
-            <tr><td>Quietly bin it</td><td><span class="pill warn">risky for you</span></td><td>Done behind your boss's back.</td></tr>
-            <tr><td>Escalate to QC</td><td><span class="pill good">best choice</span></td><td>Protects customers, company and you.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="key">6 · Decide: Option 3, the least harm and the most good. Weigh the scale properly. Don't let fear decide.</p>
-    </div>
-  </div>
-</section>
-
-<section id="s5">
-  <div class="sec-head sub"><span class="num">9.5</span><h2>Moral obligation</h2></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Four things to remember</h3>
-      <ol class="items">
-        <li><div>Self-interest needn't hurt others.</div></li>
-        <li><div>Laws can't guarantee good intentions.</div></li>
-        <li><div>Living ethically is a choice.</div></li>
-        <li><div>Our choices never affect just us.</div></li>
-      </ol>
-    </div>
-    <div class="card">
-      <span class="label">The takeaway</span>
-      <blockquote>Live in harmony, without harming others.</blockquote>
-      <p style="margin-top:12px">Ethics comes from the top. One day, the top will be you.</p>
-    </div>
-  </div>
-</section>
-
-<section id="s6">
-  <div class="sec-head sub"><span class="num">9.6</span><h2>Secret ending: Who am I?</h2><p>Every choice was a reflection of you. Can you see the gap between your thoughts and your actions?</p></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Use yourself as the framework</h3>
-      <p>No theories to memorise. Just practise it, every day.</p>
-      <p class="key">Business is just a practice of expanding yourself.</p>
-    </div>
-    <div class="card">
-      <h3>Hard choices reveal us</h3>
-      <div class="vs">
-        <div class="p"><b>Easy choice</b><small>One option is clearly better.</small></div>
-        <div class="m"><b>Hard choice</b><small>No option is better. Each is a different life.</small></div>
-      </div>
-      <p class="key">Hardship shows your true nature, so be brave. Can't decide? That doesn't make you incompetent.</p>
-    </div>
-    <div class="card">
-      <h3>Choose from your identity</h3>
-      <div class="vs">
-        <div class="p"><b>Not self-esteem</b><small>shifts with your mood</small></div>
-        <div class="m"><b>But identity</b><small>clear · consistent · stable</small></div>
-      </div>
-      <p style="margin-top:10px;font-size:13px;color:var(--ink-soft)">Based on "self-concept clarity", Campbell et al. (1996).</p>
-    </div>
-    <div class="card">
-      <h3>The self is bigger than you think</h3>
-      <p>Your relationships, reputation, work and possessions are part of you too. Self-interest is only a small part of who you are. <span style="color:var(--ink-soft)">(William James, 1890)</span></p>
-      <span class="label" style="margin-top:6px">What's scarier than a bad person?</span>
-      <p><b>An ignorant one.</b> They think they're good, so they never get the chance to change.</p>
-    </div>
-    <div class="card">
-      <h3>After this course, ask yourself</h3>
-      <ol class="items">
-        <li><div>Do my actions match how I see myself?</div></li>
-        <li><div>If not, what needs to change?</div></li>
-        <li><div>Am I as ethical as I think I am?</div></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-  </div>
-</section>
 
 </div>
 
 <div class="view" id="view-rules" role="tabpanel" aria-labelledby="tab-rules" hidden>
+<div class="view-top"><label class="searchline"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="5.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.2 13.2L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="q-rules" type="search" placeholder="Search the game rules, e.g. juror, coins" aria-label="Search the game rules"></label></div>
 
 <section id="r1">
   <div class="sec-head"><span class="num">01</span><h2>The line-up game</h2><p>A quick game to open the session. Very simple, just follow the order. Your choices shape the rest of today's lesson.</p></div>
@@ -1157,6 +1341,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
         <li>Try to balance the two lines.</li>
       </ul>
     </div>
+    <aside class="note t1" aria-label="Tip from Khánh">
+      <div class="note-who"><svg class="mood" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><b>Khánh</b></div>
+      <p>Hi, I'm your host! Choose with your own heart, not your bestie's. And when time's up, freeze like a statue.</p>
+    </aside>
     <div class="card wide">
       <h3>The five questions</h3>
       <ul class="game">
@@ -1201,6 +1389,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
       </div>
       <p class="room-note">Tables marked "NO" on the slide stay empty.</p>
     </div>
+    <aside class="note t2" aria-label="Tip from Ngọc">
+      <div class="note-who"><svg class="mood" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C3B4F0"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18.5 Q14.5 16 17 18.5" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M14 24.5 Q20 29.5 26 24.5" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><b>Ngọc</b></div>
+      <p>Count off in fives, find your table, and say hi to your new team. The jury at the back is watching… kindly.</p>
+    </aside>
   </div>
 </section>
 
@@ -1218,6 +1410,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
       <p>But the results can be thrown off by the type of phone, skin colour and more.</p>
       <p class="key">Your three decisions lead to one of five endings.</p>
     </div>
+    <aside class="note t3" aria-label="Tip from Thảo Linh">
+      <div class="note-who"><svg class="mood" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#86C3F2"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18 Q14.5 20.5 17 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M23 18 Q25.5 20.5 28 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M16.5 25 Q20 27.8 23.5 25" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="29" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><b>Thảo Linh</b></div>
+      <p>Linh's story gets heavy. It's okay to feel it. Both voices in her head are trying to protect someone.</p>
+    </aside>
     <div class="card wide">
       <h3>Characters</h3>
       <div class="tbl">
@@ -1300,6 +1496,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
         <li>The judge decides when it is unfair.</li>
       </ul>
     </div>
+    <aside class="note t1" aria-label="Tip from Raine">
+      <div class="note-who"><svg class="mood" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F48FB6"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M11 13.5 L17 15.8 M29 13.5 L23 15.8" stroke="#2B2F4A" stroke-width="2.4" stroke-linecap="round"/><circle cx="14.5" cy="19.5" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="19.5" r="2.2" fill="#2B2F4A"/><path d="M13.5 25 Q20 29.5 26.5 25" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><b>Raine</b></div>
+      <p>30 seconds goes fast! Lead with your strongest point. Just standing up to speak earns your team a coin.</p>
+    </aside>
     <div class="card wide">
       <h3>The three scenes</h3>
       <div class="scenes">
@@ -1312,7 +1512,81 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 </section>
 
 <section id="r5">
-  <div class="sec-head"><span class="num">05</span><h2>Endings &amp; prizes</h2><p>Five endings. Only one stays level.</p></div>
+  <div class="sec-head"><span class="num">05</span><h2>Coins, trust &amp; the audit</h2><p>Now, the money. Teams earn coins all game, and from Round 2 they can try to buy a juror's ear.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Teams earn coins three ways</h3>
+      <ul class="earn">
+        <li><span class="coin">+1</span><div><b>Stand up and debate.</b> <span>Just for speaking.</span></div></li>
+        <li><span class="coin">+2</span><div><b>Your side wins the verdict.</b> <span>+2 coins for every team on that side.</span></div></li>
+        <li><span class="coin">+1</span><div><b>Sharpest argument of the round.</b> <span>Our lecturer picks one team, and that team gets +1 coin.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="label">From Round 2</span>
+      <h3>Spending coins: the bribe</h3>
+      <ul class="earn">
+        <li><span class="coin neg">−2</span><div><b>Pay any one juror 2 coins</b> <span>during the huddle, and talk to them privately for 30 seconds.</span></div></li>
+        <li><span class="coin neg">−1</span><div><b>Caught offering?</b> <span>A juror can refuse and report it out loud. Then that team pays a 1-coin fine.</span></div></li>
+      </ul>
+      <p class="key">There are no refunds. The juror can take your money and still vote against you. That's how bribes work: there's no contract.</p>
+    </div>
+    <aside class="note t2" aria-label="Tip from Dương">
+      <div class="note-who"><svg class="mood" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F7AE84"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="15.3" cy="17.2" r=".9" fill="#fff"/><circle cx="26.3" cy="17.2" r=".9" fill="#fff"/><path d="M13 26 q1.75 -2 3.5 0 t3.5 0 t3.5 0 t3.5 0" stroke="#2B2F4A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 8 q2.6 3.6 0 5.6 q-2.6 -2 0 -5.6z" fill="#8CCBF5" stroke="#2B2F4A" stroke-width=".8"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><b>Dương</b></div>
+      <p>Thinking about bribing a juror? The audit wheel is spinning… and it remembers everything.</p>
+    </aside>
+    <div class="card">
+      <h3>Jurors: how you play</h3>
+      <div class="trust" aria-label="You start with 3 Trust">
+        <svg viewBox="0 0 24 28" width="30" height="35" aria-hidden="true"><path class="shield" d="M12 1.5 L22 5.5 V13 C22 20 17.5 24.5 12 26.5 C6.5 24.5 2 20 2 13 V5.5 Z"/><path d="M7.5 13.5 L10.8 16.8 L16.5 10.5" stroke="#26315F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 28" width="30" height="35" aria-hidden="true"><path class="shield" d="M12 1.5 L22 5.5 V13 C22 20 17.5 24.5 12 26.5 C6.5 24.5 2 20 2 13 V5.5 Z"/><path d="M7.5 13.5 L10.8 16.8 L16.5 10.5" stroke="#26315F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 28" width="30" height="35" aria-hidden="true"><path class="shield" d="M12 1.5 L22 5.5 V13 C22 20 17.5 24.5 12 26.5 C6.5 24.5 2 20 2 13 V5.5 Z"/><path d="M7.5 13.5 L10.8 16.8 L16.5 10.5" stroke="#26315F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>You start with <b>3 Trust</b></span>
+      </div>
+      <div class="formula"><span>Final score</span><i>=</i><span class="coin sm">¢</span><span>coins</span><i>+</i><span>Trust</span></div>
+      <ul class="checks" style="margin-top:12px">
+        <li>Vote for the side with the best argument: <b>+1 Trust</b> for judging fairly.</li>
+        <li>Take a bribe: you keep the coins, but <b>lose 1 Trust</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="label">From Round 2</span>
+      <h3>The audit wheel</h3>
+      <p>After every verdict, we spin this wheel and audit one juror. If that juror took a bribe this round:</p>
+      <ul class="tight">
+        <li>they give the coins back and lose <b>2 more Trust</b>;</li>
+        <li>the team that paid loses <b>2 coins</b>.</li>
+      </ul>
+      <div class="wheel-wrap">
+        <svg class="wheel" viewBox="0 0 200 204" role="img" aria-label="Audit wheel with five juror seats"><g id="wheel-g" style="transform-box:view-box;transform-origin:100px 108px"><path class="seg-m" d="M100 108 L100.0 18.0 A90 90 0 0 1 185.6 80.2 Z"/><path class="seg-n" d="M100 108 L185.6 80.2 A90 90 0 0 1 152.9 180.8 Z"/><path class="seg-s" d="M100 108 L152.9 180.8 A90 90 0 0 1 47.1 180.8 Z"/><path class="seg-m" d="M100 108 L47.1 180.8 A90 90 0 0 1 14.4 80.2 Z"/><path class="seg-n" d="M100 108 L14.4 80.2 A90 90 0 0 1 100.0 18.0 Z"/><text x="134.1" y="61.1" class="seg-t" text-anchor="middle" dominant-baseline="central">1</text><text x="155.2" y="125.9" class="seg-t" text-anchor="middle" dominant-baseline="central">2</text><text x="100.0" y="166.0" class="seg-t" text-anchor="middle" dominant-baseline="central">3</text><text x="44.8" y="125.9" class="seg-t" text-anchor="middle" dominant-baseline="central">4</text><text x="65.9" y="61.1" class="seg-t" text-anchor="middle" dominant-baseline="central">5</text></g><circle cx="100" cy="108" r="16" class="hub"/><text x="100" y="108" class="hub-t" text-anchor="middle" dominant-baseline="central">?</text><path class="pointer" d="M90 2 L110 2 L100 22 Z"/></svg>
+        <div class="spin-side">
+          <button type="button" id="spin" class="spin-btn">Spin the wheel</button>
+          <p class="spin-out" id="spin-out" aria-live="polite">Who gets audited?</p>
+        </div>
+      </div>
+      <p class="key">So is it worth it? That's your call. Just like real life. 😉</p>
+    </div>
+    <div class="card wide">
+      <h3>Who gains, who loses</h3>
+      <div class="tbl">
+        <table class="ledger">
+          <thead><tr><th>Moment</th><th>Team</th><th>Juror</th></tr></thead>
+          <tbody>
+            <tr><td>Stand up and debate</td><td><span class="plus">+1 coin</span></td><td>–</td></tr>
+            <tr><td>Your side wins the verdict</td><td><span class="plus">+2 coins</span> for every team on that side</td><td>–</td></tr>
+            <tr><td>Sharpest argument of the round</td><td><span class="plus">+1 coin</span> for the one team the lecturer picks</td><td>–</td></tr>
+            <tr><td>Juror votes for the best argument</td><td>–</td><td><span class="plus">+1 Trust</span></td></tr>
+            <tr><td>Bribe paid (from Round 2)</td><td><span class="minus">−2 coins</span></td><td><span class="plus">+2 coins</span> <span class="minus">−1 Trust</span></td></tr>
+            <tr><td>Bribe refused and reported</td><td><span class="minus">−1 coin</span> fine</td><td>–</td></tr>
+            <tr><td>Audit finds a bribe this round</td><td><span class="minus">−2 coins</span></td><td>Gives the coins back, <span class="minus">−2 Trust</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">Jurors' final score is coins plus Trust. Each juror starts with 3 Trust.</p>
+    </div>
+  </div>
+</section>
+
+<section id="r6">
+  <div class="sec-head"><span class="num">06</span><h2>Endings &amp; prizes</h2><p>Five endings. Only one stays level.</p></div>
   <div class="grid">
     <div class="card wide">
       <h3>The five endings</h3>
@@ -1343,6 +1617,44 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 
 </div>
 
+<div class="view" id="view-movies" role="tabpanel" aria-labelledby="tab-movies" hidden>
+
+<section id="movies-list">
+  <div class="caution" role="note">
+    <svg class="mood" viewBox="0 0 40 40" width="44" height="44" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F7AE84"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="15.3" cy="17.2" r=".9" fill="#fff"/><circle cx="26.3" cy="17.2" r=".9" fill="#fff"/><path d="M13 26 q1.75 -2 3.5 0 t3.5 0 t3.5 0 t3.5 0" stroke="#2B2F4A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 8 q2.6 3.6 0 5.6 q-2.6 -2 0 -5.6z" fill="#8CCBF5" stroke="#2B2F4A" stroke-width=".8"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg>
+    <div><b>Only watch this after class.</b><p>These films are part of today's game. Watching them early spoils the choices for you and your team.</p></div>
+  </div>
+  <div class="sec-head"><h2>All movies</h2><p>The three scenes from Team 8's immersive game. Watch them in order.</p></div>
+  <div class="grid films">
+    <div class="card film">
+      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film one</span></div>
+      <h3>Film one</h3>
+      <p>The app is ready. The investors are waiting. Only Linh knows what the numbers really say. One button stands between 80 jobs and the people the app might fail.</p>
+      <a class="watch" data-youtube="PASTE-FILM-ONE-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
+    </div>
+    <div class="card film">
+      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film two</span></div>
+      <h3>Film two</h3>
+      <p>Six months later, Lumen passes the new law with ease. Maybe too easily. Linh knows something the law never asked about. Stay quiet, or say it out loud?</p>
+      <a class="watch" data-youtube="PASTE-FILM-TWO-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
+    </div>
+    <div class="card film">
+      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film three</span></div>
+      <h3>Film three</h3>
+      <p>A phone photo. A name. A diagnosis that came too late. Now there's an offer on the table, and a hotline on Linh's screen. Only one of them can be the answer.</p>
+      <a class="watch" data-youtube="PASTE-FILM-THREE-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
+    </div>
+    <div class="card wide credits">
+      <span class="label">Made by</span>
+      <h3>Team 8 😎</h3>
+      <ul class="crew"><li><svg class="mood" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C3B4F0"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18.5 Q14.5 16 17 18.5" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M14 24.5 Q20 29.5 26 24.5" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Ngọc</span></li><li><svg class="mood" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F48FB6"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M11 13.5 L17 15.8 M29 13.5 L23 15.8" stroke="#2B2F4A" stroke-width="2.4" stroke-linecap="round"/><circle cx="14.5" cy="19.5" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="19.5" r="2.2" fill="#2B2F4A"/><path d="M13.5 25 Q20 29.5 26.5 25" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Raine</span></li><li><svg class="mood" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#86C3F2"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18 Q14.5 20.5 17 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M23 18 Q25.5 20.5 28 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M16.5 25 Q20 27.8 23.5 25" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="29" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Thảo Linh</span></li><li><svg class="mood" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F7AE84"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="15.3" cy="17.2" r=".9" fill="#fff"/><circle cx="26.3" cy="17.2" r=".9" fill="#fff"/><path d="M13 26 q1.75 -2 3.5 0 t3.5 0 t3.5 0 t3.5 0" stroke="#2B2F4A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 8 q2.6 3.6 0 5.6 q-2.6 -2 0 -5.6z" fill="#8CCBF5" stroke="#2B2F4A" stroke-width=".8"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Dương</span></li><li><svg class="mood" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg><span>Khánh</span></li></ul>
+      <p class="src">Game hosts: Raine &amp; Khánh. MANA3021 Business Ethics, VinUniversity.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
 <p class="empty" id="empty" hidden>No card matches that search.</p>
 
 </div>
@@ -1357,12 +1669,18 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 
 <script>
 (function(){
-  const input=document.getElementById('q');
   const empty=document.getElementById('empty');
   const header=document.querySelector('header');
-  const views={course:document.getElementById('view-course'),rules:document.getElementById('view-rules')};
-  const tabs={course:document.getElementById('tab-course'),rules:document.getElementById('tab-rules')};
-  const chips={course:document.getElementById('chips-course'),rules:document.getElementById('chips-rules')};
+  const names=['course','rules','movies'];
+  const views={},tabs={},chips={};
+  names.forEach(n=>{views[n]=document.getElementById('view-'+n);tabs[n]=document.getElementById('tab-'+n);chips[n]=document.getElementById('chips-'+n)});
+
+  document.querySelectorAll('[data-youtube]').forEach(a=>{
+    const u=(a.getAttribute('data-youtube')||'').trim();
+    if(/^https?:\/\//i.test(u)){a.href=u;a.textContent='Watch on YouTube';a.removeAttribute('aria-disabled')}
+    else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.textContent='Link coming soon'}
+  });
+
   const originals=new Map([...document.querySelectorAll('.card')].map(c=>[c,c.innerHTML]));
   let current='course';
   function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
@@ -1370,6 +1688,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
     const texts=[];while(walker.nextNode())texts.push(walker.currentNode);
     texts.forEach(t=>{
+      if(t.parentNode.closest('svg'))return;
       if(!re.test(t.nodeValue))return;re.lastIndex=0;
       const frag=document.createDocumentFragment();let last=0;
       t.nodeValue.replace(re,(m,i)=>{frag.append(t.nodeValue.slice(last,i));const mk=document.createElement('mark');mk.textContent=m;frag.append(mk);last=i+m.length;});
@@ -1377,8 +1696,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     });
   }
   function filter(){
-    const q=input.value.trim();
+    const input=document.getElementById('q-'+current);
     const root=views[current];
+    if(!input){empty.hidden=true;return}
+    const q=input.value.trim();
     let shown=0;
     root.querySelectorAll('.card').forEach(c=>{c.innerHTML=originals.get(c);
       if(!q){c.classList.remove('hidden-match');return}
@@ -1388,26 +1709,44 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
         c.querySelectorAll('details').forEach(d=>{if(d.querySelector('mark'))d.open=true});}
     });
     root.querySelectorAll('section').forEach(s=>{s.hidden=!!q&&!s.querySelector('.card:not(.hidden-match)')});
+    root.querySelectorAll('.note').forEach(n=>{n.hidden=!!q});
     empty.hidden=!q||shown>0;
   }
   function show(name){
     current=name;
-    for(const k in views){const on=k===name;views[k].hidden=!on;chips[k].hidden=!on;tabs[k].setAttribute('aria-selected',on?'true':'false');}
+    names.forEach(k=>{const on=k===name;views[k].hidden=!on;if(chips[k])chips[k].hidden=!on;tabs[k].setAttribute('aria-selected',on?'true':'false')});
     filter();
   }
   function route(scroll){
     const h=decodeURIComponent(location.hash.slice(1));
-    if(!h||h==='course'||h==='ideas'||h==='rules'){
-      show(h==='rules'?'rules':'course');
+    if(!h||h==='course'||h==='ideas'||h==='rules'||h==='movies'){
+      show(h==='rules'||h==='movies'?h:'course');
       if(scroll&&h&&window.scrollY>header.offsetHeight)window.scrollTo(0,header.offsetHeight);
       return;
     }
     const el=document.getElementById(h);
     if(!el){show('course');return}
-    show(el.closest('#view-rules')?'rules':'course');
+    const v=el.closest('.view');
+    show(v?v.id.replace('view-',''):'course');
     if(scroll)el.scrollIntoView();
   }
-  input.addEventListener('input',filter);
+  document.addEventListener('input',e=>{if(e.target.id==='q-course'||e.target.id==='q-rules')filter()});
+
+  let rot=0,spinning=false;
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest('#spin');
+    if(!btn||spinning)return;
+    const g=document.getElementById('wheel-g'),out=document.getElementById('spin-out');
+    if(!g)return;
+    spinning=true;btn.disabled=true;out.textContent='Spinning…';
+    const k=Math.floor(Math.random()*5);
+    const target=(360-(k*72+36))%360;
+    rot+=360*4+((target-(rot%360))+360)%360;
+    g.style.transform='rotate('+rot+'deg)';
+    setTimeout(()=>{out.textContent='Auditing juror '+(k+1)+'!';btn.disabled=false;spinning=false},reduce?0:3100);
+  });
+
   window.addEventListener('hashchange',()=>route(true));
   route(true);
 })();
