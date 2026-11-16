@@ -433,6 +433,31 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   a{color:inherit;text-decoration:none}
   .hello-face{animation:none}
 }
+
+/* v6: films */
+.film{display:grid;gap:12px}
+.film-main{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:18px;align-items:start}
+.film-info h3{font-size:24px;margin:4px 0 8px}
+.player{position:relative;border-radius:12px;overflow:hidden;background:#0E1020;aspect-ratio:16/9;max-width:100%}
+.player video{display:block;width:100%;height:100%;object-fit:contain;background:#0E1020}
+.vfail{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:4px;padding:16px;margin:0;color:#fff;background:rgba(14,16,32,.85);font-size:14px;line-height:1.5}
+.vfail a{color:#fff;font-weight:600}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice > div{border-radius:10px;padding:12px;min-width:0}
+.choice .pr{background:var(--tint-m)} .choice .mo{background:var(--tint-n)}
+.choice span{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.choice b{display:block;font-family:var(--f-display);font-size:17px;margin:2px 0 4px}
+.choice .pr b{color:var(--magenta)} .choice .mo b{color:var(--navy)}
+.choice p{margin:0;font-size:14px}
+.endings-v{margin-top:6px}
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.ev{margin:0;border-radius:12px;padding:8px;min-width:0}
+.ev.pr{background:var(--tint-m)} .ev.mo{background:var(--tint-n)}
+.ev figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 4px 2px;font-size:14px}
+.ev figcaption span{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.ev.pr b{color:var(--magenta)} .ev.mo b{color:var(--navy)}
+@media (max-width:760px){.film-main{grid-template-columns:1fr}}
+@media (max-width:560px){.choice,.ev-grid{grid-template-columns:1fr}}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -1624,26 +1649,59 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     <svg class="mood" viewBox="0 0 40 40" width="44" height="44" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F7AE84"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.7" fill="#2B2F4A"/><circle cx="15.3" cy="17.2" r=".9" fill="#fff"/><circle cx="26.3" cy="17.2" r=".9" fill="#fff"/><path d="M13 26 q1.75 -2 3.5 0 t3.5 0 t3.5 0 t3.5 0" stroke="#2B2F4A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 8 q2.6 3.6 0 5.6 q-2.6 -2 0 -5.6z" fill="#8CCBF5" stroke="#2B2F4A" stroke-width=".8"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg>
     <div><b>Only watch this after class.</b><p>These films are part of today's game. Watching them early spoils the choices for you and your team.</p></div>
   </div>
-  <div class="sec-head"><h2>All movies</h2><p>The three scenes from Team 8's immersive game. Watch them in order.</p></div>
+  <div class="sec-head"><h2>All movies</h2><p>The three scenes from Team 8's immersive game, each with its decision and endings. Watch them in order, and pause to pick A or B before the endings.</p></div>
   <div class="grid films">
-    <div class="card film">
-      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film one</span></div>
-      <h3>Film one</h3>
-      <p>The app is ready. The investors are waiting. Only Linh knows what the numbers really say. One button stands between 80 jobs and the people the app might fail.</p>
-      <a class="watch" data-youtube="PASTE-FILM-ONE-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
-    </div>
-    <div class="card film">
-      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film two</span></div>
-      <h3>Film two</h3>
-      <p>Six months later, Lumen passes the new law with ease. Maybe too easily. Linh knows something the law never asked about. Stay quiet, or say it out loud?</p>
-      <a class="watch" data-youtube="PASTE-FILM-TWO-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
-    </div>
-    <div class="card film">
-      <div class="screen" aria-hidden="true"><span class="play"></span><span class="screen-t">Film three</span></div>
-      <h3>Film three</h3>
-      <p>A phone photo. A name. A diagnosis that came too late. Now there's an offer on the table, and a hotline on Linh's screen. Only one of them can be the answer.</p>
-      <a class="watch" data-youtube="PASTE-FILM-THREE-YOUTUBE-LINK-HERE" target="_blank" rel="noopener">Link coming soon</a>
-    </div>
+    <article class="card wide film" id="film-1">
+      <div class="film-main">
+        <div class="player"><video controls playsinline preload="none" poster="film-1.jpg" aria-label="Film one"><source src="film-1.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div>
+        <div class="film-info">
+          <span class="label">Film one · 4:33</span>
+          <h3>Film one</h3>
+          <p>The app is ready. The investors are waiting. Only Linh knows what the numbers really say. One button stands between 80 jobs and the people the app might fail.</p>
+        </div>
+      </div>
+      <span class="label">The decision</span>
+      <div class="choice"><div class="pr"><span>A · Prudential</span><b>Launch nationwide on time</b><p>Rural patients get a 71% tool now, and the company and its 80 jobs survive.</p></div><div class="mo"><span>B · Moral</span><b>Launch in cities only</b><p>Rural patients get nothing until the model is fixed, and the investors may change the deal.</p></div></div>
+      <div class="endings-v">
+        <span class="label">The two endings · the verdict decides which one plays</span>
+        <div class="ev-grid">
+          <figure class="ev pr"><div class="player"><video controls playsinline preload="none" poster="film-1-ending-prudential.jpg" aria-label="Film one, ending A, prudential"><source src="film-1-ending-prudential.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div><figcaption><b>Ending A · Prudential</b><span>0:17</span></figcaption></figure>
+          <figure class="ev mo"><div class="player"><video controls playsinline preload="none" poster="film-1-ending-moral.jpg" aria-label="Film one, ending B, moral"><source src="film-1-ending-moral.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div><figcaption><b>Ending B · Moral</b><span>0:23</span></figcaption></figure>
+        </div>
+      </div>
+    </article>
+    <article class="card wide film" id="film-2">
+      <div class="film-main">
+        <div class="player"><video controls playsinline preload="none" poster="film-2.jpg" aria-label="Film two"><source src="film-2.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div>
+        <div class="film-info">
+          <span class="label">Film two · 4:32</span>
+          <h3>Film two</h3>
+          <p>Six months later, Lumen passes the new law with ease. Maybe too easily. Linh knows something the law never asked about. Stay quiet, or say it out loud?</p>
+        </div>
+      </div>
+      <span class="label">The decision</span>
+      <div class="choice"><div class="pr"><span>A · Prudential</span><b>Stay within the law</b><p>Report the legal 89% average and sign the HanaCare deal. The money funds free rural scans and the rural fix, but the public isn't told about the gap.</p></div><div class="mo"><span>B · Moral</span><b>Go beyond the law</b><p>Disclose the 74% rural figure to the regulator and the public. People get the truth, but the HanaCare deal and the free rural scans are lost.</p></div></div>
+      <div class="endings-v">
+        <span class="label">The two endings · the verdict decides which one plays</span>
+        <div class="ev-grid">
+          <figure class="ev pr"><div class="player"><video controls playsinline preload="none" poster="film-2-ending-prudential.jpg" aria-label="Film two, ending A, prudential"><source src="film-2-ending-prudential.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div><figcaption><b>Ending A · Prudential</b><span>0:17</span></figcaption></figure>
+          <figure class="ev mo"><div class="player"><video controls playsinline preload="none" poster="film-2-ending-moral.jpg" aria-label="Film two, ending B, moral"><source src="film-2-ending-moral.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div><figcaption><b>Ending B · Moral</b><span>0:25</span></figcaption></figure>
+        </div>
+      </div>
+    </article>
+    <article class="card wide film" id="film-3">
+      <div class="film-main">
+        <div class="player"><video controls playsinline preload="none" poster="film-3.jpg" aria-label="Film three"><source src="film-3.mp4" type="video/mp4"></video><p class="vfail" hidden>This video plays on the class website:<br><a href="https://kaquag.github.io/business-ethics/#movies" target="_blank" rel="noopener">kaquag.github.io/business-ethics</a></p></div>
+        <div class="film-info">
+          <span class="label">Film three · 4:42</span>
+          <h3>Film three</h3>
+          <p>A phone photo. A name. A diagnosis that came too late. Now there's an offer on the table, and a hotline on Linh's screen. Only one of them can be the answer.</p>
+        </div>
+      </div>
+      <span class="label">The decision</span>
+      <div class="choice"><div class="pr"><span>A · Prudential</span><b>Settle privately</b><p>Lan's family gets treatment abroad and 3 billion VND now, the app keeps running, the case stays confidential and Linh keeps her career.</p></div><div class="mo"><span>B · Moral</span><b>Report to the regulator</b><p>The case becomes public and the rules change, but the app is paused for six months, the family's compensation may take years in court, and Linh's career likely ends.</p></div></div>
+      <p class="inclass" style="margin-top:4px">Your three verdicts lead to one of five endings. <a href="#r6">See the five endings in Game rules</a>.</p>
+    </article>
     <div class="card wide credits">
       <span class="label">Made by</span>
       <h3>Team 8 😎</h3>
@@ -1747,6 +1805,13 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     setTimeout(()=>{out.textContent='Auditing juror '+(k+1)+'!';btn.disabled=false;spinning=false},reduce?0:3100);
   });
 
+  document.querySelectorAll('.player video').forEach(v=>{
+    const fail=()=>{const f=v.parentNode.querySelector('.vfail');if(f)f.hidden=false};
+    v.addEventListener('error',fail);
+    v.querySelectorAll('source').forEach(src=>src.addEventListener('error',fail));
+  });
+  document.addEventListener('play',e=>{document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()})},true);
+  document.addEventListener('click',e=>{if(e.target.closest('.tab')&&!e.target.closest('#tab-movies'))document.querySelectorAll('video').forEach(v=>v.pause())});
   window.addEventListener('hashchange',()=>route(true));
   route(true);
 })();
