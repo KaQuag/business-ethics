@@ -458,6 +458,26 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 .ev.pr b{color:var(--magenta)} .ev.mo b{color:var(--navy)}
 @media (max-width:760px){.film-main{grid-template-columns:1fr}}
 @media (max-width:560px){.choice,.ev-grid{grid-template-columns:1fr}}
+
+/* v7: teaching team */
+.teach-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;align-items:start}
+.person{display:grid;gap:12px}
+.person-head{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.person-head h3{font-size:21px;margin:2px 0 2px;text-wrap:balance}
+.person-head .role{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.mono{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;color:#fff;letter-spacing:.02em;box-shadow:0 3px 0 var(--line)}
+.mono-a{background:linear-gradient(135deg,#E2357A,#3A5196)}
+.mono-b{background:linear-gradient(135deg,#2C86DD,#26315F)}
+.person > p{margin:0}
+.facts{margin:0;display:grid;gap:10px}
+.facts dt{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.facts dd{margin:2px 0 0;font-size:14px}
+.profile-link{justify-self:start;font-weight:600;font-size:14px;color:var(--magenta);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
+.profile-link:hover{color:var(--navy)}
+.profile-link:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+.thanks .profile-link{display:inline-block;margin-top:6px}
+@media (max-width:760px){.teach-grid{grid-template-columns:1fr}}
+@media print{#teach{break-before:page}.profile-link{color:var(--magenta)}.thanks .profile-link{display:none}}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -487,6 +507,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   </div>
   <div class="wrap chips" id="chips-course">
     <a href="#w9" class="us"><span>W9</span>Team 8 😎</a>
+    <a href="#teach"><span>Meet</span>Teaching team</a>
     <a href="#map"><span>All</span>At a glance</a>
     <a href="#w1"><span>W1</span>Why ethics</a>
     <a href="#w2"><span>W2</span>Normative theories</a>
@@ -524,7 +545,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
       <span class="label">A note from Team 8</span>
       <p>You may need this for your final group assignments of the case study.</p>
       <span class="label">With thanks</span>
-      <p>To Prof. Dr. Bui Thi Minh Hong and TA Han Khanh Linh, for teaching and supporting us all course long.</p>
+      <p>To Prof. Dr. Bùi Thị Minh Hồng and TA Hán Khánh Linh, for teaching and supporting us all course long.</p>
     </div>
     <div class="pc-qr"><img src="data:image/png;base64,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" alt="QR code to the website"><small>Scan for the website</small></div>
   </div>
@@ -544,9 +565,10 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     </div>
     <div class="card thanks">
       <span class="label">With thanks</span>
-      <h3>Thank you, Prof. Dr. Bui Thi Minh Hong and TA Han Khanh Linh</h3>
+      <h3>Thank you, Prof. Dr. Bùi Thị Minh Hồng and TA Hán Khánh Linh</h3>
       <p>For nine weeks of teaching, patience and good questions, and for trusting each team to lead a week. You showed us that ethics is a choice we make every day.</p>
       <p class="sign">With love, Team 8 😎</p>
+      <a class="profile-link" href="#teach">Meet our teaching team ↓</a>
     </div>
   </div>
   <label class="searchline"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="5.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.2 13.2L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="q-course" type="search" placeholder="Search the course summary, e.g. Kant, CSR, Tylenol" aria-label="Search the course summary"></label>
@@ -810,6 +832,38 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   </div>
 </section>
 
+
+<section id="teach">
+  <div class="sec-head"><h2>Your teaching team</h2><p>The people behind MANA3021, from VinUniversity's College of Business and Management.</p></div>
+  <div class="teach-grid">
+    <article class="card person">
+      <div class="person-head">
+        <span class="mono mono-a" aria-hidden="true">MH</span>
+        <div><span class="label">Lecturer</span><h3>Prof. Dr. Bùi Thị Minh Hồng</h3><p class="role">Professor, College of Business and Management</p></div>
+      </div>
+      <p>A social scientist whose work spans economics, education, communication and management. Before VinUni she spent 20 years teaching at five UK universities, including Southampton and Bath, after seven years at Vietnam National University, Hanoi.</p>
+      <dl class="facts">
+        <div><dt>Research</dt><dd>Learning organisations for innovation and sustainable development, co-innovation, and interdisciplinary work on complex problems such as climate change, smart cities and health governance.</dd></div>
+        <div><dt>Teaches</dt><dd>Human resource development, organisational behaviour, leadership, research methods, emerging issues in business and management.</dd></div>
+        <div><dt>Education</dt><dd>PhD in Human Resource Development, University of East Anglia (UK). MAs from the University of East Anglia and RMIT Vietnam. BAs from Vietnam National University, Hanoi and Hanoi University.</dd></div>
+        <div><dt>Highlights</dt><dd>Forbes Vietnam Top 20 Inspiring Women (2021). Director's Teaching Award, University of Southampton (2015). Former editor of <i>The Learning Organization</i>. 44 publications.</dd></div>
+      </dl>
+      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/bui-thi-minh-hong-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
+    </article>
+    <article class="card person">
+      <div class="person-head">
+        <span class="mono mono-b" aria-hidden="true">KL</span>
+        <div><span class="label">Teaching assistant</span><h3>Hán Khánh Linh</h3><p class="role">MSc, College of Business and Management</p></div>
+      </div>
+      <p>Passionate about education and business. She brings practical experience from operations roles in healthcare, where she worked on administrative coordination, strategic planning and cross-functional projects.</p>
+      <dl class="facts">
+        <div><dt>Education</dt><dd>Master's in International Management with honours, University of Messina (Italy). Bachelor's in Business Administration, Hanoi University.</dd></div>
+        <div><dt>As our TA</dt><dd>Shares academic knowledge and real-world experience, and builds a dynamic, inclusive classroom that helps students reach their potential and get ready for the global job market.</dd></div>
+      </dl>
+      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/han-khanh-linh-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
+    </article>
+  </div>
+</section>
 
 <section id="map">
   <div class="sec-head"><h2>The course at a glance</h2><p>MANA3021 Business Ethics, nine weeks. From week 2, each team teaches one week: week 2 is team 1, through to week 9, team 8 (at the top).</p></div>
@@ -1721,7 +1775,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 <footer>
   <div class="wrap">
     <p><b>References.</b> Campbell, J. D., et al. (1996). Self-concept clarity. <i>Journal of Personality and Social Psychology, 70</i>(1), 141–156. · EBSCO Research Starters, "Seven People Die After Taking Cyanide-Laced Tylenol". · James, W. (1890). <i>The Principles of Psychology</i>, Vol. 1. · Course textbook, Week 9: Business Ethics.</p>
-    <p>Weeks 1–8 summarised from the MANA3021 lecture slides (Prof. Hong T. M. Bui). Week 9 and the game rules from Team 8's deck "Business Ethics". Also cited in the slides: Crane et al. (2019); Lillie (2011); Agudelo et al. (2019); Donaldson &amp; Dunfee (1994); Fadiman (1986); Shaw et al. (2013); Laura, K. (2025), BBC News.</p>
+    <p>Weeks 1–8 summarised from the MANA3021 lecture slides (Prof. Dr. Bùi Thị Minh Hồng). Week 9 and the game rules from Team 8's deck "Business Ethics". Also cited in the slides: Crane et al. (2019); Lillie (2011); Agudelo et al. (2019); Donaldson &amp; Dunfee (1994); Fadiman (1986); Shaw et al. (2013); Laura, K. (2025), BBC News.</p>
   </div>
 </footer>
 
