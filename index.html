@@ -478,6 +478,162 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 .thanks .profile-link{display:inline-block;margin-top:6px}
 @media (max-width:760px){.teach-grid{grid-template-columns:1fr}}
 @media print{#teach{break-before:page}.profile-link{color:var(--magenta)}.thanks .profile-link{display:none}}
+
+/* v8: welcome tab */
+nav a.tab span{color:inherit;font-family:inherit;margin-right:0}
+.t-short{display:none}
+nav a.tab-welcome{background:var(--tint-m);color:var(--magenta)}
+nav a.tab-welcome[aria-selected="true"]{background:var(--magenta);color:var(--bg)}
+.welcome{position:relative;overflow:hidden;background:var(--tint-m);border:1.5px solid var(--line);border-radius:24px;padding:30px clamp(16px,3.4vw,40px) 24px;display:grid;gap:22px}
+.welcome::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,var(--magenta) 1px,transparent 1.6px);background-size:22px 22px;opacity:.09;pointer-events:none}
+.wl-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:center}
+.wl-text{display:grid;gap:10px}
+.wl-text h2{font-family:var(--f-display);font-weight:800;font-size:clamp(36px,5.4vw,60px);line-height:1;letter-spacing:-.02em;margin:4px 0 2px;color:var(--ink);text-wrap:balance}
+.wl-text h2 em{font-style:normal;color:var(--magenta)}
+.wl-lead{font-size:19px;font-weight:600;margin:0;color:var(--ink);max-width:40ch;text-wrap:balance}
+.wl-text p{margin:0;max-width:62ch}
+.wl-text > p:not(.wl-lead){color:var(--ink-soft)}
+.wl-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn-solid,.btn-ghost{display:inline-flex;align-items:center;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:999px}
+.btn-solid{background:var(--ink);color:var(--bg);box-shadow:0 3px 0 var(--magenta)}
+.btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--magenta)}
+.btn-solid:focus-visible,.btn-ghost:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+.btn-solid:hover,.btn-ghost:hover{transform:translateY(-1px)}
+.wl-art{display:grid;place-items:center}
+.scale-art{width:100%;max-width:360px;height:auto}
+.scale-art .blob{fill:var(--surface);opacity:.75}
+.scale-art .ink-fill{fill:var(--ink)}
+.scale-art .knob{fill:var(--sun)}
+.scale-art .string{stroke:var(--ink-soft);stroke-width:2;fill:none}
+.scale-art .pan-me{fill:var(--magenta)}
+.scale-art .pan-others{fill:var(--sky)}
+.scale-art .pan-t{font-family:var(--f-body);font-weight:700;font-size:12px;letter-spacing:.14em;fill:var(--ink-soft)}
+.scale-art .spark{fill:var(--sun)}
+.scale-art .beam,.scale-art .pan{transform-box:view-box}
+.scale-art .beam{transform-origin:172px 74px;animation:tilt 5s ease-in-out infinite}
+.scale-art .pan-l{animation:pan-l 5s ease-in-out infinite}
+.scale-art .pan-r{animation:pan-r 5s ease-in-out infinite}
+.scale-art .spark{transform-box:fill-box;transform-origin:center;animation:twinkle 2.6s ease-in-out infinite}
+.scale-art .s2{animation-delay:.8s} .scale-art .s3{animation-delay:1.5s}
+@keyframes tilt{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes pan-l{0%,100%{transform:translateY(-5.5px)}50%{transform:translateY(5.5px)}}
+@keyframes pan-r{0%,100%{transform:translateY(5.5px)}50%{transform:translateY(-5.5px)}}
+@keyframes twinkle{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.55);opacity:.5}}
+.wl-weeks{position:relative;display:grid;gap:10px;border-top:1.5px dashed var(--line);padding-top:16px}
+.dots{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;position:relative}
+.dots::before{content:"";position:absolute;left:5%;right:5%;top:19px;height:2px;background:var(--line)}
+.dots a{position:relative;display:grid;justify-items:center;gap:6px;text-decoration:none;color:var(--ink-soft);font-size:12px;text-align:center}
+.dots b{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:2px solid var(--line);font-family:var(--f-display);font-weight:800;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums;transition:transform .15s}
+.dots a:hover b,.dots a:focus-visible b{border-color:var(--magenta);transform:translateY(-2px)}
+.dots a:focus-visible{outline:none}
+.dots a.us b{background:var(--magenta);border-color:var(--magenta);color:var(--bg)}
+.dots a.us span{color:var(--magenta);font-weight:600}
+#view-welcome #teach .person{border-top:4px solid var(--magenta)}
+#view-welcome #teach .person:nth-child(2){border-top-color:var(--sky)}
+.mono{width:72px;height:72px;font-size:24px;box-shadow:0 0 0 4px var(--surface),0 0 0 6px var(--tint-m)}
+@media (max-width:760px){
+  .wl-grid{grid-template-columns:1fr}
+  .wl-art{order:-1}
+  .scale-art{max-width:260px}
+  .dots{grid-template-columns:repeat(5,minmax(0,1fr));row-gap:14px}
+  .dots::before{display:none}
+}
+@media (max-width:480px){
+  .t-long{display:none}
+  .t-short{display:inline}
+  nav a.tab{padding:7px 11px}
+}
+@media (prefers-reduced-motion:reduce){
+  .scale-art .beam,.scale-art .pan,.scale-art .spark{animation:none}
+}
+@media print{
+  #view-welcome[hidden],#view-course[hidden]{display:block!important}
+  #view-welcome{margin-bottom:24px}
+  .wl-cta,.wl-weeks,.thanks .profile-link{display:none!important}
+  .welcome{break-inside:avoid}
+  .scale-art .beam,.scale-art .pan,.scale-art .spark{animation:none}
+  .print-cover{display:block}
+  .wl-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+  .wl-art{order:0}
+  .scale-art{max-width:240px}
+  #teach{break-before:auto!important}
+  .teach-grid{grid-template-columns:1fr 1fr}
+  .person .facts dd,.person > p{font-size:12.5px}
+}
+
+/* v9: motion */
+:root{--lift:rgba(38,49,95,.26)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lift:rgba(0,0,0,.55)}}
+:root[data-theme="dark"]{--lift:rgba(0,0,0,.55)}
+
+/* sliding tab pill */
+.tabs{position:relative;isolation:isolate}
+.tab-pill{position:absolute;top:3px;bottom:3px;left:0;width:0;border-radius:999px;background:var(--ink);z-index:-1}
+.tabs.pill-ready .tab-pill{transition:transform .38s cubic-bezier(.3,1.25,.45,1),width .38s cubic-bezier(.3,1.25,.45,1),background-color .25s}
+.tabs.has-pill a.tab[aria-selected="true"]{background:transparent}
+.tabs.welcome-on .tab-pill{background:var(--magenta)}
+nav a.tab{transition:color .25s,transform .15s}
+
+/* page (tab) change */
+@keyframes rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+.view.entering > :nth-child(-n+7){animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.view.entering > :nth-child(2){animation-delay:.05s}
+.view.entering > :nth-child(3){animation-delay:.1s}
+.view.entering > :nth-child(4){animation-delay:.15s}
+.view.entering > :nth-child(5){animation-delay:.2s}
+.view.entering > :nth-child(6){animation-delay:.25s}
+.view.entering > :nth-child(7){animation-delay:.3s}
+
+/* cards rise gently as you scroll to them */
+.rv-in{animation:rise .55s cubic-bezier(.2,.7,.2,1) both}
+details.reveal[open] > :not(summary){animation:rise .35s ease both}
+
+/* hover lift */
+@media (hover:hover) and (pointer:fine){
+  .card,.note{transition:transform .22s ease,box-shadow .22s ease}
+  .grid > .card:not(.wide):not(.film):hover,.teach-grid > .card:hover,.top-row > .card:hover{transform:translateY(-3px);box-shadow:0 12px 24px -14px var(--lift)}
+  .note:hover{box-shadow:0 10px 18px -10px var(--lift)}
+  .earn li:hover .coin{transform:rotateY(360deg)}
+  .note:hover .mood,.crew li:hover .mood,.caution:hover .mood{animation:wiggle .55s ease}
+  .dl:hover svg{animation:nudge .8s ease-in-out infinite}
+}
+.coin{transition:transform .6s ease}
+.mood{transform-box:fill-box;transform-origin:center}
+@keyframes wiggle{0%,100%{rotate:0deg}25%{rotate:-12deg}60%{rotate:9deg}}
+@keyframes nudge{0%,100%{translate:0 0}50%{translate:0 3px}}
+
+/* button press and ripple */
+.dl,.btn-solid,.btn-ghost,.watch,.spin-btn,.play-btn{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.dl,.btn-solid,.btn-ghost,.watch,.spin-btn,.chips a{transition:transform .15s ease,box-shadow .15s ease,background-color .2s,border-color .2s,color .2s}
+.dl:active,.btn-solid:active,.btn-ghost:active,.watch:not([aria-disabled="true"]):active,.spin-btn:active,.chips a:active,nav a.tab:active,.to-top:active{transform:scale(.95)}
+.ripple{position:absolute;border-radius:50%;pointer-events:none;background:currentColor;opacity:.28;transform:scale(0);animation:ripple .6s ease-out forwards}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+
+/* active chip follows your scroll */
+.chips{position:relative}
+.chips a.active{border-color:var(--magenta);background:var(--tint-m)}
+.chips a.us.active{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--magenta)}
+
+/* video: poster to film */
+.play-btn{position:absolute;left:50%;top:50%;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;border:0;background:rgba(255,255,255,.93);box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer;display:grid;place-items:center;transition:transform .28s cubic-bezier(.3,1.4,.5,1),opacity .28s;z-index:2}
+.play-btn::after{content:"";margin-left:6px;border-left:22px solid #26315F;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.ev .play-btn{width:50px;height:50px;margin:-25px 0 0 -25px}
+.ev .play-btn::after{margin-left:4px;border-left-width:15px;border-top-width:9px;border-bottom-width:9px}
+.play-btn:focus-visible{outline:3px solid var(--magenta);outline-offset:3px}
+.player video{transition:transform .6s ease,filter .4s ease}
+.player:not(.is-playing) video{filter:saturate(.9)}
+@media (hover:hover){.player:not(.is-playing):hover video{transform:scale(1.035)}.player:hover .play-btn{transform:scale(1.08)}}
+.player.is-playing .play-btn,.player.is-failed .play-btn{opacity:0;transform:scale(.5);pointer-events:none}
+
+/* back to top */
+.to-top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);box-shadow:0 8px 18px -8px var(--lift);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+@media print{.to-top,.play-btn,.tab-pill{display:none!important}.rv-in,.view.entering > *{animation:none!important}}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -500,14 +656,14 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 <nav aria-label="Page">
   <div class="wrap navrow">
     <div class="tabs" role="tablist" aria-label="Views">
-      <a href="#course" class="tab" id="tab-course" role="tab" aria-controls="view-course" aria-selected="true">Course summary</a>
+      <a href="#welcome" class="tab tab-welcome" id="tab-welcome" role="tab" aria-controls="view-welcome" aria-selected="true">Welcome</a>
+      <a href="#course" class="tab" id="tab-course" role="tab" aria-controls="view-course" aria-selected="false"><span class="t-long">Course summary</span><span class="t-short">Summary</span></a>
       <a href="#rules" class="tab" id="tab-rules" role="tab" aria-controls="view-rules" aria-selected="false">Game rules</a>
-      <a href="#movies" class="tab" id="tab-movies" role="tab" aria-controls="view-movies" aria-selected="false">All movies</a>
+      <a href="#movies" class="tab" id="tab-movies" role="tab" aria-controls="view-movies" aria-selected="false"><span class="t-long">All movies</span><span class="t-short">Movies</span></a>
     </div>
   </div>
-  <div class="wrap chips" id="chips-course">
+  <div class="wrap chips" id="chips-course" hidden>
     <a href="#w9" class="us"><span>W9</span>Team 8 😎</a>
-    <a href="#teach"><span>Meet</span>Teaching team</a>
     <a href="#map"><span>All</span>At a glance</a>
     <a href="#w1"><span>W1</span>Why ethics</a>
     <a href="#w2"><span>W2</span>Normative theories</a>
@@ -530,8 +686,6 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
 
 <main>
 <div class="wrap">
-<div class="view" id="view-course" role="tabpanel" aria-labelledby="tab-course">
-
 <div class="print-cover">
   <span class="label">VinUniversity · MANA3021 Business Ethics</span>
   <h1>Business Ethics<br><span>Course summary</span></h1>
@@ -550,6 +704,86 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     <div class="pc-qr"><img src="data:image/png;base64,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" alt="QR code to the website"><small>Scan for the website</small></div>
   </div>
 </div>
+
+
+<div class="view" id="view-welcome" role="tabpanel" aria-labelledby="tab-welcome">
+
+<section id="about" class="welcome">
+  <div class="wl-grid">
+    <div class="wl-text">
+      <span class="label">MANA3021 · VinUniversity · College of Business and Management</span>
+      <h2>Welcome to <em>Business Ethics</em></h2>
+      <p class="wl-lead">How do businesses, and the people in them, decide what's right when the right thing isn't obvious?</p>
+      <p>Over nine weeks we move from the basics of moral reasoning, through the major ethical theories, to the places where business meets society: corporate responsibility, global markets, the environment, the workplace, and leadership. From week 2, each student team teaches one week.</p>
+      <div class="wl-cta">
+        <a class="btn-solid" href="#course">Open the course summary</a>
+        <a class="btn-ghost" href="#w9">Jump to Team 8 😎</a>
+      </div>
+    </div>
+    <div class="wl-art"><svg class="scale-art" viewBox="0 0 340 270" role="img" aria-label="A balance scale weighing me against others">
+  <circle class="blob" cx="172" cy="150" r="112"/>
+  <path class="spark s1" d="M52 43 Q53.62 50.38 61 52 Q53.62 53.62 52 61 Q50.38 53.62 43 52 Q50.38 50.38 52 43Z"/><path class="spark s2" d="M296 33 Q297.26 38.74 303 40 Q297.26 41.26 296 47 Q294.74 41.26 289 40 Q294.74 38.74 296 33Z"/><path class="spark s3" d="M26 218 Q27.08 222.92 32 224 Q27.08 225.08 26 230 Q24.92 225.08 20 224 Q24.92 222.92 26 218Z"/>
+  <path class="ink-fill" d="M138 252 L206 252 L196 236 L148 236 Z"/>
+  <rect class="ink-fill" x="168" y="72" width="8" height="166" rx="3"/>
+  <g class="beam">
+    <rect class="ink-fill" x="54" y="70" width="236" height="8" rx="4"/>
+  </g>
+  <circle class="knob" cx="172" cy="66" r="10"/>
+  <g class="pan pan-l">
+    <path class="string" d="M70 76 L44 158 M70 76 L96 158"/>
+    <svg x="46" y="118" width="48" height="48" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#F6C445"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><circle cx="14.5" cy="18" r="2.2" fill="#2B2F4A"/><circle cx="25.5" cy="18" r="2.2" fill="#2B2F4A"/><path d="M13.5 24 Q20 30.5 26.5 24" stroke="#2B2F4A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="10.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="29.5" cy="23.5" rx="2.4" ry="1.4" fill="#F07AA5" opacity=".5"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg>
+    <path class="pan-me" d="M32 158 Q70 188 108 158 Z"/>
+    <text class="pan-t" x="70" y="206" text-anchor="middle">ME</text>
+  </g>
+  <g class="pan pan-r">
+    <path class="string" d="M274 76 L248 158 M274 76 L300 158"/>
+    <svg x="250" y="118" width="48" height="48" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#86C3F2"/><circle cx="20" cy="20" r="17.3" fill="none" stroke="#2B2F4A" stroke-opacity=".14" stroke-width="1.4"/><path d="M12 18 Q14.5 20.5 17 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M23 18 Q25.5 20.5 28 18" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M16.5 25 Q20 27.8 23.5 25" stroke="#2B2F4A" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="29" cy="23" rx="2.8" ry="1.6" fill="#F07AA5" opacity=".6"/><ellipse cx="13" cy="10.5" rx="6" ry="3.2" fill="#fff" opacity=".55" transform="rotate(-25 13 10.5)"/></svg>
+    <path class="pan-others" d="M236 158 Q274 188 312 158 Z"/>
+    <text class="pan-t" x="274" y="206" text-anchor="middle">OTHERS</text>
+  </g>
+</svg></div>
+  </div>
+  <div class="wl-weeks">
+    <span class="label">Nine weeks, eight student teams</span>
+    <ol class="dots"><li><a href="#w1"><b>1</b><span>Why ethics</span></a></li><li><a href="#w2"><b>2</b><span>Theories</span></a></li><li><a href="#w3"><b>3</b><span>Applying</span></a></li><li><a href="#w4"><b>4</b><span>CSR</span></a></li><li><a href="#w5"><b>5</b><span>Global</span></a></li><li><a href="#w6"><b>6</b><span>Environment</span></a></li><li><a href="#w7"><b>7</b><span>At work</span></a></li><li><a href="#w8"><b>8</b><span>Leadership</span></a></li><li><a href="#w9" class="us"><b>9</b><span>Hard choices</span></a></li></ol>
+  </div>
+</section>
+
+<section id="teach">
+  <div class="sec-head"><h2>Your teaching team</h2><p>The people behind MANA3021, from VinUniversity's College of Business and Management.</p></div>
+  <div class="teach-grid">
+    <article class="card person">
+      <div class="person-head">
+        <span class="mono mono-a" aria-hidden="true">MH</span>
+        <div><span class="label">Lecturer</span><h3>Prof. Dr. Bùi Thị Minh Hồng</h3><p class="role">Professor, College of Business and Management</p></div>
+      </div>
+      <p>A social scientist whose work spans economics, education, communication and management. Before VinUni she spent 20 years teaching at five UK universities, including Southampton and Bath, after seven years at Vietnam National University, Hanoi.</p>
+      <dl class="facts">
+        <div><dt>Research</dt><dd>Learning organisations for innovation and sustainable development, co-innovation, and interdisciplinary work on complex problems such as climate change, smart cities and health governance.</dd></div>
+        <div><dt>Teaches</dt><dd>Human resource development, organisational behaviour, leadership, research methods, emerging issues in business and management.</dd></div>
+        <div><dt>Education</dt><dd>PhD in Human Resource Development, University of East Anglia (UK). MAs from the University of East Anglia and RMIT Vietnam. BAs from Vietnam National University, Hanoi and Hanoi University.</dd></div>
+        <div><dt>Highlights</dt><dd>Forbes Vietnam Top 20 Inspiring Women (2021). Director's Teaching Award, University of Southampton (2015). Former editor of <i>The Learning Organization</i>. 44 publications.</dd></div>
+      </dl>
+      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/bui-thi-minh-hong-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
+    </article>
+    <article class="card person">
+      <div class="person-head">
+        <span class="mono mono-b" aria-hidden="true">KL</span>
+        <div><span class="label">Teaching assistant</span><h3>Hán Khánh Linh</h3><p class="role">MSc, College of Business and Management</p></div>
+      </div>
+      <p>Passionate about education and business. She brings practical experience from operations roles in healthcare, where she worked on administrative coordination, strategic planning and cross-functional projects.</p>
+      <dl class="facts">
+        <div><dt>Education</dt><dd>Master's in International Management with honours, University of Messina (Italy). Bachelor's in Business Administration, Hanoi University.</dd></div>
+        <div><dt>As our TA</dt><dd>Shares academic knowledge and real-world experience, and builds a dynamic, inclusive classroom that helps students reach their potential and get ready for the global job market.</dd></div>
+      </dl>
+      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/han-khanh-linh-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
+    </article>
+  </div>
+</section>
+
+</div>
+
+<div class="view" id="view-course" role="tabpanel" aria-labelledby="tab-course" hidden>
 
 <div class="view-top">
   <div class="top-row">
@@ -832,38 +1066,6 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   </div>
 </section>
 
-
-<section id="teach">
-  <div class="sec-head"><h2>Your teaching team</h2><p>The people behind MANA3021, from VinUniversity's College of Business and Management.</p></div>
-  <div class="teach-grid">
-    <article class="card person">
-      <div class="person-head">
-        <span class="mono mono-a" aria-hidden="true">MH</span>
-        <div><span class="label">Lecturer</span><h3>Prof. Dr. Bùi Thị Minh Hồng</h3><p class="role">Professor, College of Business and Management</p></div>
-      </div>
-      <p>A social scientist whose work spans economics, education, communication and management. Before VinUni she spent 20 years teaching at five UK universities, including Southampton and Bath, after seven years at Vietnam National University, Hanoi.</p>
-      <dl class="facts">
-        <div><dt>Research</dt><dd>Learning organisations for innovation and sustainable development, co-innovation, and interdisciplinary work on complex problems such as climate change, smart cities and health governance.</dd></div>
-        <div><dt>Teaches</dt><dd>Human resource development, organisational behaviour, leadership, research methods, emerging issues in business and management.</dd></div>
-        <div><dt>Education</dt><dd>PhD in Human Resource Development, University of East Anglia (UK). MAs from the University of East Anglia and RMIT Vietnam. BAs from Vietnam National University, Hanoi and Hanoi University.</dd></div>
-        <div><dt>Highlights</dt><dd>Forbes Vietnam Top 20 Inspiring Women (2021). Director's Teaching Award, University of Southampton (2015). Former editor of <i>The Learning Organization</i>. 44 publications.</dd></div>
-      </dl>
-      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/bui-thi-minh-hong-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
-    </article>
-    <article class="card person">
-      <div class="person-head">
-        <span class="mono mono-b" aria-hidden="true">KL</span>
-        <div><span class="label">Teaching assistant</span><h3>Hán Khánh Linh</h3><p class="role">MSc, College of Business and Management</p></div>
-      </div>
-      <p>Passionate about education and business. She brings practical experience from operations roles in healthcare, where she worked on administrative coordination, strategic planning and cross-functional projects.</p>
-      <dl class="facts">
-        <div><dt>Education</dt><dd>Master's in International Management with honours, University of Messina (Italy). Bachelor's in Business Administration, Hanoi University.</dd></div>
-        <div><dt>As our TA</dt><dd>Shares academic knowledge and real-world experience, and builds a dynamic, inclusive classroom that helps students reach their potential and get ready for the global job market.</dd></div>
-      </dl>
-      <a class="profile-link" href="https://vinuni.edu.vn/vi/people/han-khanh-linh-2/" target="_blank" rel="noopener">Full profile on VinUni ↗</a>
-    </article>
-  </div>
-</section>
 
 <section id="map">
   <div class="sec-head"><h2>The course at a glance</h2><p>MANA3021 Business Ethics, nine weeks. From week 2, each team teaches one week: week 2 is team 1, through to week 9, team 8 (at the top).</p></div>
@@ -1779,11 +1981,15 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   </div>
 </footer>
 
+<button type="button" class="to-top" id="to-top" aria-label="Back to top"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M10 16V4m0 0L5 9m5-5l5 5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
 <script>
 (function(){
   const empty=document.getElementById('empty');
   const header=document.querySelector('header');
-  const names=['course','rules','movies'];
+  const rm=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  let lastSwitch=performance.now(),firstShow=true;
+  const names=['welcome','course','rules','movies'];
   const views={},tabs={},chips={};
   names.forEach(n=>{views[n]=document.getElementById('view-'+n);tabs[n]=document.getElementById('tab-'+n);chips[n]=document.getElementById('chips-'+n)});
 
@@ -1794,7 +2000,7 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   });
 
   const originals=new Map([...document.querySelectorAll('.card')].map(c=>[c,c.innerHTML]));
-  let current='course';
+  let current='welcome';
   function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
   function highlight(node,re){
     const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
@@ -1825,21 +2031,29 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
     empty.hidden=!q||shown>0;
   }
   function show(name){
+    const changed=name!==current;
     current=name;
     names.forEach(k=>{const on=k===name;views[k].hidden=!on;if(chips[k])chips[k].hidden=!on;tabs[k].setAttribute('aria-selected',on?'true':'false')});
     filter();
+    movePill();
+    if(changed&&!firstShow&&!rm){
+      const v=views[name];v.classList.remove('entering');void v.offsetWidth;v.classList.add('entering');
+      clearTimeout(v._t);v._t=setTimeout(()=>v.classList.remove('entering'),1000);
+    }
+    if(changed||firstShow)lastSwitch=performance.now();
+    firstShow=false;
   }
   function route(scroll){
     const h=decodeURIComponent(location.hash.slice(1));
-    if(!h||h==='course'||h==='ideas'||h==='rules'||h==='movies'){
-      show(h==='rules'||h==='movies'?h:'course');
+    if(!h||h==='welcome'||h==='course'||h==='ideas'||h==='rules'||h==='movies'){
+      show(!h?'welcome':(h==='ideas'?'course':h));
       if(scroll&&h&&window.scrollY>header.offsetHeight)window.scrollTo(0,header.offsetHeight);
       return;
     }
     const el=document.getElementById(h);
-    if(!el){show('course');return}
+    if(!el){show('welcome');return}
     const v=el.closest('.view');
-    show(v?v.id.replace('view-',''):'course');
+    show(v?v.id.replace('view-',''):'welcome');
     if(scroll)el.scrollIntoView();
   }
   document.addEventListener('input',e=>{if(e.target.id==='q-course'||e.target.id==='q-rules')filter()});
@@ -1866,6 +2080,65 @@ table.dec th[scope="row"]{font-size:13px;letter-spacing:0;text-transform:none;co
   });
   document.addEventListener('play',e=>{document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()})},true);
   document.addEventListener('click',e=>{if(e.target.closest('.tab')&&!e.target.closest('#tab-movies'))document.querySelectorAll('video').forEach(v=>v.pause())});
+  /* sliding pill under the active tab */
+  const tabsEl=document.querySelector('.tabs');
+  const pill=document.createElement('span');pill.className='tab-pill';pill.setAttribute('aria-hidden','true');
+  tabsEl.prepend(pill);tabsEl.classList.add('has-pill');
+  function movePill(){const t=tabs[current];if(!t)return;pill.style.width=t.offsetWidth+'px';pill.style.transform='translateX('+t.offsetLeft+'px)';tabsEl.classList.toggle('welcome-on',current==='welcome')}
+  window.addEventListener('resize',movePill);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(movePill);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>tabsEl.classList.add('pill-ready')));
+
+  /* ripple on buttons */
+  document.addEventListener('pointerdown',e=>{
+    if(rm)return;
+    const b=e.target.closest('.dl,.btn-solid,.btn-ghost,.watch:not([aria-disabled="true"]),.spin-btn,.play-btn');
+    if(!b)return;
+    const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*2.2,sp=document.createElement('span');
+    sp.className='ripple';sp.style.width=sp.style.height=d+'px';
+    sp.style.left=(e.clientX-r.left-d/2)+'px';sp.style.top=(e.clientY-r.top-d/2)+'px';
+    b.appendChild(sp);setTimeout(()=>sp.remove(),650);
+  });
+
+  /* video players: a play button that fades away into the film */
+  document.querySelectorAll('.player').forEach(p=>{
+    const v=p.querySelector('video');if(!v)return;
+    const b=document.createElement('button');b.type='button';b.className='play-btn';
+    b.setAttribute('aria-label','Play '+(v.getAttribute('aria-label')||'video'));
+    b.addEventListener('click',()=>{const pr=v.play();if(pr&&pr.catch)pr.catch(()=>{})});
+    p.appendChild(b);
+    v.addEventListener('play',()=>p.classList.add('is-playing'));
+    v.addEventListener('ended',()=>p.classList.remove('is-playing'));
+    const bad=()=>p.classList.add('is-failed');
+    v.addEventListener('error',bad);v.querySelectorAll('source').forEach(x=>x.addEventListener('error',bad));
+  });
+
+  /* cards rise in as they scroll into view (already visible at rest) */
+  if('IntersectionObserver' in window&&!rm){
+    const io=new IntersectionObserver(entries=>{entries.forEach(en=>{
+      if(!en.isIntersecting)return;const el=en.target;io.unobserve(el);
+      if(performance.now()-lastSwitch<500)return;
+      el.classList.add('rv-in');
+    })},{rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.card,.note,.week-head,.star-head,.wl-weeks').forEach(el=>io.observe(el));
+  }
+
+  /* the chip for the section you're reading lights up */
+  if('IntersectionObserver' in window){
+    const spy=new IntersectionObserver(entries=>{entries.forEach(en=>{
+      if(!en.isIntersecting)return;const row=chips[current];if(!row)return;
+      const a=row.querySelector('a[href="#'+en.target.id+'"]');if(!a)return;
+      row.querySelectorAll('a.active').forEach(x=>x.classList.remove('active'));a.classList.add('active');
+      row.scrollTo({left:a.offsetLeft-row.clientWidth/2+a.offsetWidth/2,behavior:rm?'auto':'smooth'});
+    })},{rootMargin:'-30% 0px -65% 0px'});
+    document.querySelectorAll('#view-course > section[id],#view-rules > section[id]').forEach(x=>spy.observe(x));
+  }
+
+  /* back to top */
+  const tt=document.getElementById('to-top');let tick=false;
+  window.addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{tt.classList.toggle('show',window.scrollY>900);tick=false})},{passive:true});
+  tt.addEventListener('click',()=>window.scrollTo({top:0,behavior:rm?'auto':'smooth'}));
+
   window.addEventListener('hashchange',()=>route(true));
   route(true);
 })();
