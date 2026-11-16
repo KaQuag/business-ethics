@@ -634,11 +634,123 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 @media print{.to-top,.play-btn,.tab-pill{display:none!important}.rv-in,.view.entering > *{animation:none!important}}
+
+/* v10: bold motion + decoration */
+.chips a.us.active{background:var(--magenta);color:var(--bg)}
+ul.checks li{display:block;position:relative;padding-left:28px}
+ul.checks li::before{position:absolute;left:2px;top:0}
+:root{--aur-o:.24;--glass:rgba(251,247,238,.72)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--aur-o:.17;--glass:rgba(20,23,40,.72)}}
+:root[data-theme="dark"]{--aur-o:.17;--glass:rgba(20,23,40,.72)}
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+
+/* drifting colour background */
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(80px);opacity:var(--aur-o);will-change:transform}
+.aurora i:nth-child(1){width:48vmax;height:48vmax;left:-14vmax;top:-12vmax;background:var(--magenta);animation:drift1 28s ease-in-out infinite alternate}
+.aurora i:nth-child(2){width:42vmax;height:42vmax;right:-16vmax;top:18vh;background:var(--sky);animation:drift2 34s ease-in-out infinite alternate}
+.aurora i:nth-child(3){width:38vmax;height:38vmax;left:28vw;bottom:-20vmax;background:var(--sun);animation:drift3 31s ease-in-out infinite alternate}
+.aurora::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,var(--ink-soft) .8px,transparent 1.3px);background-size:26px 26px;opacity:.12}
+@keyframes drift1{to{transform:translate(18vw,22vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-22vw,26vh) scale(.9)}}
+@keyframes drift3{to{transform:translate(-16vw,-30vh) scale(1.2)}}
+
+/* glass nav + reading progress */
+nav{background:var(--glass);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--magenta),var(--sun),var(--sky));transform-origin:0 50%;transform:scaleX(0);pointer-events:none;border-radius:0 3px 3px 0}
+@supports (animation-timeline: scroll()){.progress{animation:prog linear both;animation-timeline:scroll(root block)}}
+@keyframes prog{to{transform:scaleX(1)}}
+
+/* header: flowing stripe and shimmering title */
+.stripe{background:linear-gradient(90deg,var(--sky),var(--magenta),var(--sun),var(--sky));background-size:300% 100%;animation:flow 9s linear infinite}
+@keyframes flow{to{background-position:300% 0}}
+.title .e{background:linear-gradient(100deg,var(--magenta) 0%,var(--magenta) 40%,#F9A8C9 50%,var(--magenta) 60%,var(--magenta) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+
+/* full-page slide between tabs (View Transitions) */
+main{view-transition-name:page}
+::view-transition-old(root){display:none}
+::view-transition-new(root){animation:none}
+::view-transition-group(page){animation:none}
+::view-transition-old(page){animation:vt-out .34s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(page){animation:vt-in .62s cubic-bezier(.16,1,.3,1) both}
+html.vt-back::view-transition-old(page){animation-name:vt-out-back}
+html.vt-back::view-transition-new(page){animation-name:vt-in-back}
+@keyframes vt-out{to{opacity:0;transform:translateX(-90px) scale(.96);filter:blur(3px)}}
+@keyframes vt-in{from{opacity:0;transform:translateX(120px) scale(.96)}}
+@keyframes vt-out-back{to{opacity:0;transform:translateX(90px) scale(.96);filter:blur(3px)}}
+@keyframes vt-in-back{from{opacity:0;transform:translateX(-120px) scale(.96)}}
+
+/* items fly in as you scroll (scroll-driven, nothing hidden at rest) */
+@keyframes fly{from{opacity:0;translate:var(--fx,0) 70px;scale:.92}to{opacity:1;translate:0 0;scale:1}}
+@keyframes slap{from{opacity:0;rotate:-14deg;scale:.6}70%{rotate:3deg;scale:1.04}to{opacity:1;rotate:0deg;scale:1}}
+@keyframes pop{from{opacity:0;scale:.3;rotate:-25deg}70%{scale:1.12}to{opacity:1;scale:1;rotate:0deg}}
+@keyframes wipe{from{clip-path:inset(-25% 100% -25% 0)}to{clip-path:inset(-25% -6% -25% 0)}}
+@supports (animation-timeline: view()){
+  .grid > .card,.teach-grid > .card,.top-row > .card,.map a,.dots li,.crew li{animation:fly linear both;animation-timeline:view();animation-range:entry 0% cover 24%}
+  .grid > :nth-child(3n+1){--fx:-46px} .grid > :nth-child(3n){--fx:46px}
+  .grid > .wide{--fx:0}
+  .note{animation:slap linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+  .sec-head h2,.week-head h2,.star-head h2{animation:wipe linear both;animation-timeline:view();animation-range:entry 10% cover 26%}
+  .num,.wk b,.star-badge{animation:pop linear both;animation-timeline:view();animation-range:entry 5% cover 22%}
+  .rv-in{animation:none}
+}
+
+/* Team 8: glowing animated border */
+.star{border-color:transparent;background:linear-gradient(var(--tint-m),var(--tint-m)) padding-box,conic-gradient(from var(--ang),var(--magenta),var(--sun),var(--sky),var(--magenta)) border-box;border-width:3px;animation:spin-border 7s linear infinite}
+@keyframes spin-border{to{--ang:360deg}}
+
+/* light that follows the cursor on cards, and 3D tilt */
+@media (hover:hover) and (pointer:fine){
+  .card{background-image:radial-gradient(380px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--magenta) 10%,transparent),transparent 62%)}
+  .tilt{transition:transform .25s ease,box-shadow .25s ease;will-change:transform}
+  .tilt:hover{box-shadow:0 22px 40px -22px var(--lift)}
+  .chips a:hover{transform:translateY(-2px);box-shadow:0 6px 12px -8px var(--lift)}
+}
+
+/* buttons: magnetic pull, shine, springy press */
+.magnet{transition:translate .25s cubic-bezier(.3,1.4,.5,1),transform .15s ease,box-shadow .15s ease}
+.dl::after,.btn-solid::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 3.6s ease-in-out infinite;pointer-events:none}
+@keyframes shine{0%,62%{left:-70%}100%{left:135%}}
+.dl:active,.btn-solid:active,.btn-ghost:active,.spin-btn:active,.watch:not([aria-disabled="true"]):active{transform:scale(.9)}
+nav a.tab:active{transform:scale(.88)}
+nav a.tab{transition:color .25s,transform .3s cubic-bezier(.3,1.6,.5,1)}
+
+/* welcome: rising bubbles, drawn highlight, floating art */
+.wl-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.wl-bubbles i{position:absolute;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.95),rgba(255,255,255,.25) 32%,transparent 60%),var(--b,var(--magenta));opacity:.22;animation:bubble linear infinite}
+.wl-bubbles i:nth-child(1){left:6%;width:26px;height:26px;animation-duration:14s}
+.wl-bubbles i:nth-child(2){left:22%;width:14px;height:14px;--b:var(--sky);animation-duration:11s;animation-delay:-4s}
+.wl-bubbles i:nth-child(3){left:46%;width:34px;height:34px;--b:var(--sun);animation-duration:18s;animation-delay:-9s}
+.wl-bubbles i:nth-child(4){left:64%;width:18px;height:18px;animation-duration:13s;animation-delay:-2s}
+.wl-bubbles i:nth-child(5){left:80%;width:24px;height:24px;--b:var(--sky);animation-duration:16s;animation-delay:-7s}
+.wl-bubbles i:nth-child(6){left:92%;width:12px;height:12px;--b:var(--sun);animation-duration:10s;animation-delay:-5s}
+@keyframes bubble{0%{transform:translate(0,0)}50%{transform:translate(16px,-260px)}100%{transform:translate(-8px,-560px);opacity:0}}
+.wl-grid,.wl-weeks{z-index:1}
+.wl-text h2 em{background:linear-gradient(transparent 64%,color-mix(in srgb,var(--sun) 60%,transparent) 64%) no-repeat;background-size:0% 100%;animation:mark 1.1s .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes mark{to{background-size:100% 100%}}
+.scale-art{transition:translate .4s ease-out}
+.dots a.us b{animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--magenta) 55%,transparent)}70%,100%{box-shadow:0 0 0 12px transparent}}
+
+/* confetti for the audit wheel */
+.wheel-wrap{position:relative}
+.confetti{position:absolute;width:8px;height:12px;border-radius:2px;pointer-events:none;z-index:3}
+
+@media print{
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .aurora,.wl-bubbles,.progress{display:none!important}
+  nav{backdrop-filter:none}
+  .star{background:var(--tint-m)!important;border:2px solid var(--magenta)!important}
+  .card{background-image:none!important}
+  .title .e{color:var(--magenta);background:none}
+}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
 
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <header>
   <div class="wrap">
     <div>
@@ -709,6 +821,7 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
 <div class="view" id="view-welcome" role="tabpanel" aria-labelledby="tab-welcome">
 
 <section id="about" class="welcome">
+  <div class="wl-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="wl-grid">
     <div class="wl-text">
       <span class="label">MANA3021 · VinUniversity · College of Business and Management</span>
@@ -2034,7 +2147,7 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
     names.forEach(k=>{const on=k===name;views[k].hidden=!on;if(chips[k])chips[k].hidden=!on;tabs[k].setAttribute('aria-selected',on?'true':'false')});
     filter();
     movePill();
-    if(changed&&!firstShow&&!rm){
+    if(changed&&!firstShow&&!rm&&!document.startViewTransition){
       const v=views[name];v.classList.remove('entering');void v.offsetWidth;v.classList.add('entering');
       clearTimeout(v._t);v._t=setTimeout(()=>v.classList.remove('entering'),1000);
     }
@@ -2043,16 +2156,20 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
   }
   function route(scroll){
     const h=decodeURIComponent(location.hash.slice(1));
-    if(!h||h==='welcome'||h==='course'||h==='ideas'||h==='rules'||h==='movies'){
-      show(!h?'welcome':(h==='ideas'?'course':h));
-      if(scroll&&h&&window.scrollY>header.offsetHeight)window.scrollTo(0,header.offsetHeight);
-      return;
-    }
-    const el=document.getElementById(h);
-    if(!el){show('welcome');return}
-    const v=el.closest('.view');
-    show(v?v.id.replace('view-',''):'welcome');
-    if(scroll)el.scrollIntoView();
+    let target='welcome',el=null;
+    if(!h||h==='welcome'||h==='course'||h==='ideas'||h==='rules'||h==='movies'){target=!h?'welcome':(h==='ideas'?'course':h)}
+    else{el=document.getElementById(h);if(el){const v=el.closest('.view');target=v?v.id.replace('view-',''):'welcome'}}
+    const apply=instant=>{
+      show(target);
+      if(!scroll)return;
+      const b=instant?'instant':'smooth';
+      if(el)el.scrollIntoView({behavior:b});
+      else if(h&&window.scrollY>header.offsetHeight)window.scrollTo({top:header.offsetHeight,behavior:b});
+    };
+    if(target!==current&&!firstShow&&!rm&&document.startViewTransition){
+      document.documentElement.classList.toggle('vt-back',names.indexOf(target)<names.indexOf(current));
+      document.startViewTransition(()=>apply(true));
+    }else apply(false);
   }
   document.addEventListener('input',e=>{if(e.target.id==='q-course'||e.target.id==='q-rules')filter()});
 
@@ -2068,7 +2185,7 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
     const target=(360-(k*72+36))%360;
     rot+=360*4+((target-(rot%360))+360)%360;
     g.style.transform='rotate('+rot+'deg)';
-    setTimeout(()=>{out.textContent='Auditing juror '+(k+1)+'!';btn.disabled=false;spinning=false},reduce?0:3100);
+    setTimeout(()=>{out.textContent='Auditing juror '+(k+1)+'!';btn.disabled=false;spinning=false;burst(btn.closest('.wheel-wrap'))},reduce?0:3100);
   });
 
   document.querySelectorAll('.player video').forEach(v=>{
@@ -2112,7 +2229,7 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
   });
 
   /* cards rise in as they scroll into view (already visible at rest) */
-  if('IntersectionObserver' in window&&!rm){
+  if('IntersectionObserver' in window&&!rm&&!(window.CSS&&CSS.supports('animation-timeline: view()'))){
     const io=new IntersectionObserver(entries=>{entries.forEach(en=>{
       if(!en.isIntersecting)return;const el=en.target;io.unobserve(el);
       if(performance.now()-lastSwitch<500)return;
@@ -2136,6 +2253,46 @@ details.reveal[open] > :not(summary){animation:rise .35s ease both}
   const tt=document.getElementById('to-top');let tick=false;
   window.addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{tt.classList.toggle('show',window.scrollY>900);tick=false})},{passive:true});
   tt.addEventListener('click',()=>window.scrollTo({top:0,behavior:rm?'auto':'smooth'}));
+
+  /* v10: progress bar, tilt, spotlight, magnet, parallax, confetti */
+  const navEl=document.querySelector('nav');
+  const prog=document.createElement('span');prog.className='progress';prog.setAttribute('aria-hidden','true');navEl.appendChild(prog);
+  if(!(window.CSS&&CSS.supports('animation-timeline: scroll()'))){
+    const upd=()=>{const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(m>0?Math.min(1,scrollY/m):0)+')'};
+    window.addEventListener('scroll',upd,{passive:true});upd();
+  }
+  document.querySelectorAll('.person,.top-row > .card').forEach(el=>el.classList.add('tilt'));
+  document.querySelectorAll('.btn-solid,.btn-ghost,.dl,.spin-btn').forEach(el=>el.classList.add('magnet'));
+  const art=document.querySelector('.scale-art');
+  if(!rm&&window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+    let raf=0,ev=null,tiltEl=null,magEl=null;
+    document.addEventListener('pointermove',e=>{ev=e;if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const t=ev.target;if(!t.closest)return;
+      const c=t.closest('.card');
+      if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',(ev.clientX-r.left)+'px');c.style.setProperty('--my',(ev.clientY-r.top)+'px')}
+      const tl=t.closest('.tilt');
+      if(tl!==tiltEl){if(tiltEl)tiltEl.style.transform='';tiltEl=tl}
+      if(tl){const r=tl.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;
+        tl.style.transform='perspective(900px) rotateX('+(-y*6).toFixed(2)+'deg) rotateY('+(x*7).toFixed(2)+'deg) translateY(-4px)'}
+      const mg=t.closest('.magnet');
+      if(mg!==magEl){if(magEl)magEl.style.translate='';magEl=mg}
+      if(mg){const r=mg.getBoundingClientRect();mg.style.translate=((ev.clientX-r.left-r.width/2)*.2).toFixed(1)+'px '+((ev.clientY-r.top-r.height/2)*.35).toFixed(1)+'px'}
+      const w=t.closest('.welcome');
+      if(art){if(w){const r=w.getBoundingClientRect();art.style.translate=(((ev.clientX-r.left)/r.width-.5)*-22).toFixed(1)+'px '+(((ev.clientY-r.top)/r.height-.5)*-14).toFixed(1)+'px'}else art.style.translate=''}
+    })});
+    document.addEventListener('pointerleave',()=>{if(tiltEl)tiltEl.style.transform='';if(magEl)magEl.style.translate='';tiltEl=magEl=null});
+  }
+  function burst(host){
+    if(!host||rm||!host.animate)return;
+    const wh=host.querySelector('.wheel');if(!wh)return;
+    const r=wh.getBoundingClientRect(),hr=host.getBoundingClientRect(),cx=r.left-hr.left+r.width/2,cy=r.top-hr.top+r.height*.5;
+    const cols=['#E2357A','#F4BE3A','#2C86DD','#F48FB6','#86C3F2','#3A5196'];
+    for(let i=0;i<30;i++){
+      const p=document.createElement('i');p.className='confetti';p.style.background=cols[i%cols.length];p.style.left=cx+'px';p.style.top=cy+'px';host.appendChild(p);
+      const a=Math.random()*Math.PI*2,d=70+Math.random()*110;
+      p.animate([{transform:'translate(-50%,-50%) rotate(0deg)',opacity:1},{transform:'translate('+(Math.cos(a)*d).toFixed(0)+'px,'+(Math.sin(a)*d+60).toFixed(0)+'px) rotate('+(Math.random()*720).toFixed(0)+'deg)',opacity:0}],
+        {duration:900+Math.random()*600,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>p.remove();
+    }
+  }
 
   window.addEventListener('hashchange',()=>route(true));
   route(true);
